@@ -1,0 +1,77 @@
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    background-color: #014242;
+    color: white;
+    margin-top: 15vh;
+}
+nav, main, footer {
+    min-width: 600px;
+    margin: 10vh auto 10vh 10vw;
+}
+nav a, li span:first-child {
+    color: #9EA998;
+}
+h1 {
+    font-size: calc(2vw + 2vh + .5vmin);
+    line-height: 1.5em;
+}
+span {
+    font-size: 12px;
+}
+a {
+    text-decoration: none;
+}
+nav a:after {
+    content: " /";
+}
+footer a {
+    display: block;
+    width: 70px;
+    height: 70px;
+    background: url("../image/ava.jpg") center;
+    border: 2px solid grey;
+    border-radius: 50%;
+}
+footer {
+    position: relative;
+    min-width: 600px;
+}
+ul {
+    position: absolute;
+    left: 90px;
+    top: 15px;
+}
+li {
+    display: inline-block;
+    margin-right: 18px;
+}
+
+@media all and (max-width: 600px) {
+    span {
+        font-size: 14px;
+    }
+    li {
+        width: 150px;
+    }
+    li:nth-child(1) {
+        position: absolute;
+        left: 200px;
+        top: -25px;
+    }
+    li:nth-child(2) {
+        position: absolute;
+        left: 20px;
+        top: 25px;
+    }
+    li:nth-child(3) {
+        position: absolute;
+        left: 200px;
+        top: 25px;
+    }
+    li:nth-child(4) {
+        position: absolute;
+        left: 20px;
+        top: -25px;
+    }
+
+}

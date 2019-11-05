@@ -1,0 +1,43 @@
+body {
+    margin: auto;
+    background-color: #F5F5F5;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    width: 800px;
+}
+dl {
+    color: #fff;
+}
+dt {
+    background-color: #0E494E;
+    padding: 10px 50px;
+}
+dd {
+    background-color: #236167;
+    margin: 0px;
+    padding: 15px 25px;
+}
+a {
+    text-decoration: none;
+    font-size: 10px;
+}
+p {
+    font-size: 10px;
+}
+b {
+    margin-right: 10px;
+}
+li {
+    margin-left: 0px;
+}
+a:link {
+    color: #0000FF;
+}
+a:hover {
+    color: #FFE;
+}
+a:active {
+    color: #000;
+}
+a:visited {
+    color: #B79EAC;
+}

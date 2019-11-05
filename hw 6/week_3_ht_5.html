@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Navigation</title>
+    <style>
+        body {
+            margin: auto;
+            background-color: #F5F5F5;
+            width: 1000px;
+            color: #fff;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+        header {
+            background-color: #923158;
+            padding: 10px 40px;
+            margin: 20px 10px 0px 10px;
+        }
+        nav, footer {
+            background-color: #6E1237;
+            padding: 5px 40px;
+            margin: 10px;
+        }
+        section {
+            background-color: #DB92AF;
+            padding: 1px 0px 20px 40px;
+            margin: 10px 40px 10px 0px;
+        }
+        #right {
+            background-color: #B65B80;
+            padding-left: 40px;
+            margin: 0px 10px;
+            width: 100px;
+            display: inline-block;
+        }
+        #right h3 {
+            margin-left: 20px;
+            width: 1em;
+            line-height:1.5em;
+            text-align: center;
+            word-wrap: break-word;
+        }
+        #left {
+            margin: 0px 10px;
+            width: 240px;
+            float:left;
+        }
+        #left :first-child {
+            background-color: #B65B80;
+            padding: 5px 0px 0px 20px;
+            margin-bottom: 10px;
+        }
+        #left :last-child {
+            background-color: #B65B80;
+            padding: 10px 0px 30px 20px;
+        }
+        main :last-child {
+            margin-bottom: 40px;
+        }
+        main {
+            background-color: #B65B80;
+            width: 540px;
+            padding-left: 40px;
+            margin-bottom: 10px;
+            display: inline-block;
+            float: left;
+        }
+        footer {
+            clear: left;
+            margin: 10px;
+            padding-left: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h3>HEADER</h3>
+    </header>
+
+    <nav>
+        <h3>MENU</h3>
+    </nav>
+
+    <div id = "left">
+        <aside>
+            <h3>ASIDE 1</h3>
+        </aside>
+        <aside>
+            <h3>ASIDE 2</h3>
+        </aside>
+    </div>
+
+    <main>
+        <h3>MAIN CONTENT</h3>
+        <section>
+            <h4>SECTION 1</h4>
+        </section>
+        <section>
+            <h4>SECTION 2</h4>
+        </section>
+    </main>
+
+    <aside id = "right">
+        <h3>ASIDE &#8195; 3</h3>
+    </aside>
+
+    <footer>
+        <h3>FOOTER</h3>
+    </footer>
+
+</body>
+</html>

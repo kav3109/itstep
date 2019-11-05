@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Footer</title>
+        <style>
+            html {
+                position:relative;
+                min-height:100%;
+            }
+            body {
+                margin: 0px;
+                height: 100%;
+                color: #FEFEFE;
+                background-color: #F6F6F6;
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+            }
+            footer {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                min-width: 1200px;
+                height: 250px;
+                background-color: #2A4F6E;
+            }
+            div {
+                float: left;
+                width: 33%;
+                margin-top: 30px;
+                margin-left: 100px;
+            }
+            div:nth-child(2){
+                margin-left: 0px;
+                width: 30%;
+            }
+            div:last-child {
+                width: unset;
+                padding-right: 40px;
+                margin-top: 45px;
+                margin-left: 20px;
+            }
+            ul {
+                list-style-type: none;
+            }
+            li {
+                margin: 5px;
+            }
+            ul a {
+                color: #FEFEFE;
+                text-decoration: none;
+            }
+            ul a:hover {
+                text-decoration: underline;
+            }
+            #netIcon a {
+                display: block;
+                width: 64px;
+                height: 64px;
+                border-radius: 2%;
+                background-color: #2A4F6E;
+                margin: 0 15px;
+            }
+            a[title="Facebook"] {
+                float: left;
+                background-image: url("image/fb_gray.png");
+            }
+            a[title="Facebook"]:hover {
+                background-image: url("image/fb.png");
+            }
+            a[title="Instagram"] {
+                float: left;
+                background-image: url("image/insta_gray.png");
+            }
+            a[title="Instagram"]:hover {
+                background-image: url("image/insta.png");
+            }
+            a[title="Youtube"] {
+                float: left;
+                background-image: url("image/youtube_gray.png");
+            }
+            a[title="Youtube"]:hover {
+                background-image: url("image/youtube.png");
+            }
+            p {
+                border-top: 1px solid #FEFEFE;
+                padding-top: 20px;
+                margin: 0 40px;
+                clear: left;
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <footer>
+            <nav>
+                <div>
+                    <ul>
+                        <li><a href="#" title="Home">Home</a></li>
+                        <li><a href="#" title="About">About</a></li>
+                        <li><a href="#" title="Gallery">Gallery</a></li>
+                        <li><a href="#" title="News">News</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="#" title="Blog">Blog</a></li>
+                        <li><a href="#" title="FAQ">FAQ</a></li>
+                        <li><a href="#" title="Contacts">Contacts</a></li>
+                        <li><a href="#" title="Privacy & cookies">Privacy & cookies</a></li>
+                    </ul>
+                </div>
+                <div id="netIcon">
+                    <a href="#" title="Facebook"></a>
+                    <a href="#" title="Instagram"></a>
+                    <a href="#" title="Youtube"></a>
+                </div>
+            </nav>
+            <p>Copyright &#169; Company 2018-2019</p>
+        </footer>
+    </body>
+</html>

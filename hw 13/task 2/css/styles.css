@@ -1,0 +1,23 @@
+body {
+    max-width:1200px;
+    margin: 10px auto;
+}
+.container {
+    display: flex;
+}
+.item {
+    height:300px;
+    flex-basis:20%;
+    transition: flex 300ms ease;
+}
+.item:hover {
+    flex: 0.1 0.1 400px;
+    background-size: 100% 100%;
+}
+
+
+.pic1 { background: url('https://picsum.photos/id/1018/400/300') 0 0 no-repeat; }
+.pic2 { background: url('https://picsum.photos/id/1016/400/300') 0 0 no-repeat; }
+.pic3 { background: url('https://picsum.photos/id/1015/400/300') 0 0 no-repeat; }
+.pic4 { background: url('https://picsum.photos/id/1000/400/300') 0 0 no-repeat; }
+.pic5 { background: url('https://picsum.photos/id/1037/400/300') 0 0 no-repeat; }

@@ -1,0 +1,59 @@
+body {
+    background-color: #F5F5F5;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    width: 480px;
+    margin: 10px auto;
+    padding: 20px;
+    color: #718C8B;
+    font-size: 10px;
+}
+form {
+    background: #9FCDCD url("../image/moon_flag.png") no-repeat bottom -55px right -70px;
+    height: 260px;
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-left: 20px;
+}
+legend {
+    background-color: #DB6423;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    width: 350px;
+    margin: 20px auto 20px -40px;
+    padding: 10px 0 10px 40px;
+}
+#name, #number {
+    width: 250px;
+}
+div input {
+    width: 70px;
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    width: 260px;
+    margin-bottom: 30px;
+}
+input {
+    height: 25px;
+    border: none;
+    border-bottom: 1px solid #718C8B;
+    font-size: 14px;
+    padding-left: 10px;
+    background-color: #A9D2D2;
+    color: #718C8B;
+    margin: 10px 0;
+}
+input:focus {
+    outline: none;
+    border-bottom: 2px solid #718C8B;
+    transition: border-bottom 0.3s ease;
+}
+::-webkit-input-placeholder {color:#9CC1C0;}
+::-moz-placeholder          {color:#9CC1C0;}
+:-ms-input-placeholder      {color:#9CC1C0;}
+input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+input:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}

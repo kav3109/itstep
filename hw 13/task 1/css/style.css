@@ -1,0 +1,40 @@
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    background-color: #ADD8E6;
+}
+h4 {
+    font-weight: bold;
+    padding: 10px 0 0 10px;
+}
+.y-container {
+    display: flex;
+    flex-direction: column;
+}
+.x-container {
+    display: flex;
+    flex-direction: row;
+}
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.x100 {height: 100px;}
+.x150 {height: 150px;}
+.x220 {height: 220px;}
+.x230 {height: 230px;}
+.x350 {height: 350px;}
+
+.y-container > div {
+    margin: 10px
+}
+div.item + div > p {
+    padding: 10px;
+}
+.y-container div div:first-child {
+    background-color: #C3C3C3;
+}
+.y-container div div:last-child {
+    background-color: #F5F5F5;
+}

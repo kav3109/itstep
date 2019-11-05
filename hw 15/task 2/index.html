@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/reset.css">
+    <!--<link rel="stylesheet" href="css/styles.css">-->
+    <title>Form Library</title>
+    <style>
+        body {
+            background-color: #F5F5F5;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            margin: 30px auto auto 20px;
+        }
+        h3 {
+            font-size: 12px;
+            font-weight: bold;
+        }
+        input {
+            width: 160px;
+            height: 25px;
+            border: 1px solid #E9E9E9;
+            border-radius: 3px;
+            margin: 10px auto;
+            padding-left: 15px;
+            font-size: 11px;
+        }
+        #valid {
+            border: 1px solid green;
+        }
+        #invalid {
+            border: 1px solid red;
+        }
+        #simple::-webkit-input-placeholder {color:#9CC1C0;}
+        #valid::-webkit-input-placeholder {color: green;}
+        #invalid::-webkit-input-placeholder {color: red;}
+
+    </style>
+</head>
+<body>
+<form action="#">
+    <div class="inputs">
+        <h3>Inputs</h3>
+        <input type="text" id="simple" placeholder="Enter some text">
+        <input type="text" id="valid" placeholder="valid text">
+        <input type="text" id="invalid" placeholder="invalid text">
+    </div>
+    <div class="checkboxes">
+        <h3>Check boxes</h3>
+        <checkbox></checkbox>
+        <checkbox></checkbox>
+    </div>
+    <div>
+        <h3>Radio buttons</h3>
+        <radio></radio>
+        <radio></radio>
+    </div>
+    <div class="buttons">
+        <h3>Buttons</h3>
+        <button></button>
+        <button></button>
+        <button></button>
+        <button></button>
+        <button></button>
+        <button></button>
+        <button></button>
+    </div>
+    <div>
+        <h3>Text Area</h3>
+        <textarea name="area" id="text" cols="30" rows="10" placeholder="Enter some text..."></textarea>
+    </div>
+</form>
+</body>
+</html>
