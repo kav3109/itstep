@@ -3,70 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/reset.css">
-    <!--<link rel="stylesheet" href="css/styles.css">-->
+    <link rel="stylesheet" href="css/styles.css">
     <title>Form Library</title>
-    <style>
-        body {
-            background-color: #F5F5F5;
-            font-family: Verdana, Arial, Helvetica, sans-serif;
-            margin: 30px auto auto 20px;
-        }
-        h3 {
-            font-size: 12px;
-            font-weight: bold;
-        }
-        input {
-            width: 160px;
-            height: 25px;
-            border: 1px solid #E9E9E9;
-            border-radius: 3px;
-            margin: 10px auto;
-            padding-left: 15px;
-            font-size: 11px;
-        }
-        #valid {
-            border: 1px solid green;
-        }
-        #invalid {
-            border: 1px solid red;
-        }
-        #simple::-webkit-input-placeholder {color:#9CC1C0;}
-        #valid::-webkit-input-placeholder {color: green;}
-        #invalid::-webkit-input-placeholder {color: red;}
-
-    </style>
 </head>
 <body>
 <form action="#">
     <div class="inputs">
         <h3>Inputs</h3>
-        <input type="text" id="simple" placeholder="Enter some text">
-        <input type="text" id="valid" placeholder="valid text">
-        <input type="text" id="invalid" placeholder="invalid text">
+        <input type="text" class="simple" placeholder="Enter some text">
+        <input type="text" class="valid" placeholder="valid text">
+        <input type="text" class="invalid" placeholder="invalid text">
     </div>
     <div class="checkboxes">
         <h3>Check boxes</h3>
-        <checkbox></checkbox>
-        <checkbox></checkbox>
+        <div class="wrapper blok1">
+            <label for="checkbox1">Subscribe</label>
+            <input type="checkbox" class="checkbox" id="checkbox1" checked>
+
+            <div class="knobs"></div>
+            <div class="layer"></div>
+        </div>
+        <div class="wrapper block2">
+            <label for="checkbox2">Subscribe</label>
+            <input type="checkbox" class="checkbox" id="checkbox2">
+            <div class="knobs"></div>
+            <div class="layer"></div>
+        </div>
     </div>
-    <div>
+    <div class="radioboxes">
         <h3>Radio buttons</h3>
-        <radio></radio>
-        <radio></radio>
+        <div class="radios">
+            <span>Gender: </span>
+            <label class="radio"><input type="radio" name="g" checked><span></span>Male</label>
+            <label class="radio"><input type="radio" name="g"><span></span>Female</label>
+        </div>
     </div>
     <div class="buttons">
         <h3>Buttons</h3>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
+        <button class="active simple">Active</button>
+        <button class="active hover">Hover</button>
+        <button class="danger simple">Danger</button>
+        <button class="danger hover">Hover</button>
+        <button class="disabled">Disabled</button>
+        <button class="add round">&#10010;</button>
+        <button class="delete round">&ndash;</button>
     </div>
-    <div>
+    <div class="textarea">
         <h3>Text Area</h3>
-        <textarea name="area" id="text" cols="30" rows="10" placeholder="Enter some text..."></textarea>
+        <textarea name="area" id="text" cols="40" rows="5" placeholder="Enter some text..."></textarea>
     </div>
 </form>
 </body>

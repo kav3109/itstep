@@ -1,0 +1,107 @@
+body {
+    background-color: #F5F5F5;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+.line{
+    border-bottom: 1px solid #D8D8D8;
+    width: 3000px;
+    margin-left: -400px;
+    margin-top: 30px;
+}
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    margin-right: 0;
+}
+.btn {
+    margin: 30px 0;
+    border: solid 1px transparent;
+    border-radius: 4px;
+    height: 30px;
+    width: 120px;
+    font-size: 12px;
+    color: #ffffff;
+    background-color: #008B8B;
+}
+h1 {
+    font-size: 20px;
+}
+.police label {
+    font-size: 12px;
+    margin-left: 5px;
+}
+.police input {
+    margin-right: 5px;
+    margin-bottom: 10px;
+    vertical-align: top;
+}
+.block1, .block2 {
+    margin-left: 10px;
+}
+.wrapper input {
+    height: 25px;
+    border: none;
+    border-bottom: 1px solid #718C8B;
+    font-size: 14px;
+    padding-left: 10px;
+    color: #718C8B;
+    background-color: #F5F5F5;
+}
+.sex select {
+    width: 97%;
+    padding: 3px 0 3px 7px;
+    background-color: #F5F5F5;
+    border: none;
+    border-bottom: 1px solid #718C8B;
+    font-size: 14px;
+}
+.username input, .email input {
+    width: 90%;
+}
+.password input{
+    width: 80%;
+}
+.block131 {
+    min-width: 230px;
+}
+.block11, .block12 {
+    min-width: 460px;
+}
+.confirm input, .block2 input {
+    width: 93%;
+}
+img {
+    margin-bottom: -5px;
+}
+.wrapper input:focus {
+    outline: none;
+    border-bottom: 1px solid black;
+    transition: border-bottom 0.3s ease;
+}
+::-webkit-input-placeholder {color:#9CC1C0;}
+::-moz-placeholder          {color:#9CC1C0;}
+:-ms-input-placeholder      {color:#9CC1C0;}
+.date::-webkit-input-placeholder {color:black;}
+.date::-moz-placeholder          {color:black;}
+.date:-ms-input-placeholder      {color:black;}
+input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+input:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+
+@media all and (max-width: 900px) {
+    .username input, .email input {width: 92%;}
+    .police {margin-top: -50px}
+}
+@media all and (max-width: 600px) {
+    .username input, .email input {width: 87%;}
+    .password input, .confirm input {width: 87%;}
+    .sex select {width: 95%;}
+    .confirm input {margin-left: 32px;}
+    .police {margin-top: 20px}
+}

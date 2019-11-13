@@ -1,0 +1,20 @@
+.wrapper1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.wrapper1 span:last-child {
+     justify-self: right;
+}
+.wrapper2 {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 1fr;
+}
+.wrapper2 section {
+    grid-column: 1/3;
+}
+.wrapper21 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 10px;
+}

@@ -1,0 +1,58 @@
+body {
+    background-color: #F5F5F5;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #0F4371;
+    color: white;
+}
+.wrapper1 {
+    width: 1000px;
+    padding: 0 10px;
+    margin: 1em auto;
+}
+.wrapper1 span:last-child {
+    font-size: 0.7em;
+}
+.wrapper2 {
+    width: 1000px;
+    margin: 70px auto;
+    padding: 0 10px;
+    font-size: .8em;
+}
+.wrapper21 {
+    margin: 10px 0;
+}
+.wrapper21 button {
+    width: calc(950px/6);
+    border: none;
+    background-color: #0F4371;
+    border-radius: 5px;
+    color: white;
+    height: 30px;
+    cursor: pointer;
+}
+.wrapper21 input {
+    width: calc(950px/6 - 14px);
+    padding-left: 10px;
+    height: 25px;
+    border: 2px solid #EEEEEE;
+    border-radius: 5px;
+}
+#class_type {
+    background: url("../image/triagle.png") no-repeat left calc(950px / 6 - 14px) top 10px white;
+}
+#to, #from {
+    background: url("../image/pointer.png") no-repeat left calc(950px / 6 - 25px) top 1px white;
+}
+#depart_date, #return_date {
+    background: url("../image/table.png") no-repeat left calc(950px / 6 - 25px) top 3px white;
+}
+.wrapper2 aside {
+    padding: 0 10px;
+}

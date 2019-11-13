@@ -1,0 +1,75 @@
+body {
+    background-color: #E45D44;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    height: 100vh;
+    min-height: 400px;
+}
+.wrapper {
+    width: 300px;
+}
+.block1 {
+    background-color: #E6E4E4;
+    padding: 20px;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+h3, p:not(.button), button, input {
+    width: 260px;
+    margin: 10px auto;
+    border-width: 0;
+    text-align: center;
+    padding: 10px 0;
+}
+h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-top: 0;
+    margin-bottom: 20px;
+}
+button {
+    color: white;
+    font-weight: bold;
+    background-color: #32A75A;
+    border-bottom: 2px solid #0C7932;
+    cursor: pointer;
+}
+button:active, a:active {
+    text-shadow: 2px 2px 2px grey;
+}
+.block1 p:last-child {
+    margin: 0;
+    padding-bottom: 0;
+}
+.block1 p > a {
+    font-size: 0.8em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #E45D44;
+}
+.block2 {
+    color: white;
+}
+.block2 p a {
+    text-decoration: none;
+    color: inherit;
+}
+.button a{
+    display: block;
+    width: 100%;
+    height: 27px;
+    font-size: 0.9em;
+    text-align: center;
+    padding-top: 1em;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+.facebook {
+    background-image: url("../image/facebook.png");
+    background-repeat: no-repeat;
+    background-position: top 8px left 12px;
+    background-color: #3A5BA0;
+}
+.twitter {
+    background-image: url("../image/twitter.png");
+    background-repeat: no-repeat;
+    background-position: top 8px left 20px;
+    background-color: #1CB7EB;
+}

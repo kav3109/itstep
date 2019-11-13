@@ -1,0 +1,10 @@
+body {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+.block21 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+}
