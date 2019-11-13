@@ -16,7 +16,7 @@
 </header>
 <div class="wrapper2">
     <section>
-        <form action="#" method="post">
+        <form action="#" method="post" name="sorting">
             <label><input type="radio" name="way" checked>One Way</label>
             <label><input type="radio" name="way">Round Trip</label>
             <div class="wrapper21">
@@ -29,8 +29,48 @@
             </div>
         </form>
     </section>
-    <aside>filtering</aside>
-    <main>content</main>
+    <aside>
+        <h3>Filter</h3>
+        <h4>No. of Stops</h4>
+        <form action="#" method="get" name="stops">
+            <p><label><input type="checkbox" name="non_stop">Non stop</label></p>
+            <p><label><input type="checkbox" name="one_stop">1 Stop</label></p>
+            <p><label><input type="checkbox" name="two_stop">2+ Stops</label></p>
+        </form>
+        <h4>Price</h4>
+        <form action="#" method="get" name="price" class="wrapper_price">
+            <p>Min:</p>
+            <p>Max:</p>
+            <p><input type="text" name="min" class="min" placeholder="0"></p>
+            <p><input type="text" name="max" class="max" placeholder="1000"></p>
+        </form>
+        <h4>Airlines</h4>
+        <form action="#" method="get" name="airlines">
+            <p><label><input type="checkbox" name="asiana">Asiana Airlines</label></p>
+            <p><label><input type="checkbox" name="american">American Airlines</label></p>
+            <p><label><input type="checkbox" name="canada">Air Canada</label></p>
+            <p><label><input type="checkbox" name="india">Air India</label></p>
+            <p><label><input type="checkbox" name="jet">Jet Airways</label></p>
+            <p><label><input type="checkbox" name="spicejet">Spicejet</label></p>
+            <p><label><input type="checkbox" name="indigo">IndiGo</label></p>
+            <p><label><input type="checkbox" name="multiple">Multiple Airlines</label></p>
+        </form>
+    </aside>
+    <main class="content">
+        <div class="row1">
+            <h3>Dehli to Sydney</h3>
+        </div>
+        <div class="row2">
+            <div>Airlines</div>
+            <div>Departure</div>
+            <div>Duration</div>
+            <div>Arrival</div>
+            <div>Price</div>
+            <div></div>
+        </div>
+
+
+    </main>
 </div>
 
 </body>
