@@ -26,15 +26,18 @@
     display: grid;
     grid-template-rows: 6em;
     justify-items: center;
-    /*align-items: center;*/
 }
-/*.content {*/
-    /*display: grid;*/
-    /*grid-template-columns: repeat(6, 1fr);*/
-    /*grid-template-rows: 6em 3em 4em;*/
-    /*justify-items: center;*/
-    /*align-items: center;*/
-/*}*/
-/*.row1 {*/
-    /*grid-column: 1/7;*/
-/*}*/
+.row2 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 3em;
+    justify-items: center;
+    align-items: center;
+}
+.row3 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 5em;
+    justify-items: center;
+    align-items: center;
+}

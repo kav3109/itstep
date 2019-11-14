@@ -12,10 +12,17 @@ header {
     color: white;
 }
 aside {
+    height: 490px;
     background-color: white;
     border: 2px solid #EEEEEE;
     border-radius: 5px;
     padding: 0 30px;
+}
+main {
+    border: 2px solid #EEE;
+    border-radius: 5px;
+    background-color: white;
+    padding-bottom: 2em;
 }
 h3 {
     font-size: 1.2em;
@@ -87,21 +94,40 @@ input[type="text"] {
 #depart_date, #return_date {
     background: url("../image/table.png") no-repeat left calc(950px / 6 - 25px) top 3px white;
 }
-main {
-    border: 2px solid #EEEEEE;
-    border-radius: 5px;
-    background-color: white;
-}
-.row1, .row2 {
+.row1, .row2, .row3 {
     border-bottom: 2px solid #EEE;
 }
 .row2 {
     background-color: #F5F5F5;
+    font-weight: bold;
+    font-size: .9em;
+    color: #0F4371;
 }
-/*.row1 {*/
-    /*width: 100%;*/
-    /*height: 100%;*/
-    /*background-color: white;*/
-    /*border-bottom: 2px solid #EEE;*/
-    /*text-align: center;*/
-/*}*/
+.row3 {
+    text-align: center;
+}
+.row3 p + p {
+    font-size: .8em;
+    color: #CFCFD0;
+    margin-top: 5px;
+}
+.row3 div:last-child p + p {
+    color: #0F4371;
+}
+.currency:before {
+    content: "$";
+}
+.book {
+    height: 2.5em;
+    width: 5em;
+    background-color: #0F4371;
+    border-radius: 5px;
+}
+.row3 a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: white;
+    padding-top: .8em;
+}
