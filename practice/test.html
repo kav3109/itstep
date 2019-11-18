@@ -5,56 +5,59 @@
         <meta charset="utf-8">
         <title>TABLE</title>
         <style>
-            .radio input {
-                display: none;
+
+            /*ul {*/
+                /*list-style: none;*/
+            /*}*/
+
+            /*ul.big {*/
+                /*list-style: none;*/
+                /*font-size: 300%*/
+            /*}*/
+            span.text {
+                border: 1px solid #C1C1C1;
+                border-radius: 3px;
+                border-right: none;
+                font-size: 1.1em;
             }
-            .radio span {
+            span.figure::after {
                 position: relative;
+                top: 2px;
+                content: "";
                 display: inline-block;
-                width: 19px; height: 19px;
-                background: #FFF;
-                border-radius: 50%;
-                border: 1px solid #40AA48;
+                width: 0.9em;
+                height: 0.9em;
+                border-right: 1px solid #C1C1C1;
+                border-top: 1px solid #C1C1C1;
+                transform: rotate(45deg);
+                margin-left: -12px;
             }
-            .radio input:checked + span::before {
-                content: '';
-                position: absolute;
-                left: 2px; top: 2px;
-                background: #40AA48;
-                width: 15px; height: 15px;
-                border-radius: 50%;
-            }
-            .select select {
-                /*display: block;*/
-                width: 100%; /* от ширины блока div */
-                padding: .75rem 2.5rem .75rem 1rem;/* отступы от текста до рамки */
-                background: none; /* убираем фон */
-                border: none; /* рамка */
-                border-bottom: 1px solid black;
-                /*border-radius: 3px;!* скругление полей формы *!*/
-                /*-webkit-appearance: none;!* Chrome *!*/
-                /*-moz-appearance: none;!* Firefox *!*/
-                /*appearance: none;!* убираем дефолнтные стрелочки *!*/
-                font-family: inherit;/* наследует от родителя */
-                font-size: 1rem;
-                color: #444;
-            }
+
+            /* Change color */
+            /*li:hover {*/
+                /*color: red; !* For the text *!*/
+            /*}*/
+            /*li:hover::before {*/
+                /*border-color: red; !* For the arrow (which is a border) *!*/
+            /*}*/
+
         </style>
     </head>
 
     <body>
-    <div>
-        <span>Gender: </span>
-        <label class="radio"><input type="radio" name="g" checked><span></span>Male</label>
-        <label class="radio"><input type="radio" name="g"><span></span>Female</label>
-        <label for="check"><input type="checkbox" id="check">Label</label>
-        <div class="select">
-            <select>
-                <option value="Лимон">Лимон</option>
-                <option value="Банан">Банан</option>
-                <option value="Яблоко">Яблоко</option>
-            </select>
-        </div>
-    </div>
+    <!--<ul>-->
+        <span class="text">Item1</span>
+        <span class="figure"></span>
+        <!--<li>Item2</li>-->
+        <!--<li>Item3</li>-->
+        <!--<li>Item4</li>-->
+    <!--</ul>-->
+
+    <!--<ul class="big">-->
+        <!--<li>Item1</li>-->
+        <!--<li>Item2</li>-->
+        <!--<li>Item3</li>-->
+        <!--<li>Item4</li>-->
+    <!--</ul>-->
     </body>
 </html>
