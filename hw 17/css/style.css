@@ -51,13 +51,6 @@ span.circle {
 .btn.blue:hover {background-color: #32a0af;}
 .pink {background-color: #F98691; color: white;}
 .btn.pink:hover {background-color: #d16970;}
-.com {
-    height: .7rem;
-    font-size: .5rem;
-    padding: 0 5px 6px 5px;
-    background-color: #28A745;
-    border-radius: 20px;
-}
 .settings-title {
     margin-top: 1rem;
     margin-bottom: 1rem;
