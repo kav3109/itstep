@@ -7,8 +7,8 @@
     <!--<link rel="stylesheet" href="../lib/bootstrap-4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
     <link href="https://fonts.googleapis.com/css?family=News+Cycle&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <!--<link href="../lib/fontawesome-5.11.2/css/fontawesome.css" rel="stylesheet">-->
-    <title>Homework</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/5394197a68.css">
+    <title>Settings</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light">
@@ -32,7 +32,67 @@
     </div>
 </nav>
 <main class="mr-5 ml-5">
-
+    <div class="row">
+        <div class="col-12 pr-0 pl-0">
+            <h2 class="text-muted text-center  mb-3 mt-3 pb-3">Settings</h2>
+        </div>
+    </div>
+    <div class="row rounded text-center">
+        <div class="col-lg-3">
+            <div class="row">
+                <div class="col-12 settings-title rounded-left p-2">AVATAR</div>
+                <div class="col-12 pl-1"><img class="" src="icons/av_256.png" alt="User Icon"></div>
+                <div class="col-12 back-white pr-0 pl-0"><a href="#" class="btn btn-block">Choose photo</a></div>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="row">
+                <div class="col-12 settings-title p-2">STUDENT'S INFO</div>
+                <div class="col-12">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="firstName" aria-describedby="firstName" placeholder="First name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="phone" placeholder="Phone number">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="address" placeholder="Address">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="fb" placeholder="FB link">
+                        </div>
+                        <button type="submit" class="btn btn-block back-white">Save changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="row">
+                <div class="col-12 settings-title rounded-right p-2">CHANGE PASSWORD</div>
+                <div class="col-12 pr-0">
+                    <form>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="oldPas" aria-describedby="oldPassword" placeholder="Old password">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="newPas" placeholder="New password">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="confirmPas" placeholder="Repeat password">
+                        </div>
+                        <button type="submit" class="btn btn-block back-white">Change password</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

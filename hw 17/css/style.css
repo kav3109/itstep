@@ -2,27 +2,14 @@ body {
     font-family: 'News Cycle', sans-serif;
     font-size: .9rem;
 }
-.navbar {
-    background-color: #1B5589;
-}
-.navbar-light .navbar-nav .active>.nav-link {
-    color: white;
-}
-.navbar-light .navbar-nav .nav-link {
-    color: #C7C7C7;
-}
-.navbar-light .navbar-nav .nav-link:hover {
-    color: #EDEDED;
-}
-.added {
-    font-size: .7rem;
-}
-.more-left {
-    background-color: #6C757D;
-}
-.more-right {
-    background-color: #F8F9FA;
-}
+.navbar {background-color: #1B5589;}
+.navbar-light .navbar-nav .active>.nav-link {color: white;}
+.navbar-light .navbar-nav .nav-link {color: #C7C7C7;}
+.navbar-light .navbar-nav .nav-link:hover {color: #EDEDED;}
+.added {font-size: .7rem;}
+.more-left {background-color: #6C757D;}
+.more-right {background-color: #F8F9FA;}
+.more-right:hover, .more-left:hover {cursor: pointer;}
 span.figure {
     width: 1.1rem;
     height: 1.1rem;
@@ -64,7 +51,23 @@ span.circle {
 .btn.blue:hover {background-color: #32a0af;}
 .pink {background-color: #F98691; color: white;}
 .btn.pink:hover {background-color: #d16970;}
-
+.com {
+    height: .7rem;
+    font-size: .5rem;
+    padding: 0 5px 6px 5px;
+    background-color: #28A745;
+    border-radius: 20px;
+}
+.settings-title {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: #CCE5FF;
+}
+.back-white a, button.back-white {
+    background-color: #6C757D;
+    color: white;
+}
 @media all and (max-width: 1000px){
-    .icon {display: none}
+    .icon {display: none;}
+    .settings-title {border-radius: 5px;}
 }
