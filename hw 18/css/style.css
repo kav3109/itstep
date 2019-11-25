@@ -1,0 +1,40 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    font-family: 'News Cycle', sans-serif;
+    font-size: .9rem;
+}
+a.icon {
+    text-decoration: none;
+}
+main {
+    min-height: 500px;
+    margin-right: 32px;
+    margin-left: 32px;
+}
+.block-search{
+    background-color: #CCE5FF;
+}
+section span {;
+    position: absolute;
+    top: 3px;
+    margin-left: 50px;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+footer li {
+    margin-bottom: 10px;
+}
+footer .row {
+    margin-left: 32px;
+    margin-right: 32px;
+}
+
+@media all and (max-width: 992px){main {min-height: 650px;}}
+@media all and (max-width: 768px){main {min-height: 930px;}}
+@media all and (max-width: 576px){main {min-height: 1300px;}}
