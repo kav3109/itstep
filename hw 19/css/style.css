@@ -1,0 +1,63 @@
+body {
+    font-family: 'News Cycle', sans-serif;
+    font-size: .9rem;
+}
+a.icon {
+    text-decoration: none;
+}
+.block-search{
+    background-color: #CCE5FF;
+}
+.block-search-color-result, .views {
+    background-color: #E5E6E8;
+}
+section span {;
+    position: absolute;
+    top: 3px;
+    margin-left: 50px;
+}
+footer li {
+    margin-bottom: 10px;
+}
+footer .row, main {
+    margin-left: 32px;
+    margin-right: 32px;
+}
+.dropdown-type {
+    background: url("../image/triagle.png") no-repeat left 95% top 50% white;
+}
+.item-price:after {
+    content: "$";
+}
+.media-body p, .location-time, .views {
+    font-size: .7rem;
+}
+.views {
+    margin: 1rem -1rem -1rem -1rem;
+    padding: 1rem;
+}
+span.figure {
+    width: .6rem;
+    height: .6rem;
+    background-color: white;
+    border-right: 1px solid #dee2e6;
+    border-top: 1px solid #dee2e6;
+}
+.fig-left {
+    position: relative;
+    top: -32px;
+    left: -4px;
+    transform: rotate(225deg);
+    margin-right: -14px;
+}
+span.item-price {
+    font-size: 1.2rem;
+}
+.user-data {
+    background-color: #E5E6E8;
+    margin-top: 70px;
+}
+.user-icon {
+    margin-top: -50px;
+}
+@media all and (max-width: 576px){.figure {display: none;}}

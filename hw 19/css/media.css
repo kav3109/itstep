@@ -1,0 +1,15 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+main {
+    min-height: 500px;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+@media all and (max-width: 992px){main {min-height: 650px;}}
+@media all and (max-width: 768px){main {min-height: 930px;}}
+@media all and (max-width: 576px){main {min-height: 1300px;}}
