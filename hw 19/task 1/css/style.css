@@ -32,6 +32,9 @@ footer .row, main {
 .media-body p, .location-time, .views {
     font-size: .7rem;
 }
+div.location-time {
+    max-width: 300px;
+}
 .views {
     margin: 1rem -1rem -1rem -1rem;
     padding: 1rem;
