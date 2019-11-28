@@ -3,6 +3,7 @@
 <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--<link rel="stylesheet" href="../lib/materialize/css/materialize.css">-->
     <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
@@ -14,7 +15,7 @@
             <div class="nav-wrapper">
                 <a href="#" class="brand-logo">SN</a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="#"><img src="image/av_64.png" alt="ava"></a></li>
+                    <li><a class='ava' href="#"><img src="image/av_64.png" alt="ava"></a></li>
                     <li><a href="#">Luella Hubbard</a></li>
                 </ul>
             </div>
@@ -23,20 +24,89 @@
 </header>
 <main class="container">
     <div class="row">
-        <aside class="col s12 m3">
+        <aside class="col s12 m6 xl3">
             <div class="collection">
-                <a href="#" class="collection-item active blue lighten-5 blue-text text-darken-5"><i class="small material-icons left">account_box</i>My profile</a>
-                <a href="#" class="collection-item blue-text text-darken-5"><i class="small material-icons left">dvr</i>News</a>
-                <a href="#" class="collection-item blue-text text-darken-5"><span class="new badge blue" data-badge-caption="">4</span><i class="small material-icons left">email</i>Messages</a>
-                <a href="#" class="collection-item blue-text text-darken-5"><i class="small material-icons left">sentiment_satisfied</i>Friends</a>
-                <a href="#" class="collection-item blue-text text-darken-5"><i class="small material-icons left">event_available</i>Events</a>
-                <a href="#" class="collection-item blue-text text-darken-5"><i class="small material-icons left">perm_media</i>Media</a>
+                <a href="#" class="collection-item active blue lighten-5 blue-text text-darken-5">
+                    <i class="small material-icons left">account_box</i>My profile</a>
+                <a href="#" class="collection-item blue-text text-darken-5">
+                    <i class="small material-icons left">dvr</i>News</a>
+                <a href="#" class="collection-item blue-text text-darken-5">
+                    <span class="new badge blue" data-badge-caption="">4</span>
+                    <i class="small material-icons left">email</i>Messages</a>
+                <a href="#" class="collection-item blue-text text-darken-5">
+                    <i class="small material-icons left">sentiment_satisfied</i>Friends</a>
+                <a href="#" class="collection-item blue-text text-darken-5">
+                    <i class="small material-icons left">event_available</i>Events</a>
+                <a href="#" class="collection-item blue-text text-darken-5">
+                    <i class="small material-icons left">perm_media</i>Media</a>
             </div>
         </aside>
-        <section class="col s12 m3 center">users</section>
-        <content class="col s12 m6">content</content>
+        <section class="col s12 m6 xl3">
+            <div class="card edit-ava center-align">
+                <div class="card-image">
+                    <img src="image/av_256.png">
+                </div>
+                <div class="card-action">
+                    <a class="set-ava waves-effect waves-light btn-small blue lighten-3">Edit</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content grey-text text-darken-2">
+                    <p class="m-t-0">Friends (245):</p>
+                    <div class="row">
+                        <div class="col s4">
+                            <a href="#"><img src="image/avatar_1.png" alt=""></a>
+                            <p>Hasan Tomlin</p>
+                        </div>
+                        <div class="col s4">
+                            <a href="#"><img src="image/avatar_1.png" alt=""></a>
+                            <p>Hasan Tomlin</p>
+                        </div>
+                        <div class="col s4">
+                            <a href="#"><img src="image/avatar_1.png" alt=""></a>
+                            <p>Hasan Tomlin</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <article class="col s12 m12 xl6">
+            <div class="card">
+                <div class="card-content">
+                    <h5 class="m-t-0 grey-text text-darken-2">Luella Hubbard</h5>
+                    <hr color="#F9F9F9">
+                    <div class="row m-b-0">
+                        <div class="col s6 l3 grey-text lighten-1">
+                            <p>Birthday:</p>
+                            <p>City:</p>
+                        </div>
+                        <div class="col s6 l9 blue-text text-darken-5">
+                            <p>August 13</p>
+                            <p>New Orleans</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-action">
+                    <div class="row m-b-0 center blue-text text-darken-5">
+                        <div class="col s4">
+                            <h5 class="m-t-0">245</h5>
+                            <p class="m-t-0 m-b-0">friends</p>
+                        </div>
+                        <div class="col s4">
+                            <h5 class="m-t-0">23</h5>
+                            <p class="m-t-0 m-b-0">events</p>
+                        </div>
+                        <div class="col s4">
+                            <h5 class="m-t-0">456</h5>
+                            <p class="m-t-0 m-b-0">media</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
     </div>
 </main>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!--<script src="../lib/materialize/js/materialize.js"></script>-->
 </body>
 </html>
