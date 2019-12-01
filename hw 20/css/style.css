@@ -33,6 +33,10 @@ a.ava:hover {
     padding-right: 0;
     padding-left: 0;
 }
+.m-x-1 {
+    margin-right: 5px;
+    margin-left: 5px;
+}
 .m-t-0 {
     margin-top: 0;
 }
@@ -41,6 +45,9 @@ a.ava:hover {
 }
 .m-t-1 {
     margin-top: 5px;
+}
+.m-t-3 {
+    margin-top: 15px;
 }
 article .card .card-content p {
     margin-top: 10px;
@@ -61,4 +68,48 @@ article .card .card-content p {
 }
 .card.edit-ava {
     margin: auto;
+}
+article img {
+    margin-top: 24px;
+    margin-left: 24px;
+}
+article .col.s10 {
+    padding-top: 24px;
+    padding-left: 40px;
+}
+article p:not(.count) {
+    font-size: .7rem;
+}
+article.card .card-content {
+    padding-top: 12px;
+}
+div.count, div.event-data {
+    float: left;
+}
+.clear-float {
+    clear: left;
+}
+div.count + div, .event-data {
+    margin-right: 10px;
+}
+.search input[type=text] {
+    width: 50%;
+}
+.events .card-image span.card-title {
+    font-weight: bold;
+    background-color: grey;
+}
+.events .card .card-image .card-title {
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    font-weight: bold;
+    font-size: 1rem;
+}
+.events .card .card-action {
+    font-weight: bold;
+    font-size: .9rem;
+}
+.events .card .card-content div {
+    font-size: .8rem;
+    margin-bottom: 10px;
 }
