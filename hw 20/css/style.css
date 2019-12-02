@@ -120,7 +120,6 @@ span.mes-time {
     color: white;
     background-color: #2196F3;
 }
-section.mes-content.col.s12.l6.xl6{
+div.mes-content.col.s12.l7.xl8{
     padding-left: 30px;
-    max-height: 100vh;
 }
