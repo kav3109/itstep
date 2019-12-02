@@ -1,3 +1,4 @@
+@import "margin-padding.css";
 .nav-wrapper {
     margin-left: 5rem;
     margin-right: 5rem;
@@ -28,26 +29,6 @@ a.ava:hover {
 }
 .set-ava {
     width: 100%;
-}
-.p-x-0 {
-    padding-right: 0;
-    padding-left: 0;
-}
-.m-x-1 {
-    margin-right: 5px;
-    margin-left: 5px;
-}
-.m-t-0 {
-    margin-top: 0;
-}
-.m-b-0 {
-    margin-bottom: 0;
-}
-.m-t-1 {
-    margin-top: 5px;
-}
-.m-t-3 {
-    margin-top: 15px;
 }
 article .card .card-content p {
     margin-top: 10px;
@@ -112,4 +93,34 @@ div.count + div, .event-data {
 .events .card .card-content div {
     font-size: .8rem;
     margin-bottom: 10px;
+}
+.users-mes img {
+    width: 40px;
+    height: 40px;
+}
+.users-mes {
+    border: 1px solid #EDEDED;
+    max-height: 100vh;
+    overflow: auto;
+}
+.user-mes {
+    max-height: 70px;
+    overflow: hidden;
+    cursor: pointer;
+    border-bottom: 1px solid #EDEDED;
+    font-size: .8rem;
+}
+div.username, span.username, .unread {
+    font-weight: bold;
+}
+span.mes-time {
+    font-size: .7rem
+}
+.user-mes.active, .user-mes.active {
+    color: white;
+    background-color: #2196F3;
+}
+section.mes-content.col.s12.l6.xl6{
+    padding-left: 30px;
+    max-height: 100vh;
 }
