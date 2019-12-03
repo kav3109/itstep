@@ -1,0 +1,48 @@
+body {
+    font-family: 'News Cycle', sans-serif;
+}
+nav .brand-logo {
+    margin-left: 2em;
+    font-size: 1.5rem;
+}
+.left.hide-on-med-and-down {
+    margin-left: 15rem;
+}
+.btn.my-button {
+    background-color: white;
+    color: grey;
+}
+.gallery {
+    display: flex;
+}
+.item {
+    height:200px;
+    flex-basis:20%;
+    transition: flex 300ms ease;
+}
+.item:hover {
+    flex: 0.1 0.1 300px;
+    background-size: 100% 100%;
+}
+.title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.radios {
+    font-weight: bold;
+    margin-right: 2rem;
+}
+
+.pic1 { background: url('https://picsum.photos/id/1018/300/200') 0 0 no-repeat; }
+.pic2 { background: url('https://picsum.photos/id/1016/300/200') 0 0 no-repeat; }
+.pic3 { background: url('https://picsum.photos/id/1015/300/200') 0 0 no-repeat; }
+.pic4 { background: url('https://picsum.photos/id/1000/300/200') 0 0 no-repeat; }
+.pic5 { background: url('https://picsum.photos/id/1037/300/200') 0 0 no-repeat; }
+@media all and (max-width: 992px) {
+    nav .brand-logo {
+        margin-left: 0;
+    }
+    .hide-on-med {
+        display: none;
+    }
+}
