@@ -131,8 +131,5 @@ div.mes-content.col.s12.l7.xl8{
 .mes-content p {
     margin-top: 80px;
 }
-.login.container {
-    max-width: 400px;
-}
 @media all and (max-width: 1200px) {.form-send{width: 58%}}
 @media all and (max-width: 992px) {.form-send{width: 93%}}
