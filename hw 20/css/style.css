@@ -123,3 +123,13 @@ span.mes-time {
 div.mes-content.col.s12.l7.xl8{
     padding-left: 30px;
 }
+.form-send {
+    position: absolute;
+    bottom: 0;
+    width: 65%;
+}
+.mes-content p {
+    margin-top: 80px;
+}
+@media all and (max-width: 1200px) {.form-send{width: 58%}}
+@media all and (max-width: 992px) {.form-send{width: 93%}}
