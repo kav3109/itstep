@@ -4,6 +4,12 @@ body {
 .navbar-brand {
     font-weight: bold;
 }
+.b-top {
+    border-top: 1px solid #dee2e6;
+}
+.b-bottom {
+    border-bottom: 1px solid #dee2e6;
+}
 .social img {
     width: 1rem;
     height: 1rem;
@@ -21,19 +27,32 @@ body {
     padding: 20px;
     border-radius: .5rem;
 }
-@media all and (max-width: 850px) {
-    .social {
-        display: none;
+.form-check {
+    padding-left: 2.2rem;
+}
+img.foot-social {
+    width: 20px;
+    height: 20px;
+}
+@media all and (max-width: 576px) {
+    .b-top {
+        border-top: none;
+    }
+    .align-self-center {
+        padding: 20px 50px;
     }
 }
-@media (min-width: 576px) and (max-width: 767.98px) {
+@media all and (max-width: 850px) {.social {display: none;}}
+@media (max-width: 767.98px) {
     .slide-box img {
         -ms-flex: 0 0 50%;
         flex: 0 0 50%;
         max-width: 50%;
     }
+    body main h1 {font-size: 1rem; font-weight: bold}
+    body main p {font-size: .7rem;}
+    body main button.btn-outline-secondary {font-size: 0.8rem;}
 }
-
 @media (min-width: 768px) and (max-width: 991.98px) {
     .slide-box img {
         -ms-flex: 0 0 33.3333%;
@@ -41,7 +60,6 @@ body {
         max-width: 33.3333%;
     }
 }
-
 @media (min-width: 992px)
 {
     .slide-box img {
