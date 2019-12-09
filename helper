@@ -1,0 +1,9 @@
+- underfined
+- null
+- boolean
+- string
+- number
+    * NaN
+    * Infinity
+- object
+- symbol
