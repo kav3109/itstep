@@ -1,0 +1,170 @@
+@my-ident: 5px;
+@smal-text: .8rem;
+
+.p-0 {padding: 0;}
+.m-0 {margin: 0;}
+.p-x-0 {padding-right: 0; padding-left: 0;}
+.p-y-0 {padding-top: 0; padding-bottom: 0;}
+.m-y-0 {margin-top: 0; margin-bottom: 0;}
+.m-t-0 {margin-top: 0;}
+.m-b-0 {margin-bottom: 0;}
+.m-l-0 {margin-left: 0;}
+.m-x-1 {margin-right: @my-ident; margin-left: @my-ident;}
+.m-t-1 {margin-top: @my-ident;}
+.m-r-1 {margin-right: @my-ident;}
+.m-y-2 {margin-top: @my-ident*2; margin-bottom: @my-ident*2;}
+.p-2 {padding: @my-ident*2;}
+.p-y-2 {padding-top: @my-ident*2; padding-bottom: @my-ident*2;}
+.p-x-2 {padding-right: @my-ident*2; padding-left: @my-ident*2;}
+.p-b-2 {padding-bottom: @my-ident*2;}
+.p-l-3 {padding-left: @my-ident*3;}
+.m-t-3 {margin-top: @my-ident*3;}
+.nav-wrapper {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+main.container {
+  margin-top: 2rem;
+}
+.collection{
+  border: none;
+  .collection-item {
+    border: none;
+  }
+  a.collection-item:not(.active):hover {
+    background-color: #bbdefb;
+  }
+}
+i.small {
+  font-size: 25px;
+}
+.align-text {
+  vertical-align: top;
+  font-size: @smal-text;
+}
+.font-size-1, .friends > div > div p, article p:not(.count), span.mes-time{
+  font-size: @smal-text;
+}
+.tiny-line-1 {
+  line-height: 1;
+}
+.tiny-line-2 {
+  line-height: 1.5;
+}
+span.badge {
+  min-width: 1rem;
+}
+a.ava:hover {
+  background-color: transparent;
+}
+.edit-ava {
+  max-width: 300px;
+}
+.edit-ava .card-image{
+  margin-bottom: 20px;
+}
+.set-ava {
+  width: 100%;
+}
+article .card .card-content p {
+  margin-top: 10px;
+}
+.friends {
+  padding: 20px 12px 1px 12px ;
+}
+.friends .card-content {
+  .p-0
+}
+.friends img {
+  max-width: 50px;
+  max-height: 50px;
+  margin-left: -5px;
+}
+.card.edit-ava {
+  margin: auto;
+}
+article img {
+  margin-top: 24px;
+  margin-left: 24px;
+}
+article .col.s10 {
+  padding-top: 24px;
+  padding-left: 40px;
+}
+article.card .card-content {
+  padding-top: 12px;
+}
+div.count, div.event-data, .user-img {
+  float: left;
+}
+.clear-float {
+  clear: left;
+}
+div.count + div, .event-data {
+  margin-right: 10px;
+}
+.search input[type=text] {
+  width: 50%;
+}
+.events .card-image span.card-title {
+  font-weight: bold;
+  background-color: grey;
+}
+.events .card .card-image .card-title {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.news .card .card-image .card-title {
+  background-color: rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  font-size: 1rem;
+}
+.events .card .card-action {
+  font-weight: bold;
+  font-size: @smal-text;
+}
+.events .card .card-content div {
+  font-size: @smal-text;
+  margin-bottom: 10px;
+}
+.users-mes img {
+  width: 40px;
+  height: 40px;
+}
+.users-mes {
+  border: 1px solid #EDEDED;
+  max-height: 100vh;
+  overflow: auto;
+}
+.user-mes {
+  max-height: 70px;
+  overflow: hidden;
+  cursor: pointer;
+  border-bottom: 1px solid #EDEDED;
+  font-size: @smal-text;
+}
+div.username, span.username, .unread {
+  font-weight: bold;
+}
+.user-mes.active, .user-mes.active {
+  color: white;
+  background-color: #2196F3;
+}
+div.mes-content.col.s12.l7.xl8{
+  padding-left: 30px;
+}
+.form-send {
+  position: absolute;
+  bottom: 0;
+  width: 65%;
+}
+.mes-content p {
+  margin-top: 80px;
+}
+.login.container {
+  max-width: 400px;
+}
+@media all and (max-width: 1200px) {.form-send{width: 58%}}
+@media all and (max-width: 992px) {.form-send{width: 93%}}
