@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Script</title>
+    <script>
+
+        const YEAR = 2019;
+        const USD = 25;
+        const EUR = 28;
+
+        let userName = prompt("Enter your name, please!");
+        let userBirthYear = prompt("Enter year of your birth, please!");
+        alert("Dear " + userName + ", You are " + (YEAR - userBirthYear) + " years old");
+
+        let lehgthOfSquare = prompt("Enter a length of square, please");
+        alert("Perimeter of the square is " + lehgthOfSquare*4);
+
+        let radius = prompt("Enter radius of circle, please!");
+        alert("Area of circle is " + (Math.PI*radius*radius).toFixed(2));
+
+        let distance = prompt("Enter a distance to your location, please!");
+        let time = prompt("How many hours you have to get location?");
+        alert("You should move " + Math.round(distance/time) + "km/h to get location in time");
+
+        let sumUsd = prompt("Enter sum of USD to convert to EUR, please!");
+        alert(sumUsd + " USD = " + (sumUsd*USD/EUR).toFixed(4) + " EUR");
+
+        let storageCapaity = prompt("Enter value (Gb) of your flash drive, please!");
+        alert("Your flash drive can include " + Math.round(storageCapaity * 1024/820) + " files (820mb)");
+
+         let walletCash = prompt("How much money do you have?");
+         let chocolatePrice = prompt("Enter price of a chocolate, please!");
+         alert("You can buy "
+             + Math.floor(walletCash/chocolatePrice)
+             + " chocolate(s), and your balance will be "
+             + walletCash%chocolatePrice);
+
+        let threeNumber = prompt("Enter three numbers from 0 to 9, please!");
+        let num1 = threeNumber%10;
+        let num2 = num1*10+(Math.floor(threeNumber/10))%10;
+        let num3 = num2*10+(Math.floor(threeNumber/100))%10;
+        alert("Reverse of your number is " + num3);
+
+        let anyNumber = prompt("Enter any number, please!");
+        alert((anyNumber%2 === 0)?"Your number is even":"Your number is odd");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
