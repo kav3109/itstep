@@ -5,71 +5,85 @@
     <title>Conditions</title>
     <script>
 
-        // // How old are you
-        // let age = prompt('How old are you?');
-        // if(age >= 0 && age < 12) {
-        //     alert('You are an Child!');
-        // } else if(age >= 12 && age < 18) {
-        //     alert('You are a Teenager!');
-        // } else if(age >= 18 && age < 60) {
-        //     alert('You are an Adult!');
-        // } else if(age >=  60) {
-        //     alert('You are Pensioner!');
-        // } else {
-        //     alert('Something went wrong!')
-        // }
-        //
-        // // Number from 0 to 9
-        // let numberSymbol = prompt('Enter number from 0 to 9, please!');
-        // let textSymbol = 'Your number equal to symbol - ';
-        // switch(numberSymbol) {
-        //     case '0':
-        //         alert(textSymbol + '\")\"');
-        //         break;
-        //     case '1':
-        //         alert(textSymbol + '\"!\"');
-        //         break;
-        //     case '2':
-        //         alert(textSymbol + '\"@\"');
-        //         break;
-        //     case '3':
-        //         alert(textSymbol + '\"#\"');
-        //         break;
-        //     case '4':
-        //         alert(textSymbol + '\"$\"');
-        //         break;
-        //     case '5':
-        //         alert(textSymbol + '\"%\"');
-        //         break;
-        //     case '6':
-        //         alert(textSymbol + '\"^\"');
-        //         break;
-        //     case '7':
-        //         alert(textSymbol + '\"&\"');
-        //         break;
-        //     case '8':
-        //         alert(textSymbol + '\"*\"');
-        //         break;
-        //     case '9':
-        //         alert(textSymbol + '\"(\"');
-        //         break;
-        //     default:
-        //         alert('Something went wrong!')
-        // }
+        // How old are you
+        let age = prompt('How old are you?');
+        if(age >= 0 && age < 12) {
+            alert('You are an Child!');
+        } else if(age >= 12 && age < 18) {
+            alert('You are a Teenager!');
+        } else if(age >= 18 && age < 60) {
+            alert('You are an Adult!');
+        } else if(age >=  60) {
+            alert('You are Pensioner!');
+        } else {
+            alert('Something went wrong!')
+        }
 
-        // //The same numbers
-        // let tripleNum = prompt('Enter please three-digit number, please!');
-        // if(tripleNum[0] === tripleNum[1] || tripleNum[1] === tripleNum[2] || tripleNum[0] === tripleNum[2]) {
-        //     alert('Your number contain equal numerical symbols!!! - ' + tripleNum);
-        // } else {
-        //     alert('You don\'t have the same numerical symbols');
-        // }
+        // Number from 0 to 9
+        let numberSymbol = prompt('Enter number from 0 to 9, please!');
+        let textSymbol = 'Your number contains symbol - ';
+        switch(numberSymbol) {
+            case '0':
+                alert(textSymbol + '\")\"');
+                break;
+            case '1':
+                alert(textSymbol + '\"!\"');
+                break;
+            case '2':
+                alert(textSymbol + '\"@\"');
+                break;
+            case '3':
+                alert(textSymbol + '\"#\"');
+                break;
+            case '4':
+                alert(textSymbol + '\"$\"');
+                break;
+            case '5':
+                alert(textSymbol + '\"%\"');
+                break;
+            case '6':
+                alert(textSymbol + '\"^\"');
+                break;
+            case '7':
+                alert(textSymbol + '\"&\"');
+                break;
+            case '8':
+                alert(textSymbol + '\"*\"');
+                break;
+            case '9':
+                alert(textSymbol + '\"(\"');
+                break;
+            default:
+                alert('Something went wrong!')
+        }
 
-        //
+        //The same numbers
+        let tripleNum = prompt('Enter please three-digit number, please!');
+        if(tripleNum[0] === tripleNum[1] || tripleNum[1] === tripleNum[2] || tripleNum[0] === tripleNum[2]) {
+            alert('Your number contains equal numerical symbols!!! - ' + tripleNum);
+        } else {
+            alert('You don\'t have the same numerical symbols');
+        }
+
+        //Leap year
+        let year = prompt('Enter an year, please!');
+        let leapYear = 'This is a leap year!!!';
+        let isNotleapYear = 'This IS NOT leap year!!!';
+        (year%4 === 0)?
+            ((year%100 === 0)?
+                ((year%400 === 0)?
+                    alert(leapYear):alert(isNotleapYear))
+                :alert(leapYear))
+            :alert(isNotleapYear);
+
+        // Palindrome
+        let fiveDigit = prompt("Enter five-digit number, please!");
+        (fiveDigit[0] === fiveDigit[4] && fiveDigit[1] === fiveDigit[3])?
+            alert('Your number is palindrome!!!'):alert('Your number IS NOT palindrome or not five-digit number!!!')
 
     </script>
 </head>
 <body>
-
+    <h1 style="text-align: center">DONE</h1>
 </body>
 </html>
