@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conditions</title>
+    <script>
+
+        const EUR = 0.90;
+        const UAN = 7.01;
+        const AZN = 1.70;
+
+        // // 1. Convertor
+        // let sumUsd = prompt('Enter sum of USD, please!');
+        // let userChoice = prompt('If you want to convert USD to EUR enter 1, to UAN - 2, to AZN - 3.');
+        // switch(userChoice) {
+        //     case '1':
+        //         alert(sumUsd + ' USD = ' + sumUsd*EUR + ' EUR.');
+        //         break;
+        //     case '2':
+        //         alert(sumUsd + ' USD = ' + sumUsd*UAN + ' UAN.');
+        //         break;
+        //     case '3':
+        //         alert(sumUsd + ' USD = ' + sumUsd*AZN + ' AZN.');
+        //         break;
+        //     default:
+        //         alert('Something went wrong!!!');
+        // }
+
+        // 2. Purchases
+        let sumOfPurchase = prompt('Enter sum of your purchases!');
+        if(sumOfPurchase > 200 && sumOfPurchase <= 300) {
+            alert('Your discount is 3%, you need to pay - ' + sumOfPurchase-sumOfPurchase*0.03);
+        } else if (sumOfPurchase > 300 && sumOfPurchase <= 500) {
+            alert('Your discount is 5%, you need to pay - ' + sumOfPurchase-sumOfPurchase*0.05);
+        } else if (sumOfPurchase > 500) {
+            alert('Your discount is 7%, you need to pay - ' + sumOfPurchase-sumOfPurchase*0.07);
+        } else {}
+
+    </script>
+</head>
+<body>
+    <h1 style="text-align: center">DONE</h1>
+</body>
+</html>
