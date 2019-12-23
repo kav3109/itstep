@@ -26,16 +26,63 @@
         //         alert('Something went wrong!!!');
         // }
 
-        // 2. Purchases
-        let sumOfPurchase = prompt('Enter sum of your purchases!');
-        if(sumOfPurchase > 200 && sumOfPurchase <= 300) {
-            alert('Your discount is 3%, you need to pay - ' + sumOfPurchase-sumOfPurchase*0.03);
-        } else if (sumOfPurchase > 300 && sumOfPurchase <= 500) {
-            alert('Your discount is 5%, you need to pay - ' + sumOfPurchase-sumOfPurchase*0.05);
-        } else if (sumOfPurchase > 500) {
-            alert('Your discount is 7%, you need to pay - ' + sumOfPurchase-sumOfPurchase*0.07);
-        } else {}
+        // // 2. Purchases
+        // let sumOfPurchase = prompt('Enter sum of your purchases!');
+        // if(sumOfPurchase > 200 && sumOfPurchase <= 300) {
+        //     alert('Your discount is 3%, you need to pay - ' + (sumOfPurchase-sumOfPurchase*0.03).toFixed(2));
+        // } else if (sumOfPurchase > 300 && sumOfPurchase <= 500) {
+        //     alert('Your discount is 5%, you need to pay - ' + (sumOfPurchase-sumOfPurchase*0.05).toFixed(2));
+        // } else if (sumOfPurchase > 500) {
+        //     alert('Your discount is 7%, you need to pay - ' + (sumOfPurchase-sumOfPurchase*0.07).toFixed(2));
+        // } else {
+        //     alert('You need to pay - ' + sumOfPurchase);
+        // }
 
+        // // 3. Circle inside the squared
+        // let circleLength = prompt('Enter circle length, please!');
+        // let squarePerimeter = prompt('Enter square perimeter, please!');
+        // let circleRadius = circleLength/(2*Math.PI);
+        // let squareLength = squarePerimeter/4;
+        // if(circleRadius > squareLength/2) {
+        //     alert('Your circle DOES NOT fit into the square!!!');
+        // } else {
+        //     alert('Your circle fits into the square!!!');
+        // }
+
+        // // 4. Three questions
+        // let q1 = prompt('Result of the expression - 425/5 is: a - 75, b - 70, c - 85?');//85
+        // let q2 = prompt('Result of the expression - 640/40 is: a - 16, b - 14, c - 18?');//16
+        // let q3 = prompt('Result of the expression - 425/25 is: a - 16, b - 15, c - 17?');//17
+        //
+        // let a1;
+        // let a2;
+        // let a3;
+        //
+        // (q1==='c')?a1=2:a1=0;
+        // (q2==='a')?a2=2:a2=0;
+        // (q3==='c')?a3=2:a3=0;
+        //
+        // alert('You have got - '+(a1+a2+a3)+' mark/s!!!');
+
+        // 5. Next date
+        let dd = +prompt('Enter date of month in format "dd", please!');
+        let mm = +prompt('Enter month in format "mm", please!');
+        let yyyy = +prompt('Enter year in format "yyyy", please!');
+
+        let ddNew;
+        let mmNew;
+        let yyyyNew;
+        let leap;
+        let febrLeap;
+        (yyyy%4 === 0)?((yyyy%100 === 0)?((yyyy%400 === 0)?leap = 1:leap  = 0):leap = 1):leap = 0;
+        if(dd === 31 && mm === 12) {ddNew = 1; mmNew = 1; yyyyNew = yyyy + 1;}
+        if(leap === 1) {febrLeap = 29;}
+        if()
+
+
+        //01,03,05,07,08,10,12 - 31
+        //02 - 28/29
+        //04,06,09,11 - 30
     </script>
 </head>
 <body>
