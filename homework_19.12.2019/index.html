@@ -8,7 +8,7 @@
         'use strict';
         // // 1. Sum of numbers
         //
-        // let userNumber = prompt('Enter your number, please!');
+        // let userNumber1 = prompt('Enter your number, please!');
         // let sumNumbers = 0;
         // for(let i = 1; i <= userNumber; i++) {
         //     sumNumbers = sumNumbers + i;
@@ -28,23 +28,79 @@
         // }
         // alert('Greatest common factor is ' + (numOne+numTwo));
 
-        // 3. Number dividers
-
-        let userNumber = 16;
-        for(let g = 1; g <= userNumber; g++) {
-            if(userNumber%g === 0) {
-                console.log(g);
-            }
-        }
+        // // 3. Number dividers
+        //
+        // let userNumber3 = prompt('Enter your number, please!');
+        // let result = [];
+        // let counter = 0;
+        // for(let g = 1; g <= userNumber; g++) {
+        //     if(userNumber%g === 0) {
+        //         result[counter] = g;
+        //         counter++;
+        //     }
+        // }
+        // alert('Your number dividers: ' + result);
 
         // // 4. Count of numbers
         //
-        //  let yourNumber = 1234;
+        //  let userNumber4 = prompt('Enter your number, please!');
         //
-        //  console.log('Your number contains ' + yourNumber.toString().length + ' digit symbol/s.');
+        //  alert('Your number contains ' + userNumber4.toString().length + ' digit symbol/s.');
 
         // 5.
 
+        let confirmation = confirm('Are you ready to type 10 numbers?');
+        if(confirmation) {
+            let userNumbers5 = [];
+            for(let j=0; j < 5; j++) {
+                userNumbers5[j] = prompt('Enter number '+ j);
+            }
+            alert('Your numbers - ' + userNumbers5);
+        }
+
+
+        // Запросить у пользователя 10 чисел и подсчитать, сколько
+        // он ввел положительных, отрицательных и нулей. При этом
+        // также посчитать, сколько четных и нечетных. Вывести
+        // статистику на экран. Учтите, что достаточно одной пере-
+        // менной (не 10) для ввода чисел пользователем.
+
+        // 6.
+
+        // Зациклить калькулятор. Запросить у пользователя 2 числа
+        // и знак, решить пример, вывести результат и спросить, хо-
+        // чет ли он решить еще один пример. И так до тех пор, пока
+        // пользователь не откажется.
+
+        // 7.
+
+        // Запросить у пользователя число и на сколько цифр его
+        // сдвинуть. Сдвинуть цифры числа и вывести результат (если
+        // число 123456 сдвинуть на 2 цифры, то получится 345612).
+
+        // 8.
+
+        // Зациклить вывод дней недели таким образом: «День недели.
+        //     Хотите увидеть следующий день?» и так до тех пор, пока
+        // пользователь нажимает OK.
+
+        // 9.
+
+        // Вывести таблицу умножения для всех чисел от 2 до 9.
+        // Каждое число необходимо умножить на числа от 1 до 10.
+
+        // 10.
+
+//         Игра «Угадай число». Предложить пользователю загадать
+//         число от 0 до 100 и отгадать его следующим способом:
+//             каждую итерацию цикла делите диапазон чисел пополам,
+//             записываете результат в N и спрашиваете у пользователя
+// «Ваше число > N, < N или == N?». В зависимости от того
+//         что указал пользователь, уменьшаете диапазон. Начальный
+//         диапазон от 0 до 100, поделили пополам и получили 50.
+//         Если пользователь указал, что его число > 50, то изменили
+//         диапазон на от 51 до 100. И так до тех пор, пока пользова-
+//         тель не выберет == N.
     </script>
 </head>
 <body>
