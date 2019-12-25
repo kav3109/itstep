@@ -1,4 +1,6 @@
-let userNumber = '123456';
-result1 = userNumber.slice(0, 2);
-result2 = userNumber.slice(2);
-console.log(result2);
+for (let k = 2; k <= 9; k++){
+    for (let m = 1; m <=10; m++)
+    {
+        console.log(k + "*" + m + "=" +(k*m));
+    }
+}
