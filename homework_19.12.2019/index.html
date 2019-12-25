@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Conditions</title>
+    <title>Loops</title>
     <script>
 
         'use strict';
@@ -47,42 +47,60 @@
         //
         //  alert('Your number contains ' + userNumber4.toString().length + ' digit symbol/s.');
 
-        // 5.
+        // // 5. Types of numbers
+        //
+        // let confirmation = confirm('Are you ready to type 10 numbers?');
+        // if(confirmation) {
+        //     let positive = 0;
+        //     let negative = 0;
+        //     let neutral = 0;
+        //     let odd = 0;
+        //     let even = 0;
+        //     for(let j=1; j <= 10; j++) {
+        //         let number = +prompt('Enter number '+ j);
+        //         if(number < 0){negative++}
+        //         if(number > 0){positive++}
+        //         if(number === 0){neutral++}
+        //         if(number !== 0 && number%2 === 0){even++}
+        //         if(number%2 !== 0){odd++}
+        //     }
+        //     alert('Result of your numbers: \nPositive/s - ' + positive +
+        //             '\nNegative/s - ' + negative +
+        //             '\nNeutral/s - ' + neutral +
+        //             '\nEven/s - ' + even +
+        //             '\nOdd/s - ' + odd);
+        // }
 
-        let confirmation = confirm('Are you ready to type 10 numbers?');
-        if(confirmation) {
-            let userNumbers5 = [];
-            for(let j=0; j < 5; j++) {
-                userNumbers5[j] = prompt('Enter number '+ j);
-            }
-            alert('Your numbers - ' + userNumbers5);
-        }
+        // // 6. Simple calculator
+        //
+        // let operator = true;
+        // while(operator) {
+        //     let numOne = +prompt('Enter first number, please!');
+        //     let action = prompt('Enter one of this actions \"*\", \"/\", \"+\", \"-\"');
+        //     let numTwo = +prompt('Enter second number, please!');
+        //     let result;
+        //     if(action === '+') result = numOne+numTwo;
+        //     if(action === '-') result = numOne-numTwo;
+        //     if(action === '/') result = numOne/numTwo;
+        //     if(action === '*') result = numOne*numTwo;
+        //     alert('Result of your action is '+ result);
+        //     operator = confirm('Are you going to continue?');
+        // }
 
+        // // 7. Moving numbers
+        //
+        // let userNumber7 = prompt('Enter your number, please');
+        // let movePosition = prompt('How far do you want to move?');
+        // alert('Your number is - ' + userNumber7 + ', result of your moving is - '
+        //     + userNumber7.slice(movePosition) + userNumber7.slice(0, movePosition));
 
-        // Запросить у пользователя 10 чисел и подсчитать, сколько
-        // он ввел положительных, отрицательных и нулей. При этом
-        // также посчитать, сколько четных и нечетных. Вывести
-        // статистику на экран. Учтите, что достаточно одной пере-
-        // менной (не 10) для ввода чисел пользователем.
-
-        // 6.
-
-        // Зациклить калькулятор. Запросить у пользователя 2 числа
-        // и знак, решить пример, вывести результат и спросить, хо-
-        // чет ли он решить еще один пример. И так до тех пор, пока
-        // пользователь не откажется.
-
-        // 7.
-
-        // Запросить у пользователя число и на сколько цифр его
-        // сдвинуть. Сдвинуть цифры числа и вывести результат (если
-        // число 123456 сдвинуть на 2 цифры, то получится 345612).
-
-        // 8.
-
-        // Зациклить вывод дней недели таким образом: «День недели.
-        //     Хотите увидеть следующий день?» и так до тех пор, пока
-        // пользователь нажимает OK.
+        // // 8. Day of week
+        // const daysOfWeek = ['Sunday', 'Monday','Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        // outer: while(true) {
+        //     for(let l = 0; l < 7; l++) {
+        //        if(!confirm(daysOfWeek[l]+', do you want to see next day?')) break outer;
+        //     }
+        // }
 
         // 9.
 

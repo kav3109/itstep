@@ -1,10 +1,4 @@
-let userNumber = 16;//prompt('Enter your number, please!');
-let result = [];
-let counter = 0;
-for(let g = 1; g <= userNumber; g++) {
-    if(userNumber%g === 0) {
-        result[counter] = g;
-        counter++;
-    }
-}
-console.log(result);
+let userNumber = '123456';
+result1 = userNumber.slice(0, 2);
+result2 = userNumber.slice(2);
+console.log(result2);
