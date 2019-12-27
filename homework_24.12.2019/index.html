@@ -12,8 +12,8 @@
             if(x > y) return 1;
             if(x < y) return -1;
         };
-        let x = prompt('Enter first number, please!');
-        let y = prompt('Enter second number, please!');
+        let x = +prompt('Enter first number, please!');
+        let y = +prompt('Enter second number, please!');
         alert(compareNumbers(x, y));
 
         // 2.
@@ -24,7 +24,7 @@
             }
             return result;
         };
-        let number2 = prompt('Enter a number to get factorial!');
+        let number2 = +prompt('Enter a number to get factorial!');
         alert('Factorial of number '+number2+ ' is '+getFactorial(number2));
 
         // 3.
@@ -43,22 +43,22 @@
             (side2)? result = side1*side2: result = side1*side1;
             return result;
         };
-        let param1 = prompt('Enter length of first side, please!');
-        let param2 = prompt('Enter length of second side, please!');
+        let param1 = +prompt('Enter length of first side, please!');
+        let param2 = +prompt('Enter length of second side, please!');
         alert('Square of figure is ' + getSquare(param1, param2));
 
         // 5.
-        function getCompletedNumber(number) {
+        function checkCompletedNumber(number) {
             let result = 0;
-            for(let i = 1; i <= number; i++) {
+            for(let i = 1; i < number; i++) {
                 if(number%i === 0) {
                     result = result + i;
                 }
             }
-            return result;
+            return (result === number)?'Your number is completed': 'Your number is NOT completed';
         }
-        let userNumber = prompt('Enter your number, please!');
-        alert('Completed number of your number is ' + getCompletedNumber(userNumber));
+        let userNumber = +prompt('Enter your number, please!');
+        alert(checkCompletedNumber(userNumber));
 
     </script>
 </head>
