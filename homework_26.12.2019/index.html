@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Times</title>
+    <script>
+
+        'use strict';
+        // 1.
+        let min = prompt('Enter min number, please!');
+        let max = prompt('Enter max number, please!');
+        presentCompletedNumber(min,max);
+        function checkCompletedNumber(number) {
+            let result = 0;
+            for(let i = 1; i < number; i++) {
+                if(number%i === 0) {
+                    result = result + i;
+                }
+            }
+            return (result === number)?'completed': 'incompleted';
+        }
+        function presentCompletedNumber(min, max) {
+            for (let j = min; j <= max; j++) {
+                if(checkCompletedNumber(j)==='completed') alert(j+' is Completed');
+            }
+        }
+
+        // 2.
+        let hours = +prompt('Enter hours, please!');
+        let minutes = +prompt('Enter minutes, please!');
+        let seconds = +prompt('Enter seconds, please!');
+        alert('Your time is ' + showTime(hours, minutes, seconds));
+        function showTime(hours, minutes, seconds) {
+            if(hours === ''){hours = '0';}
+            if(minutes === ''){minutes = '0';}
+            if(seconds === ''){seconds = '0';}
+            if(hours < 10) {hours = '0' + hours;}
+            if(minutes < 10) {minutes = '0' + minutes;}
+            if(seconds < 10) {seconds = '0' + seconds;}
+            return hours+':'+minutes+':'+seconds;
+        }
+        // 3.
+        let hours3 = +prompt('Enter hours, please!');
+        let minutes3 = +prompt('Enter minutes, please!');
+        let seconds3 = +prompt('Enter seconds, please!');
+        alert('Your time in seconds is '+convertToSeconds(hours3,minutes3,seconds3));
+        function convertToSeconds(h,m,s) {
+            return h*60*60 + m*60 + s;
+        }
+        
+        // 4.
+        let seconds4 = +prompt('Enter seconds, please');
+        alert('Your time is ' + convertFromSeconds(seconds4));
+        function convertFromSeconds(sec) {
+            let h = sec/3600 ^ 0;
+            let m = (sec-h*3600)/60 ^ 0;
+            let s = sec-h*3600-m*60;
+            if(h < 10) {h = '0' + h;}
+            if(m < 10) {m = '0' + m;}
+            if(s < 10) {s = '0' + s;}
+            return h+':'+m+':'+s;
+        }
+        // 5.
+        let h51 = +prompt('Enter hours your first time, please!');
+        let m51 = +prompt('Enter minutes your first time, please!');
+        let s51 = +prompt('Enter seconds your first time, please!');
+        let h52 = +prompt('Enter hours your second time, please!');
+        let m52 = +prompt('Enter minutes your second time, please!');
+        let s52 = +prompt('Enter seconds your second time, please!');
+        alert('Difference is '+ getDifferenceTime(h51, m51, s51, h52, m52, s52));
+        function getDifferenceTime(h1, m1, s1, h2, m2, s2) {
+            let difference;
+            let result;
+            let x = convertToSeconds(h1, m1, s1);
+            let y = convertToSeconds(h2, m2, s2);
+            difference = (x > y)? x - y : y - x;
+            result = convertFromSeconds(difference);
+            return result;
+        }
+
+    </script>
+</head>
+<body>
+    <h1 style="text-align: center">DONE</h1>
+</body>
+</html>
