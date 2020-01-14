@@ -39,9 +39,9 @@
 
         // 4.
         const getSquare = (side1, side2) => {
-            let result;
-            (side2)? result = side1*side2: result = side1*side1;
-            return result;
+            // let result;
+            // (side2)? result = side1*side2: result = side1*side1;
+            return (side2) ? side1*side2 : side1*side1;
         };
         let param1 = +prompt('Enter length of first side, please!');
         let param2 = +prompt('Enter length of second side, please!');

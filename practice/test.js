@@ -1,14 +1,6 @@
-function checkCompletedNumber(number) {
-    let result = 0;
-    for(let i = 1; i < number; i++) {
-        if(number%i === 0) {
-            result = result + i;
-        }
-    }
-    console.log('result '+result);
-    console.log('number '+number);
-    return (result === number)?'Your number is completed': 'Your number is NOT completed';
-
-}
-let userNumber = 27;
-console.log(checkCompletedNumber(userNumber));
+let sec = 3661 ;
+let h = sec/3600 ^ 0 ;
+console.log(h);
+// let m = (sec-h*3600)/60 ^ 0 ;
+// let s = sec-h*3600-m*60 ;
+// console.log((h<10?"0"+h:h)+":"+(m<10?"0"+m:m)+":"+(s<10?"0"+s:s)) ;
