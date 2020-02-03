@@ -10,11 +10,39 @@ const getFigureParam = function (obj) {
 };
 
 const getFigureWidth = function (obj) {
-  console.log('Width of figure is ' + (obj.downX - obj.topX));
+  return obj.downX - obj.topX;
 };
 
 const getFigureHeight = function (obj) {
-    console.log('Height of figure is ' + (obj.topY - obj.downY));
+    return obj.topY - obj.downY;
 };
-getFigureHeight(figure);
-
+const getPloshad = function (obj) {
+    return getFigureWidth(obj)*getFigureHeight(obj);
+};
+const getPerimetr = function (obj) {
+    return (getFigureWidth(obj)+getFigureHeight(obj))*2;
+};
+const changeWidth = function(obj, param) {
+    return obj.downX = obj.downX + param;
+};
+const changeHeight = function(obj, param) {
+    return obj.topY = obj.topY + param;
+};
+const changeFigureParam = function(obj, width, height) {
+    changeWidth(obj, width);
+    changeHeight(obj, height);
+};
+const moveFigure = function (obj, x, y) {
+    obj.topY = obj.topY + y;
+    obj.topX = obj.topX + x;
+    obj.downY = obj.downY + y;
+    obj.downX = obj.downX + x;
+};
+ let dot = {
+   dotX: 11,
+   dotY: 11
+ };
+ const hit = function (objFigure, objDot) {
+     return objDot.dotX < objFigure.downX && objDot.dotX > objFigure.topX && objDot.dotY < objFigure.topY && objDot.dotY > objFigure.downY;
+ };
+ console.log(hit(figure, dot));
