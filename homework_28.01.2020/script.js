@@ -119,16 +119,28 @@
 // getExpensiveItem(bill);
 // getAveragePrice(bill);
 
-//     Задание 3
-// Создать массив css-стилей (цвет, размер шрифта, выравнива-
-// ние, подчеркивание и т. д.). Каждый элемент массива – это объ-
-// ект, состоящий из двух свойств: название стиля и значение стиля.
-//     Написать функцию, которая принимает массив стилей и
-// текст, и выводит этот текст с помощью document.write() в тегах
-// <p></p> , добавив в открывающий тег атрибут style со всеми сти-
-// лями, перечисленными в массиве.
+// 3. Styles
 
+let myStyle = [
+    {'color': 'blue'},
+    {'font-size': '20px'},
+    {'text-align': 'center'},
+    {'text-decoration': 'underline'}
+];
+const displayText = (array, text) => {
 
+    // make a new array with string values from object
+    let stringsInArray = array.map((item, index, arr) => {
+        for(let key in arr[index]) {
+            return key + ':' + arr[index][key];
+        }
+    });
+    // make string from array
+    let stringFronArray = stringsInArray.join(';');
+    document.write('<p style="'+stringFronArray+'">'+text+'</p>');
+};
+
+displayText(myStyle, 'Welcome to IT HELL!');
 
 //     Задание 4
 // Создать массив аудиторий академии. Объект-аудитория со-
