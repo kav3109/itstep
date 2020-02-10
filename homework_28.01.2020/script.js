@@ -168,7 +168,6 @@ let bioGroup = {
     facultyName: 'biology'
 };
 
-
 const getRooms = (array) => {
     console.log('List of rooms:');
     console.log(array);
