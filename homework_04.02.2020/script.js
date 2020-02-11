@@ -84,15 +84,16 @@ const changeLettersAndNumbers = (text) => {
     if(typeof text !== 'string') return 'Passed value is not string!';
     text = text.trim();
     let arrayOfNumbers = ['0','1','2','3','4','5','6','7','8','9'];
-    let arrayOfEngSmallLetters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','r','s','t','u','v','w','x','y','z'];
     let newText = '';
     for(let char of text) {
-        if(arrayOfEngSmallLetters.indexOf(char) >= 0) {
-            newText = newText + char.toUpperCase();
-        } else if(arrayOfNumbers.indexOf(char) >= 0) {
+        if(arrayOfNumbers.indexOf(char) >= 0) {
             newText = newText + '_';
-        } else {
+        }else if(char.toLowerCase() === char) {
+            newText = newText + char.toUpperCase();
+        } else if(char.toUpperCase() === char){
             newText = newText + char.toLowerCase();
+        } else {
+            newText =+ '';
         }
     }
     return newText;
