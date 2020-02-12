@@ -21,6 +21,7 @@
 // let expression = ' 6 / 2 ';
 //
 // const calculate = (str) => {
+//     if(typeof str !== 'string') return 'Passed values is not an array';
 //     let action = '+-*/';
 //     let numOne;
 //     let numTwo;
@@ -39,20 +40,64 @@
 // };
 // console.log(calculate(expression));
 
-// 3.
+// // 3. get Url function ********************************************************
 //
-// Написать функцию, которая получает url и выводит под-
-// робную информацию о нем.
-//     Например: url “https://itstep.org/ua/about”, информация
-//     “протокол: https, домен: itstep.org, путь: /ua/
-// about”.
-// 4. Написать функцию, которая принимает строку и разделитель
-// и возвращает массив подстрок, разбитых с помощью
-// указанного разделителя.
-//     Например: строка “10/08/2020”, разделитель “/”, результат:
-// “10”, “08”, “2020”.
-// Выполняя задание, не используйте функцию split().
-// 5. Написать функцию вывода текста по заданному шаблону.
+// let link = 'http://itstep.org/ua/about/company';
+//
+// const getUrlInfo = (url) => {
+//     if(typeof url !== 'string') return 'Passed values is not an array';
+//     let slashes = [];
+//     let acc1 = 0;
+//     let acc2 = 0;
+//     for(let char of url){
+//         if(char === '/') {
+//             slashes[acc1] = url.indexOf(char, acc2);
+//             acc1++;
+//         }
+//         acc2++
+//     }
+//     let protocol = url.slice(0,url.indexOf(':'));
+//     let domen = url.slice(slashes[1]+1,slashes[2]);
+//     let direct = url.slice(slashes[2]);
+//     console.log(`protocol: ${protocol}, domen: ${domen} direct: ${direct}`);
+//
+// };
+// getUrlInfo(link);
+
+// // 4. get Array of substrings *************************************************
+//
+// let date = '12/02/2020/23:59/Thursday';
+//
+// const getArrayFromSting = (str) => {
+//
+//     if(typeof str !== 'string') return 'Passed values is not an array';
+//     let slashes = [];
+//     let acc1 = 0;
+//     let acc2 = 0;
+//     for(let char of str){
+//         if(char === '/') {
+//             slashes[acc1] = str.indexOf(char, acc2);
+//             acc1++;
+//         }
+//         acc2++
+//     }
+//     let result = [];
+//     for(let i = 0; i <= slashes.length; i++) {
+//         if(i === 0) {
+//             result[i] = str.slice(0,slashes[i]);
+//         } else if(i === slashes.length) {
+//             result[i] = str.slice(slashes[i-1]+1);
+//         } else {
+//             result[i] = str.slice(slashes[i-1]+1,slashes[i]);
+//         }
+//     }
+//     return result;
+// };
+// console.log(getArrayFromSting(date));
+
+// 5.
+
+// Написать функцию вывода текста по заданному шаблону.
 //     Функция принимает первым параметром шаблон, в тексте
 // которого может использоваться %, после символа % ука-
 // зывается индекс входного параметра. При выводе вместо%
