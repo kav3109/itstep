@@ -1,6 +1,6 @@
 'use strict';
 
-// HOMEWORK
+// // HOMEWORK **********************************************************************
 // // 1. get one string from several *********************************************
 // let str1 = '1';
 // let str2 = '2';
@@ -15,7 +15,7 @@
 //     return newString;
 // };
 // console.log(getOneString(str1, str2, str3, str4, str5));
-
+//
 // // 2. Calculator **************************************************************
 //
 // let expression = ' 6 / 2 ';
@@ -39,7 +39,7 @@
 //     if(action === '/') return numOne/numTwo;
 // };
 // console.log(calculate(expression));
-
+//
 // // 3. get Url function ********************************************************
 //
 // let link = 'http://itstep.org/ua/about/company';
@@ -63,7 +63,7 @@
 //
 // };
 // getUrlInfo(link);
-
+//
 // // 4. get Array of substrings *************************************************
 //
 // let date = '12/02/2020/23:59/Thursday';
@@ -94,20 +94,21 @@
 //     return result;
 // };
 // console.log(getArrayFromSting(date));
+//
+// // 5. Message from template ***************************************************
+// let temp = 'Today is %1 %2.%3.%4';
+//
+// const getTextFromTemplate = (template, ...values) => {
+//     let acc = 1;
+//     for(let value of values) {
+//         template = template.replace('%'+acc, value);
+//         acc++;
+//     }
+//     return template;
+// };
+// console.log(getTextFromTemplate(temp, 'Monday', 10, 8, 2020, 123, 11234,'3fq34'));
 
-// 5.
-
-// Написать функцию вывода текста по заданному шаблону.
-//     Функция принимает первым параметром шаблон, в тексте
-// которого может использоваться %, после символа % ука-
-// зывается индекс входного параметра. При выводе вместо%
-// индекс необходимо вывести значение соответствующего
-// входного параметра.
-//     Например: print(“Today is %1 %2.%3.%4”, “Monday”, 10,
-//     8, 2020) должна вывести “Today is Monday 10.8.2020”.
-
-
-// PRACTICE
+// PRACTICE *******************************************************************
 // Написать функцию, которая принимает 2 строки и срав-
 // нивает их длину. Функция возвращает 1, если в первой
 // строке больше символов, чем во второй; -1 – если во вто-
