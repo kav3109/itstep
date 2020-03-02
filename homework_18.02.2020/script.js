@@ -5,7 +5,6 @@
 const displayMonth = () => {
     let date = new Date();
     console.log(date.toLocaleString("ru", {month: 'long'}));
-
 };
 displayMonth();
 
@@ -17,7 +16,6 @@ const getDayOfWeek = (date) => {
     console.log((new Date(ms)).toLocaleString("ru", {weekday:'long'}));
 };
 getDayOfWeek(today);
-
 
 // 3. Count of ms from start date *********************************************
 let now = new Date();
@@ -41,7 +39,6 @@ clearInterval(startTimer);
 
 let num = 13;
 const getAreaOfCircle = (radius) => {
-    console.log(typeof radius);
     return (typeof radius !== 'number')?'Passed value is not number': Math.PI*Math.pow(radius, 2);
 };
 console.log(getAreaOfCircle(num));

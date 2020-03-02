@@ -54,3 +54,9 @@ Pattern
 - module;
 - fabric;
 - decorator;
+******************************************************
+Events
+- add as attribute (<div onclick='alert('click')'>)
+- foo.onclick = () => alert('click')
+- foo.addEventListener('click', () => alert('click'))
+- foo.removeEventListener('click', () => alert('click'))
