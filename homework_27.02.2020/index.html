@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Homework</title>
+</head>
+<body>
+
+<p>**************************** Name **************************************</p>
+
+<label for="name">Enter your name (name can't contain digits):</label><br />
+<input id="name" onkeydown="return checkDigitKey(event.key)" placeholder="Enter name..." type="text">
+
+<p>**************************** Modal *************************************</p>
+
+<input type="button" id="show-modal" value="Open modal">
+
+
+<div id="modal-cover">
+    <div id="modal">
+        <div id="modal-message"></div>
+        <input type="button" id="close" value="Close">
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
+
+<p>**************************** Traffic light *****************************</p>
+
+<div id="lights">
+    <div id="red"></div>
+    <div id="yellow"></div>
+    <div id="green"></div>
+</div>
+<input type="button" id="tog" value="NEXT" onclick="switchColor()">
+

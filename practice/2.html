@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            width: 100vh;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+<h1>Randome Number</h1>
+<div id="num"></div>
+<button id="but">Generate random number</button>
+<div id="xx"></div>
+<div id="yy"></div>
+<div id="text"></div>
+<script>
+    but.addEventListener('click', () => {num.innerHTML = Math.floor(Math.random()*100)});
+    document.body.addEventListener('mousemove', (e) => {
+        xx.innerHTML = 'page X = ' + e.pageX;
+        yy.innerHTML = 'page Y = ' + e.pageY;
+    });
+    // document.body.addEventListener('mousedown', (e) => {
+    //     text.innerHTML = e.type+' CLICKED ';
+    // });
+    document.body.addEventListener("mousedown", function(event) {
+        if (event.which === 1)
+            text.innerHTML = "clicked left";
+        else if (event.which === 2)
+            text.innerHTML = "clicked middle";
+        else if (event.which === 3)
+            text.innerHTML = "clicked right";
+    });
+</script>
+</body>
+</html>

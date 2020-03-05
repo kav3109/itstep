@@ -49,7 +49,7 @@ localeCompare - чтобы сравнить строки с учётом пра�
 str.trim() — убирает пробелы в начале и конце строки.
 str.repeat(n) — повторяет строку n раз.
 ******************************************************
-Pattern
+Patterns
 - single tone;
 - module;
 - fabric;
@@ -59,4 +59,4 @@ Events
 - add as attribute (<div onclick='alert('click')'>)
 - foo.onclick = () => alert('click')
 - foo.addEventListener('click', () => alert('click'))
-- foo.removeEventListener('click', () => alert('click'))
+  foo.removeEventListener('click', () => alert('click'))
