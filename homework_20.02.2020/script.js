@@ -16,13 +16,13 @@ class Circle {
     }
 
     getDiameter() {
-        return this._radius*2;
+        return this.radius*2;
     }
     getArea() {
-        return Math.pow(this._radius, 2)*Math.PI;
+        return Math.pow(this.radius, 2)*Math.PI;
     }
     getPerimeter() {
-        return this._radius*2*Math.PI;
+        return this.radius*2*Math.PI;
     }
 }
 const circle = new Circle(4);
@@ -89,7 +89,7 @@ class CssClass {
         this._styles = val;
     }
     deleteStyle() {
-        this._styles = [];
+        this.styles = [];
     }
     getCss() {
         return `.${this.name} {${this.styles.join('')}}`

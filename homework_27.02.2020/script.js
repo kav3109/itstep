@@ -35,6 +35,7 @@ function showModal(text) {
 document.getElementById('show-modal').onclick = function() {
     showModal("<h2>Hello from Modal Window!</h2>");
 };
+
 //3. lights *****************************************************************
 
 function switchColor() {
