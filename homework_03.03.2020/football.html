@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+    <style>
+        body {
+            position: relative;
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
+            background: url(images/stadium.png);
+            background-size: cover;
+        }
+
+        #ball {
+            position: absolute;
+            left:0;
+            top:0;
+            transition-property: left, top;
+            transition-duration: 1s;
+            transition-timing-function: cubic-bezier(0, .5, .5, 1);
+            height: 77px;
+            width: 80px;
+            border-radius: 50%;
+            background-image: url("images/ball.png");
+        }
+    </style>
+</head>
+<body>
+<div id="ball"></div>
+<script>
+    const moving = (e) => {
+        let widthView = window.innerWidth;
+        let heightView = window.innerHeight;
+        let x;
+        let y;
+        if(widthView-40 < e.pageX) {
+            x = widthView-80;
+        } else if (e.pageX < 40) {
+            x = 0;
+        } else {
+            x = e.pageX-40;
+        }
+        if(heightView-33.5 < e.pageY) {
+            y = heightView-77;
+        } else if (e.pageY < 33.5) {
+            y = 0;
+        } else {
+            y = e.pageY-33.5;
+        }
+        ball.style.left = x + 'px';
+        ball.style.top = y + 'px';
+    };
+    document.body.addEventListener('click', moving);
+</script>
+</body>
+
+
