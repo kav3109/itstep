@@ -60,3 +60,7 @@ Events
 - foo.onclick = () => alert('click')
 - foo.addEventListener('click', () => alert('click'))
   foo.removeEventListener('click', () => alert('click'))
+******************************************************
+DOM
+- outerHTML/innerHTML содержит HTML элемента целиком. Это как innerHTML плюс сам элемент.
+- textContent предоставляет доступ к тексту внутри элемента за вычетом всех <тегов>.
