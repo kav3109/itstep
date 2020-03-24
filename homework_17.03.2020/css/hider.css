@@ -1,0 +1,18 @@
+.info {
+    text-align: left;
+}
+.article h4, .article > p {
+    margin: 0;
+    padding: 5px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+.article h4 {
+    background-color: #518CBB;
+    border-top: 1px solid black;
+    color: white;
+}
+.article p {
+    background-color: #B5DCE9;
+    font-size: .8em;
+}
