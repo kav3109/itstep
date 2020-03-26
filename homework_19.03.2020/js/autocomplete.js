@@ -10,7 +10,7 @@ function autocomplete(inp, arr) {
         sub.setAttribute("id", this.id + "autocomplete-list");
         sub.setAttribute("class", "autocomplete-items");
         this.parentNode.appendChild(sub);
-        for (i = 0; i < 10; i++) {
+        for (i = 0; i < arr.length; i++) {
             if (arr[i].substr(0, val.length).toUpperCase() === val.toUpperCase()) {
                 subchilds = document.createElement("DIV");
                 // if(i > 9) subchilds.setAttribute("style", "visibility:hidden");
