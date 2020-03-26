@@ -1,0 +1,19 @@
+#like {
+    background-color: #2F98FF;
+    width: 150px;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+}
+#like span {
+    font-size: 2em;
+}
+#like:hover {
+    cursor: pointer;
+   background-color: #2B89E7;
+
+}
+#like:active{
+    background-color: #1B5691;
+}
