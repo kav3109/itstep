@@ -1,0 +1,28 @@
+.block {
+    border-bottom: 2px solid grey;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+.block:last-child {
+    border-bottom: none;
+
+}
+.name, .date, .text {
+    margin: .2em;
+}
+.date {
+    font-size: .8em;
+}
+#myName {
+    width: 20em;
+    padding: .1em;
+    font-size: .8em;
+
+}
+#comment {
+    width: 99%;
+    height: 5em;
+}
+button {
+    width: 100%;
+}
