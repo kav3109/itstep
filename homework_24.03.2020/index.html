@@ -14,23 +14,41 @@
             margin:  auto;
             background-color: #FBF2E9;
         }
+        #text, #textBtn {
+            width: 400px;
+        }
+        #myText {
+            width: 394px;
+        }
     </style>
 </head>
 <body>
 
     <p>*******************Task One*********************</p>
 
-    <div id="test"></div>
+    <div id="test">
+        <p id="question"><p/>
+        <input type="radio" name="a1" value="1" checked><span id="variant1"></span><br>
+        <input type="radio" name="a1" value="2"><span id="variant2"></span><br>
+        <button id="testBtn">Next</button>
+    </div>
+
 
     <p>*******************Task Two*********************</p>
 
-
+    <div id="text">
+        <input id="bold" type="checkbox" name="a2" value="bold"><span>Bold</span>
+        <input id="underline" type="checkbox" name="a2" value="underline"><span>Underline</span>
+        <input id="italic" type="checkbox" name="a2" value="italic"><span>Italic</span>
+        <input id="left" type="radio" name="a2" value="left"><span>Left</span>
+        <input id="right" type="radio" name="a2" value="right"><span>Right</span>
+        <input id="justify" type="radio" name="a2" value="justify"><span>Justify</span><br />
+        <textarea id="myText"></textarea>
+        <button id="textBtn">Show text</button>
+    </div>
 
     <p>*******************Task Three*******************</p>
 
-
-
-    <p>*******************Task Four********************</p>
 
 
 

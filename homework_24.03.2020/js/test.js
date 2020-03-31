@@ -1,63 +1,44 @@
 const questions = [
     ['1). How many letters are the in the world "Hello"?', '5','2'],
-    ['2). How many letters are the in the world "World"?', '4','5']
+    ['2). How many letters are the in the world "World"?', '4','5'],
+    ['3). How many letters are the in the world "Old"?', '10','3']
 ];
-const answers = ['5','5'];
+const answers = ['5','5','3'];
+let acc = 0;
 let results = [];
 
-function startTest(arrQuestions) {
-
-    for(let k = 1; k < arrQuestions.length; k++) {
-        btnTest.addEventListener('click', (e) => {
-            saveResult(k);
-            containerTest.remove();
-            if(k === arrQuestions.length - 1) {
-                buildQuestion(questions[k], 'Finished');
-            } else {
-                buildQuestion(questions[k], 'Next');
-            }
-        })
+function fillHtml(param) {
+    if(acc !== questions.length) {
+        question.innerText = param[0];
+        variant1.innerText = param[1];
+        variant2.innerText = param[2];
+        if(acc === questions.length-1) testBtn.innerText = 'Finished';
+        acc++;
+    } else {
+        test.innerHTML = `<p>Result: <b>${showResult()}</b> correct answers to ${questions.length} questions</p>`;
     }
-
 }
-function buildQuestion(question, action) {
 
-    let container, quest, answ, val, enter, btn;
-
-    container = document.createElement('DIV');
-    container.setAttribute("id", "containerTest");
-    test.appendChild(container);
-
-    quest = document.createElement('P');
-    quest.innerText = question[0];
-    containerTest.appendChild(quest);
-
-    for(let i = 1; i < question.length; i++) {
-        answ = document.createElement('INPUT');
-        answ.setAttribute("name", "r1");
-        answ.setAttribute("type", "radio");
-        answ.setAttribute("value", question[i]);
-        val = document.createElement('SPAN');
-        val.innerText = question[i];
-        enter = document.createElement('BR');
-        containerTest.appendChild(answ);
-        containerTest.appendChild(val);
-        containerTest.appendChild(enter);
-    }
-    btn = document.createElement('BUTTON');
-    btn.setAttribute("id", "btnTest");
-    btn.innerText = action;
-    containerTest.appendChild(btn);
-
-}
-function saveResult(answer) {
-    let res = document.getElementsByName('r1');
-    for (let m = 0; m <= res.length; m++) {
-        if (res[m].checked) {
-            results[answer] = m;
-            alert('Выбран '+m+' radiobutton');
+function saveResult() {
+    let radios = test.querySelectorAll('input[name="a1"]');
+    let spans = test.querySelectorAll('span');
+    for (let i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            results.push(spans[i].innerText);
         }
     }
 }
-buildQuestion(questions[0], 'Next');
-startTest(questions);
+
+function showResult() {
+    let rightAnswers = 0;
+    for(let t = 0; t < answers.length; t++) {
+        if(answers[t] === results[t]) rightAnswers++;
+    }
+    return rightAnswers;
+}
+
+fillHtml(questions[acc]);
+testBtn.addEventListener('click', () => {
+    saveResult(acc);
+    fillHtml(questions[acc]);
+});
