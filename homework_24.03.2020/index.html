@@ -2,22 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!--<link rel="stylesheet" href="css/autocomplete.css">-->
-    <!--<link rel="stylesheet" href="https://use.fontawesome.com/5394197a68.css">-->
+    <link rel="stylesheet" href="css/style.css">
     <title>Homework</title>
     <style>
-        body {
-            width: 800px;
-            margin:  auto;
-            background-color: #FBF2E9;
-        }
-        #text, #textBtn {
-            width: 400px;
-        }
-        #myText {
-            width: 394px;
-            height: 50px;
-        }
+
     </style>
 </head>
 <body>
@@ -47,12 +35,67 @@
 
     <p>*******************Task Three*******************</p>
 
+    <div id="book">
+        <div class="gridContainer">
+            <div class="gridCell">
+                <div>
+                    <img src="images/Image%201.png">
+                    <h4>Learning JavaScript: JavaScript Essential for Modern Application Development</h4>
+                    <span>Ethan Brown</span>
+                </div>
+                <div>
+                    <h3>16$</h3>
+                    <button class="btnSelect">Select</button>
+                </div>
+            </div>
+            <div class="gridCell">
+                <div>
+                    <img src="images/Image%202.png">
+                    <h4>You Don't Know JS: Scope & Closures</h4>
+                    <span>Kyle Simpson</span>
+                </div>
+                <div>
+                    <h3>20$</h3>
+                    <button class="btnSelect">Select</button>
+                </div>
+            </div>
+            <div class="gridCell">
+                <div>
+                    <img src="images/Image%203.png">
+                    <h4>JavaScript and JQuery: Interactive Front-End Web Development</h4>
+                    <span>Jon Duckett</span>
+                </div>
+                <div>
+                    <h3>22$</h3>
+                    <button class="btnSelect">Select</button>
+                </div>
 
+            </div>
+            <div>
+                <form action="#" class="gridForm">
+                    <div class="cells">
+                        <p>Book:</p>
+                        <div><input type="text" id="title" disabled></div>
+                        <p>Quantity:</p>
+                        <div><input type="text" id="quantity"></div>
+                        <p>Name:</p>
+                        <div><input type="text" id="userName"></div>
+                        <p>Delivery address:</p>
+                        <div><textarea type="text" id="address"></textarea></div>
+                        <p>Delivery date:</p>
+                        <div><input type="text" id="date"></div>
+                        <p>Comment:</p>
+                        <textarea type="text" id="comment"></textarea>
+                        <button id="btnBuy">Buy</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <script src="js/test.js"></script>
     <script src="js/text.js"></script>
     <script src="js/book.js"></script>
-    <!--<script src="https://kit.fontawesome.com/28500028b9.js" crossorigin="anonymous"></script>-->
 </body>
 
 
