@@ -20,6 +20,7 @@ function addComment() {
     comments.appendChild(subName);
     comments.appendChild(subDate);
     comments.appendChild(subComment);
+    comment.value = '';
 
     function parseDate(date) {
         if (typeof date !== 'object') return 'Wrong passed parameters!';

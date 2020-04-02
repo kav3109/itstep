@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Homework</title>
+    <style>
+        .info > p:last-child {
+            font-weight: bold;
+        }
+        .info > p:nth-child(2) {
+            font-size: .6em;
+        }
+    </style>
+</head>
+<body>
+    <h3>Create new color</h3>
+    <div class="params">
+        <label for="color">Color:</label><br />
+        <input type="text" name="color" id="color"><br />
+        <label for="type">Type:</label><br />
+        <select name="type" id="type">
+            <option value="RGB">RGB</option>
+            <option value="RGBA">RGBA</option>
+            <option value="HEX">HEX</option>
+        </select><br />
+        <label for="code">Code:</label><br />
+        <input type="text" name="code" id="code"><br />
+        <button>Save</button>
+    </div>
+    <h3>All collors</h3>
+    <div class="grid">
+        <div>
+            <div class="info" id="rgb">
+                <p>COLOR</p>
+                <p>RGB</p>
+                <p>value</p>
+            </div>
+        </div>
+        <div>
+            <div class="info" id="rgba">
+                <p>COLOR</p>
+                <p>RGBA</p>
+                <p>value</p>
+            </div>
+        </div>
+        <div>
+            <div class="info" id="hex">
+                <p>COLOR</p>
+                <p>HEX</p>
+                <p>value</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+

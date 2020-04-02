@@ -1,0 +1,39 @@
+body {
+    width: 800px;
+    margin: auto;
+    background-color: #FBF2E9;
+}
+h3, .grid {
+    text-align: center;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: .8em;
+}
+.grid div {
+    background-color: gainsboro;
+}
+.grid div p{
+    margin: 5px;
+}
+.grid div.info {
+    background-color: white;
+    opacity: .7;
+    margin: 20px 30px;
+    padding: 10px;
+}
+.params, input {
+    width: 250px;
+    margin: auto;
+}
+select, button {
+    width: 254px;
+    height: 21px;
+}
+input, select {
+    margin-bottom: 10px;
+}
+button {
+    cursor: pointer;
+}
