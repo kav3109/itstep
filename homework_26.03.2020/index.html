@@ -16,7 +16,7 @@
 <body>
     <h3>Create new color</h3>
     <div class="params">
-        <label for="color">Color:</label><br />
+        <label for="color">Color:</label><span class="color error"></span><br />
         <input type="text" name="color" id="color"><br />
         <label for="type">Type:</label><br />
         <select name="type" id="type">
@@ -24,31 +24,31 @@
             <option value="RGBA">RGBA</option>
             <option value="HEX">HEX</option>
         </select><br />
-        <label for="code">Code:</label><br />
+        <label for="code">Code:</label><span class="code error"></span><br />
         <input type="text" name="code" id="code"><br />
-        <button>Save</button>
+        <button id="btnSave">Save</button>
     </div>
     <h3>All collors</h3>
     <div class="grid">
-        <div>
-            <div class="info" id="rgb">
-                <p>COLOR</p>
+        <div class="rgb">
+            <div class="info">
+                <p class="colorName">YELLOWGREEN</p>
                 <p>RGB</p>
-                <p>value</p>
+                <p class="codeName">154,205,50</p>
             </div>
         </div>
-        <div>
-            <div class="info" id="rgba">
-                <p>COLOR</p>
+        <div class="rgba">
+            <div class="info">
+                <p class="colorName">DARKCYAN</p>
                 <p>RGBA</p>
-                <p>value</p>
+                <p class="codeName">0,139,139,1</p>
             </div>
         </div>
-        <div>
-            <div class="info" id="hex">
-                <p>COLOR</p>
+        <div class="hex">
+            <div class="info">
+                <p class="colorName">ORANGERED</p>
                 <p>HEX</p>
-                <p>value</p>
+                <p class="codeName">#FF4500</p>
             </div>
         </div>
     </div>
