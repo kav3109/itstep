@@ -3,11 +3,18 @@ let errorColor = document.querySelector('.color');
 let colorNames = document.querySelectorAll('.colorName');
 let container = document.querySelector('.grid');
 
+document.addEventListener("DOMContentLoaded", () => {
+    if(getCookie() !== '') {
+        parseCookie(getCookie());
+    }
+
+});
 btnSave.addEventListener('click', () => {
 
     if(checkColorName() === false) return;
     if(checkColorCode() === false) return;
-    addColor();
+    setCookie();
+    addColor(color.value, type.value, code.value);
     color.value = '';
     code.value = '';
 
@@ -50,7 +57,7 @@ function checkColorName(colorName) {
     return result;
 }
 
-function checkColorCode(colorCode) {
+function checkColorCode() {
     let colorType = type.value;
     if(code.value === '') {
         code.classList.add('invalid');
@@ -107,7 +114,7 @@ function checkNumberRgb() {
     return result;
 }
 
-function addColor() {
+function addColor(colorParam, typeParam, codeParam) {
     let wrap, sub, newColor, typeColor, codeColor;
 
     wrap = document.createElement("DIV");
@@ -130,23 +137,41 @@ function addColor() {
     sub.appendChild(codeColor);
 
     let array = [];
-    if(type.value === 'RGB') {
-        array = code.value.split(',');
-        newColor.innerText = color.value.toUpperCase();
+    if(typeParam === 'RGB') {
+        array = codeParam.split(',');
+        newColor.innerText = colorParam.toUpperCase();
         wrap.style.backgroundColor = `rgb(${array[0]},${array[1]},${array[2]})`;
         typeColor.innerText = 'RGB';
         codeColor.innerText = array.join(', ').toUpperCase();
 
-    } else if(type.value === 'RGBA') {
-        array = code.value.split(',');
-        newColor.innerText = color.value.toUpperCase();
+    } else if(typeParam === 'RGBA') {
+        array = codeParam.split(',');
+        newColor.innerText = colorParam.toUpperCase();
         wrap.style.backgroundColor = `rgba(${array[0]},${array[1]},${array[2]},${array[3]})`;
         typeColor.innerText = 'RGBA';
         codeColor.innerText = array.join(', ').toUpperCase();
     } else {
-        newColor.innerText = color.value.toUpperCase();
-        wrap.style.backgroundColor =  code.value;
+        newColor.innerText = colorParam.toUpperCase();
+        wrap.style.backgroundColor =  codeParam;
         typeColor.innerText = 'HEX';
-        codeColor.innerText = code.value.toUpperCase();
+        codeColor.innerText = codeParam.toUpperCase();
     }
+}
+
+function setCookie() {
+    let str = `${color.value}=${type.value}@${code.value}`;
+    document.cookie = `${str}; max-age=10800`;
+}
+
+function getCookie() {
+    return document.cookie;
+}
+
+function parseCookie(str) {
+    let params;
+    let sections = str.split(';');
+    sections.forEach((e)=>{
+        params = e.split(/[=|@]/);
+        addColor(params[0], params[1], params[2]);
+    });
 }
