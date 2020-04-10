@@ -1,0 +1,102 @@
+body {
+    background-color: #FBF2E9;
+    margin: 0;
+    padding: 0;
+}
+
+header, nav {
+    width: 800px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+hr {
+    border: none;
+    background-color: #BBBBBB;
+    color: #BBBBBB;
+    height: 2px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
+    margin: 20px auto;
+}
+
+.colors {
+    display: grid;
+    grid-template-columns: repeat(7, 25px);
+    grid-template-rows: repeat(2, 25px);
+}
+p {
+    margin: 0;
+    padding: 0;
+    height: 25px;
+    width: 25px;
+    border: 2px solid #BBBBBB;
+}
+
+label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
+
+label[for="square"] {
+    background-color: grey;
+}
+
+label[for="circle"] {
+    border-radius: 50%;
+    background-color: grey;
+}
+
+label[for="rhombus"] {
+    width: 0;
+    height: 0;
+    border: 25px solid transparent;
+    border-bottom-color: grey;
+    position: relative;
+    top: -25px;
+}
+
+label[for="rhombus"]:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: -25px;
+    top: 25px;
+    border: 25px solid transparent;
+    border-top-color: grey;
+}
+
+label[for="triangle"] {
+    width: 0;
+    height: 0;
+    border-bottom: 50px solid grey;
+    border-right: 50px solid transparent;
+}
+
+input[name="figure"] {
+    vertical-align: 18px;
+}
+
+p:hover, label:hover, input:hover{
+    cursor: pointer;
+}
+
+.white {background-color: #FFFFFF;}
+.grey-light {background-color: #D7D7D7;}
+.yellow {background-color: #FFFF00;}
+.blue-light {background-color: #B5DCE9;}
+.pink {background-color: #FFC6D0;}
+.green-light {background-color: #99F099;}
+.pink {background-color: #F08CF0;}
+.black {background-color: #000000;}
+.grey {background-color: #8A8A8A;}
+.orange {background-color: #FFAD00;}
+.blue {background-color: #0000FF;}
+.red {background-color: #FF0000;}
+.green {background-color: #008A00;}
+.pink-dark {background-color: #9D00D7;}
