@@ -46,3 +46,16 @@ input, select {
     margin-left: 20px;
     width: 554px;
 }
+header h4 {
+    margin: 15px 30px;
+    text-align: right;
+}
+hr {
+    margin: 15px 25px;
+}
+.exit {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+    margin-left: 10px;
+}
