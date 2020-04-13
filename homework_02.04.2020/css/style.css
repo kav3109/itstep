@@ -1,0 +1,48 @@
+body {
+    width: 600px;
+    margin: 10px auto;
+    background-color: #FBF2E9;
+}
+h3{
+    text-align: center;
+}
+.params, input, .btnSignUp, select {
+    width: 250px;
+    height: 21px;
+    margin: auto;
+}
+.btnSignUp, select {
+    width: 254px;
+}
+input, select {
+    margin-bottom: 10px;
+}
+.btnSignUp, .btnSave, select {
+    cursor: pointer;
+    height: 27px;
+}
+.invalid {
+    border: 1px solid red;
+}
+.error {
+    display: inline-block;
+    width: 201px;
+    text-align: right;
+    color: red;
+    font-size: .6em;
+}
+.error.password {
+    width: 180px;
+}
+.error.phone {
+    width: 150px;
+}
+.grid {
+    display: grid;
+    margin-left: 20px;
+    grid-template-columns: 300px 300px;
+}
+.btnSave {
+    margin-left: 20px;
+    width: 554px;
+}
