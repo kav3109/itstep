@@ -68,6 +68,8 @@ formUserInfo.addEventListener('submit', () => {
     checkName(lastName, errorLastName, 'lastName');
     checkYear();
     checkGender();
+    checkPhone();
+    checkSkype();
 
 });
 
@@ -132,6 +134,15 @@ phone.addEventListener('blur', (e) => {
     checkPhone();
 });
 
+skype.addEventListener('focus', (e) => {
+    skype.classList.remove('invalid');
+    errorSkype.innerText = '';
+});
+
+skype.addEventListener('blur', (e) => {
+    checkSkype();
+});
+
 const checkName = (name, error, cookieName) => {
     let text = name.value;
     if(text.match(/^[a-zA-Z]{1,20}$/) === null) {
@@ -165,10 +176,23 @@ const checkGender = () => {
 
 const checkPhone = ()=> {
     let text = phone.value;
-    if(text!== '' || text.match()) {
+    if(text !== '' && (text.match(/\d/g) === null || text.match(/\d/g).length < 10 || text.match(/\d/g).length > 12)) {
         phone.classList.add('invalid');
-        errorPhone.innerText = 'Phone should contain from 10 to 12 digits';
+        errorPhone.innerText = 'Field should contain from 10 to 12 digits';
+    } else if (text !== '' && (text.match(/[\d\ \(\)\-]/g).length !== text.length)) {
+        phone.classList.add('invalid');
+        errorPhone.innerText = 'Field should contain only digits, whitespaces, "-", "(", ")"';
     } else {
         setCookie(`phone=${text}`, 3600);
+    }
+};
+
+const checkSkype = ()=> {
+    let text = skype.value;
+    if (text !== '' && (text.match(/\d/g) === null || text.match(/[a-zA-Z0-9-.]/g).length !== text.length)) {
+        skype.classList.add('invalid');
+        errorSkype.innerText = 'Field should contain only digits, characters, "-", "."';
+    } else {
+        setCookie(`skype=${text}`, 3600);
     }
 };

@@ -9,7 +9,6 @@
 <script>
     const checkCookie = (str) => {
         str = str.split(/(; |=)/);
-        console.log(str);
         return str.find(val => val === 'email');
     };
     const deleteOldCookie = () => {
@@ -18,7 +17,6 @@
             document.cookie = `${e}; max-age=-1`;
         });
     };
-    console.log(checkCookie(document.cookie));
     if(document.cookie !== '' && checkCookie(document.cookie) === 'email') {
         location.href = 'userInfo.html';
     }
