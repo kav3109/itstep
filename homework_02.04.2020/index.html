@@ -8,17 +8,22 @@
 <body>
 <script>
     const checkCookie = (str) => {
-        let arr = str.split(';');
-        let param;
-        arr.forEach((e) => {
-            param = e.split(/=/);
-            if(param[0] === 'email') {
-                location.href = 'userInfo.html';
-            }
-        })
+        str = str.split(/(; |=)/);
+        console.log(str);
+        return str.find(val => val === 'email');
     };
-    if(document.cookie !== '') {
-        checkCookie(document.cookie);
+    const deleteOldCookie = () => {
+        let cookies = document.cookie.split('; ');
+        cookies.forEach((e) => {
+            document.cookie = `${e}; max-age=-1`;
+        });
+    };
+    console.log(checkCookie(document.cookie));
+    if(document.cookie !== '' && checkCookie(document.cookie) === 'email') {
+        location.href = 'userInfo.html';
+    }
+    if(document.cookie !== '' && checkCookie(document.cookie) === undefined) {
+        deleteOldCookie();
     }
 </script>
 <form action="#" name="signup">

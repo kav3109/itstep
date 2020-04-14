@@ -37,6 +37,12 @@ input, select {
 .error.phone {
     width: 150px;
 }
+.error.firstName, .error.lastName {
+    width: 177px;
+}
+.error.year {
+    width: 168px;
+}
 .grid {
     display: grid;
     margin-left: 20px;
