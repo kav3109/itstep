@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if(window.innerWidth > 1000) {
         (window.innerHeight < document.body.scrollHeight)?//check vertical scroll bar
-            canvas.width = window.innerWidth - 17:
+            canvas.width = window.innerWidth - 17://scroll width
             canvas.width = window.innerWidth
     }    else {
         canvas.width = 1000;

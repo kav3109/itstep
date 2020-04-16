@@ -12,34 +12,25 @@ formSignUp.addEventListener('submit', () => {
     checkPassword();
     checkRepeat();
     setCookie();
-    location.href='userInfo.html';
+    (document.querySelector('.invalid') !== null)? event.preventDefault():location.href='userInfo.html';
 
 });
 
-email.addEventListener('focus', (e) => {
+email.addEventListener('change', (e) => {
     email.classList.remove('invalid');
     errorEmail.innerText = '';
-});
-
-email.addEventListener('blur', (e) => {
     checkEmail();
 });
 
-password.addEventListener('focus', (e) => {
+password.addEventListener('change', (e) => {
     password.classList.remove('invalid');
     errorPassword.innerText = '';
-});
-
-password.addEventListener('blur', (e) => {
     checkPassword();
 });
 
-repeat.addEventListener('focus', (e) => {
+repeat.addEventListener('change', (e) => {
     repeat.classList.remove('invalid');
     errorRepeat.innerText = '';
-});
-
-repeat.addEventListener('blur', (e) => {
     checkRepeat();
 });
 
@@ -48,7 +39,6 @@ repeat.addEventListener('blur', (e) => {
      if(text.match(/^[\.\-\_a-z]{3,}@[a-z]{1,}\.[a-z]{1,}/) === null) {
          email.classList.add('invalid');
          errorEmail.innerText = 'Email have to contain at least 3 characters or symbols ("-","_",".") before @ and domain name after @ ';
-         event.preventDefault();
      }
  };
 
@@ -58,15 +48,15 @@ repeat.addEventListener('blur', (e) => {
          pass.match(/0-9/) === null &&
          pass.match(/a-z/) === null &&
          pass.match(/A-Z/) === null) {
+         password.classList.add('invalid');
          errorPassword.innerText = 'Password have to contain at least 6 symbols and include at least one number and big and small characters';
-         event.preventDefault();
      }
  };
 
  const checkRepeat = () => {
      if(password.value !== repeat.value) {
+         repeat.classList.add('invalid');
          errorRepeat.innerText = 'Repeat field have to be equal to password';
-         event.preventDefault();
      }
  };
 

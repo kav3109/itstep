@@ -70,6 +70,7 @@ formUserInfo.addEventListener('submit', () => {
     checkGender();
     checkPhone();
     checkSkype();
+    if(document.querySelector('.invalid') !== null) event.preventDefault();
 
 });
 
@@ -89,57 +90,39 @@ const setCookie = (cookie, age) => {
     document.cookie = `${cookie}; max-age=${age}`;
 };
 
-firstName.addEventListener('focus', (e) => {
+firstName.addEventListener('change', (e) => {
     firstName.classList.remove('invalid');
     errorFirstName.innerText = '';
-});
-
-firstName.addEventListener('blur', (e) => {
     checkName(firstName, errorFirstName, 'firstName');
 });
 
-lastName.addEventListener('focus', (e) => {
+lastName.addEventListener('change', (e) => {
     lastName.classList.remove('invalid');
     errorLastName.innerText = '';
-});
-
-lastName.addEventListener('blur', (e) => {
     checkName(lastName, errorLastName, 'lastName');
 });
 
-year.addEventListener('focus', (e) => {
+year.addEventListener('change', (e) => {
     year.classList.remove('invalid');
     errorYear.innerText = '';
-});
-
-year.addEventListener('blur', (e) => {
     checkYear();
 });
 
-gender.addEventListener('focus', (e) => {
+gender.addEventListener('change', (e) => {
     gender.classList.remove('invalid');
     errorYear.innerText = '';
-});
-
-gender.addEventListener('blur', (e) => {
     checkGender();
 });
 
-phone.addEventListener('focus', (e) => {
+phone.addEventListener('change', (e) => {
     phone.classList.remove('invalid');
     errorPhone.innerText = '';
-});
-
-phone.addEventListener('blur', (e) => {
     checkPhone();
 });
 
-skype.addEventListener('focus', (e) => {
+skype.addEventListener('change', (e) => {
     skype.classList.remove('invalid');
     errorSkype.innerText = '';
-});
-
-skype.addEventListener('blur', (e) => {
     checkSkype();
 });
 
@@ -148,7 +131,6 @@ const checkName = (name, error, cookieName) => {
     if(text.match(/^[a-zA-Z]{1,20}$/) === null) {
         name.classList.add('invalid');
         error.innerText = 'Only characters and no more 20 symbols without whitespaces';
-        event.preventDefault();
     } else {
         setCookie(`${cookieName}=${text}`, 3600);
     }
@@ -189,7 +171,7 @@ const checkPhone = ()=> {
 
 const checkSkype = ()=> {
     let text = skype.value;
-    if (text !== '' && (text.match(/\d/g) === null || text.match(/[a-zA-Z0-9-.]/g).length !== text.length)) {
+    if (text !== '' && (text.match(/[a-zA-Z0-9-.]/g) === null ||text.match(/[a-zA-Z0-9-.]/g).length !== text.length)) {
         skype.classList.add('invalid');
         errorSkype.innerText = 'Field should contain only digits, characters, "-", "."';
     } else {
