@@ -79,4 +79,3 @@ getData('hello', 'movie', '1', (json) => {
     // wrapper.innerText = json.Poster;
     // wrapper.innerText = json.Year;
 });
-

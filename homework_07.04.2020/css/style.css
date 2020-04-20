@@ -54,7 +54,7 @@ label {
 }
 /*pagination************************************************/
 .pagination {
-    /*display: inline-block;*/
+    width: 520px;
     margin: 10px auto;
 }
 
