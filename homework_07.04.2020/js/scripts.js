@@ -1,11 +1,42 @@
 'use strict';
 
-// let title = document.getElementById('title');
-// let type = document.getElementById('type');
-// let btnSearch = document.querySelector('.btnSearch');
+let form = document.forms.searchMovie;
+
+form.addEventListener('submit', () => {
+
+    event.preventDefault();
+    let title, type, result, loader;
+
+    title = document.getElementById('title');
+    type = document.getElementById('type');
+    result = document.querySelector('.films');
+
+    loader = document.createElement("DIV");
+    loader.setAttribute("class", "loader");
+    loader.innerText = 'Loading...';
+    document.body.appendChild(loader);
+
+    getData(title.value, type.value, '1', (json) => {
+
+        if(json.Response === 'False') {
+            result.innerText = json.Error;
+        } else {
+            result.innerText = 'Films:';
+            let pages = json.Search.length;
+            console.log();
+            // if (+json.totalResults > 0) {}
+        }
 
 
-//*********************************************************
+        // wrapper.innerText = json.totalResults;
+        // wrapper.innerText = json.Type;
+        // wrapper.innerText = json.Title;
+        // wrapper.innerText = json.Poster;
+        // wrapper.innerText = json.Year;
+    });
+});
+
+// get json************************************************
 
 const getData = (search, type, page, success) => {
     const xhr = new XMLHttpRequest();
@@ -15,7 +46,7 @@ const getData = (search, type, page, success) => {
     xhr.onreadystatechange = () => {
         if(xhr.readyState !== 4) return;
         let loader = document.querySelector('.loader');
-        loader.style.display = 'none';
+        loader.remove();
         if(xhr.status === 200) {
             let json = JSON.parse(xhr.response);
             success(json);
@@ -31,8 +62,7 @@ const getData = (search, type, page, success) => {
 
 //*********************************************************
 
-
-const setItem = (videoPoster, videoType, videotitle, vidoeYear) => {
+const setItem = (videoPoster, videoType, videotitle, videoYear) => {
 
     let wrapper, item, poster, type, title, year, detail;
 
@@ -58,24 +88,3 @@ const setItem = (videoPoster, videoType, videotitle, vidoeYear) => {
     item.appendChild(detail);
 
 };
-setItem();
-setItem();
-setItem();
-
-
-getData('hello', 'movie', '1', (json) => {
-
-    if(json.Response === 'False') {
-        let films = document.querySelector('.films');
-        films.innerText = json.Error;
-        return;
-    }
-    if(+json.totalResults > 10) console.log('More than 10 movies');
-
-
-    // wrapper.innerText = json.totalResults;
-    // wrapper.innerText = json.Type;
-    // wrapper.innerText = json.Title;
-    // wrapper.innerText = json.Poster;
-    // wrapper.innerText = json.Year;
-});
