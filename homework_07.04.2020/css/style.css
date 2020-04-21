@@ -54,10 +54,8 @@ label {
 }
 /*pagination************************************************/
 .pagination {
-    width: 520px;
-    margin: 10px auto;
+    margin: 15px auto;
 }
-
 .pagination a {
     color: black;
     float: left;
