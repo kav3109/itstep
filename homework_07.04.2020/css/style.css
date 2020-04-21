@@ -21,6 +21,9 @@ label {
     height: 27px;
     width: 204px;
 }
+input[value="Details"] {
+    cursor: pointer;
+}
 .search {
     width: 300px;
     margin: auto;
@@ -57,6 +60,7 @@ label {
     margin: 15px auto;
 }
 .pagination a {
+    cursor: pointer;
     color: black;
     float: left;
     padding: 8px 16px;
