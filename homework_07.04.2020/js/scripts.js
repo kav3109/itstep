@@ -20,13 +20,13 @@ form.addEventListener('submit', () => {
     loader.innerText = 'Loading...';
     document.body.appendChild(loader);
 
-    search();
+    search(title.value, type.value);
 
 });
 
-const search = () => {
+const search = (title, type, page) => {
 
-    getData(title.value, type.value, '1', (json) => {
+     getData(title, type, page, (json) => {
 
         let result = document.querySelector('.films');
 
@@ -37,36 +37,22 @@ const search = () => {
             let items = json.Search;
             items.forEach((val, id, arr) => {
                 let poster = arr[id].Poster;
-                if(poster.match(/http/) === null) poster = 'image/no_poster_available.jpg';
+                if (poster.match(/http/) === null) poster = 'image/no_poster_available.jpg';
                 setItem(poster, arr[id].Type, arr[id].Title, arr[id].Year, arr[id].imdbID);
             });
-            let totalPages = Math.ceil(+json.totalResults/10);
-            if(totalPages > 1) {
+            let totalPages = Math.ceil(+json.totalResults / 10);
+            if (totalPages > 1 && page === undefined) {
                 setPagination(totalPages);
-                let pages = document.querySelectorAll('a');
-                pages.forEach((val,id,arr) => {
-                    arr[id].onclick =() => {
-                        let active = document.querySelector('.active');
-                        if(arr[id].className === 'back'){
-                            getData(title.value, type.value, moveBack(), (json)=>{});
-                        }
-                        if(arr[id].className === ''){
-                            getData(title.value, type.value, arr[id].innerText, (json)=>{});
-                            active.classList.remove('active');
-                            arr[id].className = 'active';
-                        }
-                        if(arr[id].className === 'forward'){
-                            getData(title.value, type.value, moveForward(totalPages), (json)=>{});
-                        }
-                    }
-                })
             }
+            listenPagination(totalPages, title, type, page);
             showInfo();
         }
     });
 };
 
 const getData = (search, type, page, success) => {
+
+    page = (page === undefined)? 1: page;
     const xhr = new XMLHttpRequest();
     xhr.open('GET',`http://www.omdbapi.com/?s=${search}&type=${type}&page=${page}&apikey=9fb989c2`);
     xhr.send();
@@ -108,16 +94,6 @@ const getMovieInfo = (id, success) => {
     xhr.onerror = () => {
         if(json.Response === 'False') {
             result.innerText = json.Error;
-        } else {
-            // Poster
-            // Title
-            // Released
-            // Genre
-            // Country
-            // Director
-            // Writer
-            // Actors
-            // Awards
         }
     };
 };
@@ -161,11 +137,11 @@ const deleteItems = () => {
     });
 };
 
-const setPagination = (count, active) => {
+const setPagination = (countPages, activePage) => {
 
     let wrapper, pagination, a, forward, back, wrapWidth = 105;
 
-    if(active === undefined) active = 1;
+    if(activePage === undefined) activePage = 1;
 
     wrapper = document.body;
     pagination = document.createElement("DIV");
@@ -181,16 +157,40 @@ const setPagination = (count, active) => {
     forward.innerText = '>>';
 
     pagination.appendChild(back);
-    count = (+count > 10)? 10: count;
-    for(let i = 1; i <= count; i++) {
+    countPages = (+countPages > 10)? 10: countPages;
+    for(let i = 1; i <= countPages; i++) {
         a = document.createElement("A");
-        if(i === +active) a.setAttribute("class", "active");
+        if(i === +activePage) a.setAttribute("class", "active");
         a.innerText = i;
         pagination.appendChild(a);
         wrapWidth+=50;//pagination button size
     }
     pagination.appendChild(forward);
     pagination.style.width = `${wrapWidth}px`
+};
+
+const listenPagination = (totalPages, title, type, page) => {
+
+    let pages = document.querySelectorAll('a');
+    pages.forEach((val,id,arr) => {
+        arr[id].onclick =() => {
+            let active = document.querySelector('.active');
+            if(arr[id].className === 'back'){
+                deleteItems();
+                search(title, type, moveBack());
+            }
+            if(arr[id].className === ''){
+                deleteItems();
+                search(title, type, arr[id].innerText);
+                active.classList.remove('active');
+                arr[id].className = 'active';
+            }
+            if(arr[id].className === 'forward'){
+                deleteItems();
+                search(title, type, moveForward(totalPages));
+            }
+        }
+    })
 };
 
 const moveForward = (totalPages) => {
@@ -241,6 +241,15 @@ const showInfo = () => {
         arr[id].onclick = () => {
             getMovieInfo(arr[id].className, (json) => {
                 console.log(json.Response);
+                // Poster
+                // Title
+                // Released
+                // Genre
+                // Country
+                // Director
+                // Writer
+                // Actors
+                // Awards
             })
         }
     })
