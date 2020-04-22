@@ -52,10 +52,27 @@ input[value="Details"] {
     float: left;
     margin-right: 15px;
 }
-.details {
+.details, .filmInfo {
     clear: left;
 }
-/*pagination************************************************/
+.detail {
+    border: 1px solid #AFACA9;
+    border-radius: 3px;
+    display: grid;
+    grid-template-columns: 410px 100px 350px;
+    grid-template-rows: repeat(8, 1fr);
+    grid-gap: 15px;
+    align-items: center;
+}
+.posterWrapper {
+    grid-row-start: 1;
+    grid-row-end: 9;
+}
+.bigPoster {
+    width: 400px;
+    margin: 10px;
+}
+/*pagination*******************/
 .pagination {
     margin: 15px auto;
 }
@@ -68,13 +85,12 @@ input[value="Details"] {
     transition: background-color .3s;
     border: 1px solid #ddd;
 }
-
 .pagination a.active {
     background-color: #AFACA9;
     color: white;
     border: 1px solid #AFACA9;
 }
-/*loader ***************************************************/
+/*loader ***********************/
 .loader,
 .loader:before,
 .loader:after {

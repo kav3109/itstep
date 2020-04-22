@@ -5,15 +5,17 @@ let form = document.forms.searchMovie;
 form.addEventListener('submit', () => {
 
     event.preventDefault();
-    let title, type, loader, item, pagination;
+    let title, type, loader, item, pagination, detail;
 
     title = document.getElementById('title');
     type = document.getElementById('type');
     item = document.querySelector('.item');
     pagination = document.querySelector('.pagination');
+    detail = document.querySelector('.detail');
 
     if(item !== null) deleteItems();
     if(pagination !== null) pagination.remove();
+    if(detail !== null) deleteDetail(detail);
 
     loader = document.createElement("DIV");
     loader.setAttribute("class", "loader");
@@ -26,7 +28,7 @@ form.addEventListener('submit', () => {
 
 const search = (title, type, page) => {
 
-     getData(title, type, page, (json) => {
+     getSearchResult(title, type, page, (json) => {
 
         let result = document.querySelector('.films');
 
@@ -45,12 +47,12 @@ const search = (title, type, page) => {
                 setPagination(totalPages);
             }
             listenPagination(totalPages, title, type, page);
-            showInfo();
+            showDetail();
         }
     });
 };
 
-const getData = (search, type, page, success) => {
+const getSearchResult = (search, type, page, success) => {
 
     page = (page === undefined)? 1: page;
     const xhr = new XMLHttpRequest();
@@ -137,6 +139,12 @@ const deleteItems = () => {
     });
 };
 
+const deleteDetail = (detail) => {
+    let title = document.querySelector('.filmInfo');
+    title.remove();
+    detail.remove();
+};
+
 const setPagination = (countPages, activePage) => {
 
     let wrapper, pagination, a, forward, back, wrapWidth = 105;
@@ -169,7 +177,10 @@ const setPagination = (countPages, activePage) => {
     pagination.style.width = `${wrapWidth}px`
 };
 
-const listenPagination = (totalPages, title, type, page) => {
+const listenPagination = (totalPages, title, type) => {
+
+    let detail = document.querySelector('.detail');
+    if(detail !== null) deleteDetail(detail);
 
     let pages = document.querySelectorAll('a');
     pages.forEach((val,id,arr) => {
@@ -213,7 +224,7 @@ const moveForward = (totalPages) => {
     }
 };
 
-const moveBack = (totalPages) => {
+const moveBack = () => {
     let btns = document.querySelectorAll('a');
     let activePage = document.querySelector('.active');
     let activeNum = +activePage.innerText;
@@ -233,23 +244,51 @@ const moveBack = (totalPages) => {
     }
 };
 
-const showInfo = () => {
+const showDetail = () => {
 
     let allItems = document.querySelectorAll('input[value="Details"]');
 
     allItems.forEach((val,id,arr) => {
         arr[id].onclick = () => {
             getMovieInfo(arr[id].className, (json) => {
-                console.log(json.Response);
-                // Poster
-                // Title
-                // Released
-                // Genre
-                // Country
-                // Director
-                // Writer
-                // Actors
-                // Awards
+
+                let detail = document.querySelector('.detail');
+                if(detail !== null) deleteDetail(detail);
+
+                let arrTitles = ['Title:','Released:','Genre:','Country:','Director:','Writer:','Actors:','Awards:'];
+                let arrDetails = [json.Title, json.Released, json.Genre, json.Country, json.Director, json.Writer, json.Actors, json.Awards];
+
+                let poster = (json.Poster.match(/http/) === null)?'image/no_poster_available.jpg':json.Poster;
+
+                let filmInfo = document.createElement("H3");
+                filmInfo.setAttribute("class", "filmInfo");
+                filmInfo.innerText = 'Film info:';
+                filmInfo.style.paddingTop = '15px';
+                document.body.appendChild(filmInfo);
+
+                let wrap = document.createElement("DIV");
+                wrap.setAttribute("class", "detail");
+                document.body.appendChild(wrap);
+
+                let imgBlock = document.createElement("DIV");
+                imgBlock.setAttribute("class", "posterWrapper");
+                wrap.appendChild(imgBlock);
+
+                let img = document.createElement("IMG");
+                img.setAttribute("src", poster);
+                img.setAttribute("class", "bigPoster");
+                img.setAttribute("alt", "Poster");
+                imgBlock.appendChild(img);
+
+                arrDetails.forEach((val,id,arr)=>{
+                    let title = document.createElement("DIV");
+                    title.innerText = arrTitles[id];
+                    wrap.appendChild(title);
+
+                    let value = document.createElement("DIV");
+                    value.innerText = arr[id];
+                    wrap.appendChild(value);
+                })
             })
         }
     })
