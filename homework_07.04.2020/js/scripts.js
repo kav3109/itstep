@@ -2,7 +2,7 @@
 
 let form = document.forms.searchMovie;
 
-form.addEventListener('submit', () => {
+form.addEventListener('submit', (event) => {
 
     event.preventDefault();
     let title, type, loader, item, pagination, detail;
