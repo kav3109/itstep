@@ -1,0 +1,19 @@
+body {
+    width: 600px;
+    margin: 20px auto;
+    background-color: #FBF2E9;
+}
+h4 {
+    text-align: center;
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    grid-gap: 20px;
+}
+p {
+    cursor: pointer;
+    border: 1px solid #BAB6B2;
+    margin: 0;
+    padding: 15px;
+}
