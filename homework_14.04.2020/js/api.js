@@ -1,5 +1,6 @@
 'use strict';
-class Api {
+
+export default class Api {
     constructor(link) {
         this._url = link;
     }
@@ -20,13 +21,3 @@ class Api {
         }
     }
 }
-
-
-const api = new Api();
-const user = new Map();
-api.getData('https://jsonplaceholder.typicode.com/users').then((res) => {
-    res.forEach((val,ident,arr) => {
-        user.set(arr[ident].id, arr[ident].name);
-    });
-});
-

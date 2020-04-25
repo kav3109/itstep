@@ -1,0 +1,51 @@
+body {
+    width: 800px;
+    margin: 20px auto;
+    background-color: #FBF2E9;
+}
+h4, h6 {
+    text-align: center;
+}
+.users {
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    grid-column-gap: 25px;
+    grid-row-gap: 20px;
+}
+.users div {
+    cursor: pointer;
+    border: 1px solid #BAB6B2;
+    margin: 0;
+    padding: 15px;
+}
+.users div:active {
+    background-color: #E4DFDA;
+}
+.info {
+    display: grid;
+    grid-template-columns: 230px 570px;
+    border: 1px solid #BAB6B2;
+}
+.info div {
+    border: 1px solid #BAB6B2;
+    margin: 0;
+    padding: 10px;
+}
+button {
+    cursor: pointer;
+    width: 800px;
+    margin: 20px 0;
+}
+.posts {
+    display: grid;
+    grid-template-columns: repeat(2, 390px);
+    grid-gap: 20px;
+}
+.posts div {
+    border: 2px solid #BAB6B2;
+    margin: 0;
+    padding: 10px;
+}
+.posts h6, .posts p{
+    margin: 10px auto;
+}
