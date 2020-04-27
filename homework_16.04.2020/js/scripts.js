@@ -107,6 +107,7 @@ const showMore = (totalPages, title, type) => {
     more.addEventListener('click', () => {
 
         setLoader();
+        more.setAttribute('disabled', 'disabled');
         movieService.search(title, type, page, (json) => {
 
             let loader = document.querySelector(".loader");
@@ -115,6 +116,7 @@ const showMore = (totalPages, title, type) => {
                 loader.innerText = json.Error;
             } else {
                 loader.remove();
+                more.removeAttribute('disabled', 'disabled');
                 let items = json.Search;
                 items.forEach((val, id, arr) => {
                     let poster = arr[id].Poster;
@@ -133,61 +135,74 @@ const showMore = (totalPages, title, type) => {
 
 const showDetail = () => {
 
+    let modalOverlay = document.querySelector('.modal-overlay');
+    let modal = document.querySelector('.modal');
+    let closeModal = document.querySelector('.close-modal');
+    let modalContent = document.querySelector('.modal-content');
     let allItems = document.querySelectorAll('input[value="Details"]');
 
     allItems.forEach((val,id,arr) => {
         arr[id].onclick = () => {
+            modalOverlay.removeAttribute('hidden');
+            modalOverlay.classList.add('active');
+            modal.classList.add('active');
+            setLoader(modalContent);
             movieService.getMovie(arr[id].className, (json) => {
+                let loader = modalContent.querySelector('.loader');
+                loader.remove();
+                if(json.Response === 'False') {
+                    modalContent.innerText = json.Error;
+                } else {
+                    let arrTitles = ['Title:','Released:','Genre:','Country:','Director:','Writer:','Actors:','Awards:'];
+                    let arrDetails = [json.Title, json.Released, json.Genre, json.Country, json.Director, json.Writer, json.Actors, json.Awards];
+                    let poster = (json.Poster.match(/http/) === null)?'image/no_poster_available.jpg':json.Poster;
 
-                let loader = document.querySelector('.loader');
-                if(loader !== null)loader.remove();
+                    let wrap = document.createElement("DIV");
+                    wrap.setAttribute("class", "detail");
+                    modalContent.appendChild(wrap);
 
-                let detail = document.querySelector('.detail');
-                if(detail !== null) deleteDetail(detail);
+                    let img = document.createElement("IMG");
+                    img.setAttribute("src", poster);
+                    img.setAttribute("class", "bigPoster");
+                    img.setAttribute("alt", "Poster");
+                    wrap.appendChild(img);
 
-                let arrTitles = ['Title:','Released:','Genre:','Country:','Director:','Writer:','Actors:','Awards:'];
-                let arrDetails = [json.Title, json.Released, json.Genre, json.Country, json.Director, json.Writer, json.Actors, json.Awards];
+                    let description = document.createElement('DIV');
+                    description.setAttribute('class', 'description');
+                    wrap.appendChild(description);
 
-                let poster = (json.Poster.match(/http/) === null)?'image/no_poster_available.jpg':json.Poster;
 
-                let filmInfo = document.createElement("H3");
-                filmInfo.setAttribute("class", "filmInfo");
-                filmInfo.innerText = 'Film info:';
-                filmInfo.style.paddingTop = '15px';
-                document.body.appendChild(filmInfo);
+                    arrDetails.forEach((val,id,arr)=>{
+                        let title = document.createElement("DIV");
+                        title.innerText = arrTitles[id];
+                        title.style.fontWeight = 'bold';
+                        description.appendChild(title);
 
-                let wrap = document.createElement("DIV");
-                wrap.setAttribute("class", "detail");
-                document.body.appendChild(wrap);
-
-                let img = document.createElement("IMG");
-                img.setAttribute("src", poster);
-                img.setAttribute("class", "bigPoster");
-                img.setAttribute("alt", "Poster");
-                wrap.appendChild(img);
-
-                let description = document.createElement('DIV');
-                description.setAttribute('class', 'description');
-                wrap.appendChild(description);
-
-                arrDetails.forEach((val,id,arr)=>{
-                    let title = document.createElement("DIV");
-                    title.innerText = arrTitles[id];
-                    title.style.fontWeight = 'bold';
-                    description.appendChild(title);
-
-                    let value = document.createElement("DIV");
-                    value.innerText = arr[id];
-                    description.appendChild(value);
-                })
-            })
+                        let value = document.createElement("DIV");
+                        value.innerText = arr[id];
+                        description.appendChild(value);
+                    });
+                }
+                closeModal.addEventListener('click', () => {
+                    modalOverlay.setAttribute('hidden','hidden');
+                    modalOverlay.classList.remove('active');
+                    modal.classList.remove('active');
+                    modalContent.innerText = '';
+                });
+                modalOverlay.addEventListener('click', () => {
+                    modalOverlay.setAttribute('hidden','hidden');
+                    modalOverlay.classList.remove('active');
+                    modal.classList.remove('active');
+                    modalContent.innerText = '';
+                });
+            });
         }
-    })
+    });
 };
 
-const setLoader = () => {
+const setLoader = (parent) => {
     let loader = document.createElement("DIV");
     loader.setAttribute("class", "loader");
     loader.innerText = 'Loading...';
-    document.body.appendChild(loader);
+    (parent === undefined)? document.body.appendChild(loader): parent.appendChild(loader);
 };
