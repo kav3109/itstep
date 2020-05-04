@@ -108,6 +108,7 @@ class MyDate extends Date {
     isLeapYear() {
         return (new Date(this._year, 1, 29).getMonth() === 1);
     }
+
     nextDay() {
         let next = new Date(Date.parse(`${this._year},${this._month},${this._day}`)+(1000*60*60*24));
         return `${next.getDate()}/${next.getMonth()+1}/${next.getFullYear()}`;
