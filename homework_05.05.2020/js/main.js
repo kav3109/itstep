@@ -8,7 +8,7 @@ $(document).ready(() => {
         const $num = '1234567890';
         const $big = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         const $small = 'abcdefghijklmnopqrstuvwxyz';
-        const $inpRes = $('#result');
+        let $inpRes = $('#result');
         if($inpRes.val() !== '') $inpRes.val('');
         if($('#digit').prop('checked') === true) $str = $num;
         if($('#uppercase').prop('checked') === true) $str += $big;
