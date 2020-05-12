@@ -3,19 +3,20 @@ $(document).ready(() => {
     $('.generate').click(() => {
 
         if(validate() === false) return;
-        $res = '';
-        $str = '';
-        $num = '1234567890';
-        $big = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        $small = 'abcdefghijklmnopqrstuvwxyz';
-        if($('#result').val() !== '') $('#result').val('');
+        let $res = '';
+        let $str = '';
+        const $num = '1234567890';
+        const $big = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const $small = 'abcdefghijklmnopqrstuvwxyz';
+        const $inpRes = $('#result');
+        if($inpRes.val() !== '') $inpRes.val('');
         if($('#digit').prop('checked') === true) $str = $num;
         if($('#uppercase').prop('checked') === true) $str += $big;
         if($('#lowercase').prop('checked') === true) $str += $small;
         for ($i = 0; $i < $('.long').val(); $i++) {
             $res += $str.charAt(Math.floor(Math.random() * $str.length));
         }
-        $('#result').val($res);
+        $inpRes.val($res);
 
     });
 
