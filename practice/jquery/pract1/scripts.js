@@ -1,8 +1,8 @@
 $(document).ready(() => {
     //1.
     $('#btn').click(() => {
-       const $p = $('#p1');
-       $p.css({"color":"red","font-size":"34px"});
+        const $p = $('#p1');
+        $p.css({"color":"red","font-size":"34px"});
     });
     //2.
     const $link = $('#link');

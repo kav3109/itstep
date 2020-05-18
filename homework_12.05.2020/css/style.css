@@ -8,7 +8,10 @@ nav {
     height: 100vh;
     float: left;
     border-right: 6px solid #E0E0E0;
+    transition: width 1s;
 }
+.opened {width: 25vw;}
+.closed {width: 0;}
 article {
     background-color: #0f9d58;
     width: 100vw;
@@ -16,6 +19,17 @@ article {
 }
 footer {
     clear: left;
+}
+.right {
+    position: absolute;
+    left: 0;
+    top: 48vh;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-left: 6px solid black;
+    border-bottom: 10px solid transparent;
+    transition: left 1s;
 }
 .left {
     position: absolute;
@@ -26,15 +40,8 @@ footer {
     border-top: 10px solid transparent;
     border-right: 6px solid black;
     border-bottom: 10px solid transparent;
-}
-.right {
-    position: absolute;
-    top: 50vh;
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-left: 6px solid black;
-    border-bottom: 10px solid transparent;
+    transition: left 1s;
+
 }
 .line1 {
     position: absolute;
@@ -44,6 +51,10 @@ footer {
     width: 2vw;
     border-bottom: 1px solid black;
     border-top: 1px solid black;
+    transition: left 1s;
+}
+.hidden {
+    left: -1000px;
 }
 .line2 {
     position: absolute;
