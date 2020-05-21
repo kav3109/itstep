@@ -62,6 +62,21 @@ section {
 .wrap div {
     padding: 10px;
     border: 1px solid grey;
+    color: white;
+}
+.colors h3{
+    display: inline-block;
+}
+.colors div {
+    cursor: pointer;
+    display: inline-block;
+    margin: 5px;
+    width: 75px;
+    padding: 5px;
+    border: 1px solid grey;;
+}
+.shadow {
+    box-shadow: 0 0 10px rgba(0,0,0,1);
 }
 .red {background-color: #DF7B9C;}
 .green {background-color: #28B9B2;}
