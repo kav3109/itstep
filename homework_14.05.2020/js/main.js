@@ -18,28 +18,12 @@ $(document).ready(() => {
         getColors().forEach((item) => {
             $colors.append(`<div class="${item}">${item}</div>`);
         });
-        //native
-        let items = document.querySelectorAll('.colors div');
-        items.forEach((item) => {
-            item.addEventListener('click', () => {
-                let shadow = document.querySelectorAll('.shadow');
-                if(shadow.length > 0) {
-                    shadow.forEach((ele) => {
-                        ele.classList.remove('shadow');
-                    })
-                }
-                document.querySelectorAll(`.${item.className}`).forEach((el) => {
-                    el.classList.add('shadow');
-                })
+        $colors.find('div').each(function(){
+            $(this).on('click', function(){
+                let $color = $(this).text();
+                $('div').find(`.${$color}`).toggleClass('shadow');
             })
-        });
-        // jquery (doesn't work)
-        // $colors.find('div').each((ind, el) => {
-        //     $(this).on('click', (e) => {
-        //         console.log($(this));
-        //         // el.hasClass(el.className).addClass('shadow');
-        //     })
-        // })
+        })
     }
 
 
