@@ -4,24 +4,56 @@
     <!--<link rel="stylesheet" href="css/style.css">-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Jquery</title>
+    <style>
+        body {
+            border: 1px solid #44A8B0;
+            width: 400px;
+            margin: 10px auto;
+        }
+        nav {
+            background-color: #44A8B0;
+        }
+        nav div {
+            display: inline-block;
+            background-color: #44A8B0;
+            color: white;
+            margin: 0;
+            padding: 5px;
+            border: 0;
+        }
+        article {
+            padding: 10px;
+        }
+        .blue {
+            background-color: #0000FF;
+        }
+        p {
+            display: none;
+        }
+        .show {
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
 
-<p id="p1">Text</p>
-<input id="btn" type="button" value="Click me!">
-
-<br>
-<a href="#" id="link">link</a>
-
-<p id="p2">Text</p>
-<input id="btn2" type="button" value="Click me2!">
-
-<ul>
-    <li>one</li>
-    <li>two</li>
-    <li>three</li>
-</ul>
+    <nav>
+        <div class="mango blue">Mango</div>
+        <div class="orange">Orange</div>
+        <div class="pineaple">Pineapple</div>
+        <div class="papaya">Papaya</div>
+        <div class="grapefruit">Graipfruit</div>
+        <div class="pear">Pear</div>
+    </nav>
+    <article>
+        <p data-fruit='' class="mango show"> mango Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis cupiditate debitis facere in incidunt iste iure magni molestias nihil nisi, nulla, officiis, quas ratione repudiandae tempora tempore totam unde. At culpa est impedit iste nihil provident quibusdam reiciendis sint suscipit voluptatibus. Autem consequatur et praesentium sapiente, unde ut veniam vero.</p>
+        <p class="orange">orange Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis cupiditate debitis facere in incidunt iste iure magni molestias nihil nisi, nulla, officiis, quas ratione repudiandae tempora tempore totam unde. At culpa est impedit iste nihil provident quibusdam reiciendis sint suscipit voluptatibus. Autem consequatur et praesentium sapiente, unde ut veniam vero.</p>
+        <p class="pineaple">pineaple Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis cupiditate debitis facere in incidunt iste iure magni molestias nihil nisi, nulla, officiis, quas ratione repudiandae tempora tempore totam unde. At culpa est impedit iste nihil provident quibusdam reiciendis sint suscipit voluptatibus. Autem consequatur et praesentium sapiente, unde ut veniam vero.</p>
+        <p class="papaya">papaya Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis cupiditate debitis facere in incidunt iste iure magni molestias nihil nisi, nulla, officiis, quas ratione repudiandae tempora tempore totam unde. At culpa est impedit iste nihil provident quibusdam reiciendis sint suscipit voluptatibus. Autem consequatur et praesentium sapiente, unde ut veniam vero.</p>
+        <p class="grapefruit">grapefruit Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis cupiditate debitis facere in incidunt iste iure magni molestias nihil nisi, nulla, officiis, quas ratione repudiandae tempora tempore totam unde. At culpa est impedit iste nihil provident quibusdam reiciendis sint suscipit voluptatibus. Autem consequatur et praesentium sapiente, unde ut veniam vero.</p>
+        <p class="pear">pear Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis cupiditate debitis facere in incidunt iste iure magni molestias nihil nisi, nulla, officiis, quas ratione repudiandae tempora tempore totam unde. At culpa est impedit iste nihil provident quibusdam reiciendis sint suscipit voluptatibus. Autem consequatur et praesentium sapiente, unde ut veniam vero.</p>
+    </article>
 
 <script
         src="https://code.jquery.com/jquery-3.5.1.js"
