@@ -1,35 +1,15 @@
-'use strict';
+// let arr1 = [1,2,3];
+// let arr2 = [4,5,6];
+// let arr = arr1.concat(arr2);
+// const shuffledArr = arr1.concat(arr2).sort(function(){
+//     return Math.random() - 0.5;
+// });
+// console.log(shuffledArr);
+const $arrCard = ['&#10084;','&#9885;','&#9742;','&#9875;', '&#9731;'];
 
-let arr = [1,2,3,4,5,6,7,8,9,10];
-
-// 1. display array
-const displayArray = (array) => {
-    for(let key of array) {
-        console.log(key);
-    }
+const $getRandomArrey = () => {
+    return $arrCard.concat($arrCard).sort(function(){
+        return Math.random() - 0.5;
+    });
 };
-// 2. even value
-const getOdd = (array) => {
-    for(let key of array) {
-        if(key%2 !== 0) console.log(key);
-    }
-};
-// 3. sum of value
-let result = arr.reduce((sum, current) => sum + current, 0);
-
-// 4. get index
-// const getIngex = (array, value) => {
-//     console.log(array.indexOf(value));
-// };
-// getIngex(arr, 3);
-const getIndex = (array, value) => {
-    // return array.findIndex((element) => {
-    //     return element === value;
-    // })
-    return array.findIndex(element => element === value);
-};
-// 5. get array of objects
-const objArr = [{name: 'Vasya'},{name: 'Petya'}, {name: 'Vova'}];
-const getName = (object, user) => {
-    return object.find(item => item.name === user);
-};
+console.log($getRandomArrey());

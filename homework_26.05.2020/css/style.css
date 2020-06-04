@@ -18,23 +18,17 @@ hr {
     height: 20px;
     border-left: 1px solid #8A8A8A;
     border-right: 1px solid #8A8A8A;
-}
-.pagination-box {
-    width: 60px;
-    margin: auto;
+    text-align: center;
 }
 .navigation {
-    height: 60px;
+    height: 48px;
     border: 1px solid #8A8A8A;
+    text-align: center;
 }
-.navigation-box {
-    width: 350px;
-    margin: -6px auto;
+.navigation i {
+    margin: 0 10px;
 }
-.navigation-box i {
-    margin: 10px;
-}
-.pagination-box i {
+.pagination i {
     margin: 2px;
 }
 .hidden {
@@ -62,7 +56,7 @@ i:hover {
 }
 .full-presentation {
     width: calc(100vw - 2px);
-    height: calc(100vh - 85px);
+    height: calc(100vh - 72px);
 }
 .full-wrap {
     width: calc(100vw - 2px);
