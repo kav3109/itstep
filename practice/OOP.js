@@ -18,13 +18,15 @@ class Animal {
         return (new this(name));//this === Animal
     }
 
-    #legs = 4;// private - it understand only Chrome
-    getLegs() {
-        return this.#legs;
-    }
-    setLegs(val) {
-        this.#legs = val;
-    }
+
+
+    // #legs = 4;// private - it understand only Chrome
+    // getLegs() {
+    //     return this.#legs;
+    // }
+    // setLegs(val) {
+    //     this.#legs = val;
+    // }
 }
 // 1. classic
 const bear = new Animal('Bear');
@@ -33,5 +35,5 @@ console.log(bear.name);
 Animal.tail();
 const mouse = Animal.createAnimal('Mouse');
 console.log(mouse.name);
-// 3. private
-bear.getLegs();
+// // 3. private
+// bear.getLegs();

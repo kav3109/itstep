@@ -45,10 +45,14 @@ hr {
     position: absolute;
     top: 0;
     right: 2px;
+    z-index: 1;
 }
 img {
-     width: 800px;
-     height: 400px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 800px;
+    height: 400px;
  }
 i:hover {
     cursor: pointer;
@@ -62,4 +66,9 @@ i:hover {
     width: calc(100vw - 2px);
     height: calc(100vh - 2px);
     margin: 0;
+}
+.disabled {
+    cursor: default;
+    color: #2584A3;
+    opacity: .3;
 }
