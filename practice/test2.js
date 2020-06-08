@@ -1,15 +1,12 @@
-// let arr1 = [1,2,3];
-// let arr2 = [4,5,6];
-// let arr = arr1.concat(arr2);
-// const shuffledArr = arr1.concat(arr2).sort(function(){
-//     return Math.random() - 0.5;
-// });
-// console.log(shuffledArr);
-const $arrCard = ['&#10084;','&#9885;','&#9742;','&#9875;', '&#9731;'];
+let interval;
+let num = 0;
+function do_slide(){
+    interval = setInterval(function(){
+        console.log(num);
+        if(num === 10) clearInterval(interval);
+        num++;
+    }, 2000);
+}
+do_slide();
 
-const $getRandomArrey = () => {
-    return $arrCard.concat($arrCard).sort(function(){
-        return Math.random() - 0.5;
-    });
-};
-console.log($getRandomArrey());
+
