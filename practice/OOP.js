@@ -1,6 +1,7 @@
 class Animal {
     constructor(name) {
         this.name = name;// setter
+        if(name === undefined) this.name = 'Cat';
         // this.name();// getter
     }
 
@@ -29,8 +30,8 @@ class Animal {
     // }
 }
 // 1. classic
-const bear = new Animal('Bear');
-console.log(bear.name);
+const animal = new Animal('Dog');
+console.log(animal.name);
 // 2. static
 Animal.tail();
 const mouse = Animal.createAnimal('Mouse');
