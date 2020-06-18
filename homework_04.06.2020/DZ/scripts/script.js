@@ -53,10 +53,10 @@ import ApiWeather from './ApiWeather.js';
                     $($elDegree.get($acc))
                         .text(Math.floor(+(data.list[$average].main.temp)));
                     $($elIcon.get($acc))
-                        .attr('src', `http://openweathermap.org/img/wn/${data.list[$average].weather[0].icon}@2x.png`)
-                        .attr('alt', data.list[$average].weather[0].description);
+                        .prop('src', `http://openweathermap.org/img/wn/${data.list[$average].weather[0].icon}@2x.png`)
+                        .prop('alt', data.list[$average].weather[0].description);
                     $acc++;
-                    $nextDay = ($nextDay+1 === 7)? $nextDay = 0: $nextDay+1;
+                    $nextDay++;
                 }
             }
         });
