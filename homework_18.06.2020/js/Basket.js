@@ -16,12 +16,12 @@ export default class Products {
             `);
     }
 
-    setItems(number, product, quantity, price, count) {
+    setItems(number, product, price, quantity, maxQuantity) {
         $('.result').append(`
             <div>${number}.</div>
             <div>${product}</div>
-            <div class="quantity"><input type="number" min="1" max="${count}" step="0.1" value="${quantity}"><span>kg</span></div>
-            <div class="price">${price}</div>
+            <div class="quantity"><input type="number" min="1" max="${maxQuantity}" step="0.1" value="${quantity}"><span>kg</span></div>
+            <div class="price">${(+price)*(+quantity)}</div>
         `);
     }
 }

@@ -49,7 +49,13 @@ import DataBase from './DataBase.js';
             let $arr;
             for(let i = 0; i < localStorage.length; i++){
                 $arr = localStorage.getItem(localStorage.key(i)).split(',');
-                $basket.setItems(i+1,`${$arr[0]}(${$arr[1]})`,$arr[2],(+$arr[3]*(+$arr[2])).toFixed(2),$arr[4]);
+                $basket.setItems(
+                    i+1, //item row number
+                    `${$arr[0]}(${$arr[1]})`, //title and country
+                    $arr[2], //price
+                    $arr[3], //current quantity
+                    $arr[4] //max quantity
+                );
             }
             //TODO set last row + event onchange
         }
@@ -74,7 +80,13 @@ import DataBase from './DataBase.js';
                 if(+$elCount.val() > $maxCount || +$elCount.val() < 1) return $elCount.addClass('invalid');
 
                 //save to local storage
-                localStorage.setItem($ident, `${$(`#${$ident} .item`).text()},${$(`#${$ident} .country`).text()},${$(`#${$ident} .price`).text()},${$elCount.val()},${$maxCount}`);
+                localStorage.setItem($ident,
+                    $(`#${$ident} .item`).text() + ',' + // title of item
+                    $(`#${$ident} .country`).text()+ ',' + // country
+                    $(`#${$ident} .price`).text()+ ',' + // price
+                    $elCount.val() + ',' + // current quantity
+                    $maxCount // max quantity
+                );
             });
         }
 
