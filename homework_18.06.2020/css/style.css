@@ -1,0 +1,73 @@
+/*common style*/
+body {
+    margin: 0;
+    padding: 0;
+}
+h2 {
+    text-align: center;
+}
+/*navigation*/
+nav {
+    background-color: #600000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+nav span {
+    height: 40px;
+    padding: 20px;
+}
+nav span:hover {
+    color: #E5E5E5;
+    cursor: pointer;
+}
+.active {
+    background-color: #340000;
+}
+/*products page*/
+.products {
+    width: 700px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+    text-align: center;
+}
+.products div {
+    border: 1px solid grey;
+    padding-bottom: 10px;
+}
+.icon {
+    width: 100px;
+    height: 100px;
+}
+.counter, .quantity input {
+    width: 35px;
+}
+.price:after {
+    content: "$";
+}
+.invalid {
+    border: 1px solid red;
+}
+/*basket page*/
+.result {
+    width: 700px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr 2fr;
+    border: 1px solid grey;
+}
+.result h3 {
+    margin: 0;
+}
+.result h3, .result div {
+    border: 1px solid grey;
+    padding: 10px;
+}
+.price, .prices {
+    text-align: center;
+}
+.quantity span {
+    margin-left: 5px;
+}
