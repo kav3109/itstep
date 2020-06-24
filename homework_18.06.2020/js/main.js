@@ -68,10 +68,21 @@ import DataBase from './DataBase.js';
 
             //change quantity
             $elCount.change(function () {
-                if(+$(this).val() > +$(this).data(count)) $(this).addClass('invalid');
-                //TODO recount cums
-            })
 
+                let $total = 0;
+
+                // check available quantity
+                if(+$(this).val() > +$(this).data('count')) return $(this).addClass('invalid');
+
+                // set total sum of current row
+                $('.price').eq(+$(this).data('num')-1).text(((+$(this).val())*(+$(this).data('price'))).toFixed(2));
+
+                // set total sum of the basket
+                $('.row').each(function(){
+                    $total = +$total+(+$(this).text());
+                });
+                $('.sum').text((+$total).toFixed(2));
+            })
         }
 
         function setProductPage() {
