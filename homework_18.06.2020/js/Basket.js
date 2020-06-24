@@ -1,4 +1,4 @@
-export default class Products {
+export default class Basket {
 
     setTitle(wrapper) {
         wrapper.append(`
@@ -20,8 +20,15 @@ export default class Products {
         $('.result').append(`
             <div>${number}.</div>
             <div>${product}</div>
-            <div class="quantity"><input type="number" min="1" max="${maxQuantity}" step="0.1" value="${quantity}"><span>kg</span></div>
+            <div class="quantity"><input type="number" min="1" max="${maxQuantity}" step="0.1" value="${quantity}" data-count="${maxQuantity}"><span>kg</span></div>
             <div class="price">${(+price)*(+quantity)}</div>
+        `);
+    }
+
+    setTotal(totalSum) {
+        $('.result').append(`
+            <div class="total">Total:</div>
+            <div class="price">${totalSum}</div>
         `);
     }
 }

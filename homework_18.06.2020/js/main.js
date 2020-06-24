@@ -46,7 +46,7 @@ import DataBase from './DataBase.js';
             $basket.setTitle($section);
             if(localStorage.length === 0) return;
             $basket.setTableHeader($section);
-            let $arr;
+            let $arr, $totalSum = 0;
             for(let i = 0; i < localStorage.length; i++){
                 $arr = localStorage.getItem(localStorage.key(i)).split(',');
                 $basket.setItems(
@@ -56,16 +56,32 @@ import DataBase from './DataBase.js';
                     $arr[3], //current quantity
                     $arr[4] //max quantity
                 );
+                $totalSum = $totalSum + (+$arr[3]*(+$arr[2]));
+                if(i === localStorage.length - 1) $basket.setTotal($totalSum);
             }
+
+            //listen quantity
+            let $elCount = $('input[type="number"]');
+
+            //clear invalid class from input on focusing
+            $elCount.focus(function () {$(this).removeClass('invalid');});
+
+            //change quantity
+            $elCount.change(function () {
+                if(+$(this).val() > +$(this).data(count)) $(this).addClass('invalid');
+
+            })
             //TODO set last row + event onchange
         }
 
         function setProductPage() {
             //build page and listen elements
             $products.setTitle($section);
-            $db.getData().forEach((e, id)=>{$products.setItems(id, e.title, e.image, e.country, e.price, e.count);});
+            $db.getData().forEach((e, id)=>{
+                if(e.count > 0)$products.setItems(id, e.title, e.image, e.country, e.price, e.count);
+            });
 
-            //clear invalid class from input on focus
+            //clear invalid class from input on focusing
             $('.counter').focus(function () {$(this).removeClass('invalid');});
 
             //listen the button "Buy"

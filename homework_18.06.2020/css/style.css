@@ -50,6 +50,9 @@ nav span:hover {
 .invalid {
     border: 1px solid red;
 }
+input[value="Buy"]:hover {
+    cursor: pointer;
+}
 /*basket page*/
 .result {
     width: 700px;
@@ -70,4 +73,8 @@ nav span:hover {
 }
 .quantity span {
     margin-left: 5px;
+}
+.total {
+    text-align: right;
+    grid-column: 1/4;
 }
