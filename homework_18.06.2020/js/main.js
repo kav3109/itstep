@@ -69,9 +69,9 @@ import DataBase from './DataBase.js';
             //change quantity
             $elCount.change(function () {
                 if(+$(this).val() > +$(this).data(count)) $(this).addClass('invalid');
-
+                //TODO recount cums
             })
-            //TODO set last row + event onchange
+
         }
 
         function setProductPage() {
