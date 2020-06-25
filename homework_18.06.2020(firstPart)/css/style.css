@@ -61,10 +61,10 @@ input[value="Buy"]:hover {
     grid-template-columns: 1fr 3fr 2fr 2fr;
     border: 1px solid grey;
 }
-.result h3, .info h3 {
+.result h3 {
     margin: 0;
 }
-.result h3, .result div, .info h3, .info div {
+.result h3, .result div {
     border: 1px solid grey;
     padding: 10px;
 }
@@ -77,68 +77,4 @@ input[value="Buy"]:hover {
 .total {
     text-align: right;
     grid-column: 1/4;
-}
-.info {
-    width: 700px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr 2fr 1fr 1fr 1fr 1fr;
-    border: 1px solid grey;
-}
-.iconAdmin {
-    width: 25px;
-    height: 25px;
-}
-.info img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-.edit, .remove {
-    cursor: pointer;
-}
-.newProduct {
-    margin: 10px auto;
-    width: 700px;
-}
-#new {
-    width: 100%;
-    cursor: pointer;
-}
-#fade:before {
-    content: '';
-    background: #000;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.7;
-}
-#fade {
-    display: none;
-}
-#popup {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    width: 300px;
-    background: #cceef6;
-    z-index: 99999;
-    opacity: 1;
-    text-align: center;
-}
-#save {
-    width: 100%;
-    margin: 10px auto;
-}
-#popup label {
-    text-align: left;
-}
-.popup {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-row-gap: 10px;
 }

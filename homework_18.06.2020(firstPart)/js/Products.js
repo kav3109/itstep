@@ -10,7 +10,7 @@ export default class Products {
         $('.products').append(`
             <div id="${id}">
                 <h4 class="item">${title}</h4>
-                <img class="icon" src="${imageLink}" alt="${title}">
+                <img class="icon" src="${imageLink}" alt="apple">
                 <p class="country">${country}</p>
                 <span class="price">${price}</span>
                 <input class="counter" type="number" min="1" max="${count}" step="0.1" value="1">
