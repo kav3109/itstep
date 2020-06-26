@@ -17,7 +17,8 @@ input {
 #repeat {margin-left: 34px;}
 #register {width: 409px}
 #register:hover {cursor: pointer}
-/*parsley*/
-/*#parsley-id-5, #parsley-id-5 li {*/
-    /*display: inline;*/
-/*}*/
+.parsley-errors-list li, .parsley-errors-list{
+    display: inline;
+    padding-left: 10px;
+    color: red;
+}
