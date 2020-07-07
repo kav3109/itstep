@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
     <title>Parsley</title>
 </head>
 <body>
@@ -21,11 +21,20 @@
         <input id="repeat" type="password" required="" data-parsley-equalto="#password">
         <br><input id="register" type="submit" value="Register">
     </form>
-
 </section>
-<section id="settings">
-
+<section id="result" hidden>
+    <h2>Result</h2>
+    <div class="wrapper">
+        <div>Username</div>
+        <div class="username">Username</div>
+        <div>Email</div>
+        <div class="email">Email</div>
+        <div>Password</div>
+        <div class="password">Password</div>
+    </div>
+    <input class="next" type="button" value="Next form" onclick="window.location='userInfo.html';">
 </section>
+
 
 <script src="scripts/index.js"></script>
 </body>
