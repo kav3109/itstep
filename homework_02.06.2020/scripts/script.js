@@ -32,15 +32,16 @@ import ApiWeather from './ApiWeather.js';
             const $elIcon = $('.icon-forecast');
             const $elDegree = $('.degree-forecast');
 
-            let $acc = 0, $curDate, $formatDate, $average, $nextDay = $date.getDay()+1;
+            let $acc = 0, $curDate, $formatDate, $average, $nextDay = ($date.getDay()+1 === 7)? 0: $date.getDay()+1;
 
             for(let $i = 0; $i < data.list.length; $i++) {
 
                 $curDate = new Date(data.list[$i].dt_txt);
 
                 //get data from array of data.list and parse them
+                console.log(`ineration ${$i}: current date - ${$curDate.getDay()}; nextDay - ${$nextDay}`);
                 if($curDate.getDay() === $nextDay) {
-
+                    console.log('inside');
                     //set day of week
                     $($elDay.get($acc)).text($curDate.toString().slice(0,3));
 
@@ -56,7 +57,7 @@ import ApiWeather from './ApiWeather.js';
                         .attr('src', `http://openweathermap.org/img/wn/${data.list[$average].weather[0].icon}@2x.png`)
                         .attr('alt', data.list[$average].weather[0].description);
                     $acc++;
-                    $nextDay = ($nextDay+1 === 7)? $nextDay = 0: $nextDay+1;
+                    $nextDay = ($nextDay+1 === 7)? 0: $nextDay+1;
                 }
             }
         });
