@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conditions</title>
+    <script>
+
+        const EUR = 0.90;
+        const UAN = 7.01;
+        const AZN = 1.70;
+
+        // 1. Convertor
+
+        let sumUsd = prompt('Enter sum of USD, please!');
+        let userChoice = prompt('If you want to convert USD to EUR enter 1, to UAN - 2, to AZN - 3.');
+        switch(userChoice) {
+            case '1':
+                alert(sumUsd + ' USD = ' + sumUsd*EUR + ' EUR.');
+                break;
+            case '2':
+                alert(sumUsd + ' USD = ' + sumUsd*UAN + ' UAN.');
+                break;
+            case '3':
+                alert(sumUsd + ' USD = ' + sumUsd*AZN + ' AZN.');
+                break;
+            default:
+                alert('Something went wrong!!!');
+        }
+
+        // 2. Purchases
+
+        let sumOfPurchase = prompt('Enter sum of your purchases!');
+        if(sumOfPurchase > 200 && sumOfPurchase <= 300) {
+            alert('Your discount is 3%, you need to pay - ' + (sumOfPurchase-sumOfPurchase*0.03).toFixed(2));
+        } else if (sumOfPurchase > 300 && sumOfPurchase <= 500) {
+            alert('Your discount is 5%, you need to pay - ' + (sumOfPurchase-sumOfPurchase*0.05).toFixed(2));
+        } else if (sumOfPurchase > 500) {
+            alert('Your discount is 7%, you need to pay - ' + (sumOfPurchase-sumOfPurchase*0.07).toFixed(2));
+        } else {
+            alert('You need to pay - ' + sumOfPurchase);
+        }
+
+        // 3. Circle inside the squared
+
+        let circleLength = prompt('Enter circle length, please!');
+        let squarePerimeter = prompt('Enter square perimeter, please!');
+        let circleRadius = circleLength/(2*Math.PI);
+        let squareLength = squarePerimeter/4;
+        if(circleRadius > squareLength/2) {
+            alert('Your circle DOES NOT fit into the square!!!');
+        } else {
+            alert('Your circle fits into the square!!!');
+        }
+
+        // 4. Three questions
+
+        let q1 = prompt('Result of the expression - 425/5 is: a - 75, b - 70, c - 85?');//85
+        let q2 = prompt('Result of the expression - 640/40 is: a - 16, b - 14, c - 18?');//16
+        let q3 = prompt('Result of the expression - 425/25 is: a - 16, b - 15, c - 17?');//17
+
+        let a1;
+        let a2;
+        let a3;
+
+        (q1==='c')?a1=2:a1=0;
+        (q2==='a')?a2=2:a2=0;
+        (q3==='c')?a3=2:a3=0;
+
+        alert('You have got - '+(a1+a2+a3)+' mark/s!!!');
+
+        // 5. Next date
+
+        let dd = +prompt('Enter number of a date of month, please!');
+        let mm = +prompt('Enter number of a month, please!');
+        let yyyy = +prompt('Enter number of a year, please!');
+
+        let ddNew;
+        let mmNew;
+        let yyyyNew;
+        let leap;
+        let maxDays;
+        //Year is leap or not
+
+        (yyyy%4 === 0)?((yyyy%100 === 0)?((yyyy%400 === 0)?leap = 1:leap  = 0):leap = 1):leap = 0;
+        //Max days in the month
+        if(mm === 4 || mm === 6 || mm === 9 || mm === 11) {
+            maxDays = 30;
+        } else if(mm === 2 && leap === 1) {
+            maxDays = 29;
+        } else if(mm === 2 && leap === 0) {
+            maxDays = 28;
+        } else {
+            maxDays = 31;
+        }
+        //Counter
+
+        if(dd === 31 && mm === 12) {//new year
+            ddNew = 1;
+            mmNew = 1;
+            yyyyNew = yyyy + 1;
+        } else if(dd === maxDays) {//end of month
+            ddNew = 1;
+            mmNew = mm+1;
+            yyyyNew = yyyy;
+        } else {
+            ddNew = dd+1;
+            mmNew = mm;
+            yyyyNew = yyyy;
+        }
+        alert('You have entered date - ' + dd + '/' + mm + '/' + yyyy + '. Next date - ' + ddNew + '/' + mmNew + '/' + yyyyNew);
+    </script>
+</head>
+<body>
+    <h1 style="text-align: center">DONE</h1>
+</body>
+</html>

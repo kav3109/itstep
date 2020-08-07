@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+    <style>
+        button {
+            font-size: 20px;
+        }
+        button:nth-child(1) {
+            position: absolute;
+            top: 50px;
+        }
+        button:nth-child(2) {
+            position: absolute;
+            left: 110px;
+        }
+        .tooltipTop, .tooltipDown{
+            position: absolute;
+            padding: 10px 20px;
+            text-align: center;
+            color: white;
+            background-color: #8A53A9;
+        }
+        .tooltipTop::after {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent #8A53A9 transparent;
+        }
+        .tooltipDown::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #8A53A9 transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+<button data-tooltip="Tool tip 1">Button 1</button>
+<button data-tooltip="Tool tip 2">Button 2</button>
+<script>
+    let tooltipElem;
+    document.onmouseover = function(event) {
+        let target = event.target;
+
+        // check tooltip
+        let tooltipHtml = target.dataset.tooltip;
+        if (!tooltipHtml) return;
+
+        // create tooltip
+        tooltipElem = document.createElement('div');
+        tooltipElem.className = 'tooltipDown';
+        tooltipElem.innerHTML = tooltipHtml;
+        document.body.append(tooltipElem);
+
+        // show tooltip
+        let coords = target.getBoundingClientRect();
+
+        let left = coords.left + (target.offsetWidth - tooltipElem.offsetWidth) / 2;
+        if (left < 0) left = 0; // check left side
+
+        let top = coords.top - tooltipElem.offsetHeight - 5;
+        if (top < 0) {
+            tooltipElem.className = 'tooltipTop';
+            top = coords.top + target.offsetHeight + 5;
+        }
+
+        tooltipElem.style.left = left + 'px';
+        tooltipElem.style.top = top + 'px';
+    };
+
+    document.onmouseout = function(e) {
+
+        if (tooltipElem) {
+            tooltipElem.remove();
+            tooltipElem = null;
+        }
+    };
+</script>
+</body>
+
+

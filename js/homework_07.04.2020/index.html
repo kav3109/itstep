@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Movies</title>
+</head>
+<body>
+<form action="#" name="searchMovie" id="searchMovie">
+    <h3>Search:</h3>
+    <div class="search">
+        <label for="title">Title:</label><span class="title"></span>
+        <input type="text" name="title" id="title" autofocus><br />
+        <label for="type">Type:</label><span class="type"></span>
+        <select name="type" id="type">
+            <option value="movie">Movie</option>
+            <option value="series">Series</option>
+            <option value="episode">Episode</option>
+        </select><br />
+        <input type="submit" class="btnSearch" value="Search">
+    </div>
+</form>
+<h3 class="films"></h3>
+<div class="wrapper"></div>
+<script src="js/scripts.js"></script>
+</body>

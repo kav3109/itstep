@@ -1,0 +1,91 @@
+body, .arrow, .line1, .line2{
+    margin: 0;
+    padding: 0;
+}
+nav {
+    background-color: #00b8d4;
+    width: 25vw;
+    height: 100vh;
+    float: left;
+    border-right: 6px solid #E0E0E0;
+    transition: width 1s;
+}
+.opened {width: 25vw;}
+.closed {width: 0;}
+article {
+    background-color: #0f9d58;
+    width: 100vw;
+    height: 100vh;
+}
+footer {
+    clear: left;
+}
+.right {
+    position: absolute;
+    left: 0;
+    top: 48vh;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-left: 6px solid black;
+    border-bottom: 10px solid transparent;
+    transition: left 1s;
+}
+.left {
+    position: absolute;
+    left: 25vw;
+    top: 48vh;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 6px solid black;
+    border-bottom: 10px solid transparent;
+    transition: left 1s;
+
+}
+.line1 {
+    position: absolute;
+    top: calc(50vh - 6px);
+    left: 11vw;
+    height: 4px;
+    width: 2vw;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    transition: left 1s;
+}
+.hidden {
+    left: -1000px;
+}
+.line2 {
+    position: absolute;
+    top: calc(70vh - 6px);
+    left: 60vw;
+    height: 4px;
+    width: 2vw;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+.block1 {
+    background-color: #B5DCE9;
+    border-bottom: 6px solid #E0E0E0;
+    height: calc(50vh - 6px);
+}
+.block2 {
+    background-color: pink;
+    height: 50vh;
+}
+.block3 {
+    background-color: #28B9B2;
+    border-bottom: 6px solid #E0E0E0;
+    height: calc(70vh - 6px);
+}
+.block4 {
+    background-color: #FFA984;
+    height: 30vh;
+}
+.btn:hover {
+    cursor: pointer;
+}
+.grab:hover {
+    cursor: n-resize;
+}

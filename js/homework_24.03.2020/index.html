@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Homework</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+    <p>*******************Task One*********************</p>
+
+    <div id="test">
+        <p id="question"><p/>
+        <input type="radio" name="a1" value="1" checked><span id="variant1"></span><br>
+        <input type="radio" name="a1" value="2"><span id="variant2"></span><br>
+        <button id="testBtn">Next</button>
+    </div>
+
+
+    <p>*******************Task Two*********************</p>
+
+    <div id="text">
+        <input id="bold" type="checkbox" name="a2" value="bold"><span>Bold</span>
+        <input id="underline" type="checkbox" name="a2" value="underline"><span>Underline</span>
+        <input id="italic" type="checkbox" name="a2" value="italic"><span>Italic</span>
+        <input id="textLeft" type="radio" name="a2" value="left"><span>Left</span>
+        <input id="textRight" type="radio" name="a2" value="right"><span>Right</span>
+        <input id="justify" type="radio" name="a2" value="justify"><span>Justify</span><br />
+        <textarea id="myText"></textarea>
+        <button id="textBtn">Show text</button>
+    </div>
+
+    <p>*******************Task Three*******************</p>
+
+    <div id="book">
+        <div class="gridContainer">
+            <div class="gridCell">
+                <div>
+                    <img src="images/Image%201.png">
+                    <h4>Learning JavaScript: JavaScript Essential for Modern Application Development</h4>
+                    <span>Ethan Brown</span>
+                </div>
+                <div>
+                    <h3>16$</h3>
+                    <button class="btnSelect">Select</button>
+                </div>
+            </div>
+            <div class="gridCell">
+                <div>
+                    <img src="images/Image%202.png">
+                    <h4>You Don't Know JS: Scope & Closures</h4>
+                    <span>Kyle Simpson</span>
+                </div>
+                <div>
+                    <h3>20$</h3>
+                    <button class="btnSelect">Select</button>
+                </div>
+            </div>
+            <div class="gridCell">
+                <div>
+                    <img src="images/Image%203.png">
+                    <h4>JavaScript and JQuery: Interactive Front-End Web Development</h4>
+                    <span>Jon Duckett</span>
+                </div>
+                <div>
+                    <h3>22$</h3>
+                    <button class="btnSelect">Select</button>
+                </div>
+
+            </div>
+            <div>
+                <form action="#" class="gridForm">
+                    <div class="cells">
+                        <p>Book:</p>
+                        <div><input type="text" id="title" disabled></div>
+                        <p>Quantity:</p>
+                        <div><input type="text" id="quantity"></div>
+                        <p>Name:</p>
+                        <div><input type="text" id="userName"></div>
+                        <p>Delivery address:</p>
+                        <div><textarea type="text" id="address"></textarea></div>
+                        <p>Delivery date:</p>
+                        <div><input type="text" id="date"></div>
+                        <p>Comment:</p>
+                        <textarea type="text" id="comment"></textarea>
+                        <button id="btnBuy">Buy</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/test.js"></script>
+    <script src="js/text.js"></script>
+    <script src="js/book.js"></script>
+</body>
+
+

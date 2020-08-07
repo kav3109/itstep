@@ -1,0 +1,55 @@
+body {
+    width: 800px;
+    margin: 10px auto;
+    background-color: #FBF2E9;
+
+}
+h3, .grid {
+    text-align: center;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: .8em;
+}
+.rgb {
+    background-color: rgb(154,205,50);
+}
+.rgba {
+    background-color: rgba(0,139,139,1);
+}
+.hex {
+    background-color: #ff4500;
+}
+.grid div p{
+    margin: 5px;
+}
+.grid div.info {
+    background-color: white;
+    opacity: .7;
+    margin: 20px 30px;
+    padding: 10px;
+}
+.params, input {
+    width: 250px;
+    margin: auto;
+}
+select, button {
+    width: 254px;
+    height: 21px;
+}
+input, select {
+    margin-bottom: 10px;
+}
+button {
+    cursor: pointer;
+}
+.invalid {
+    border: 1px solid red;
+}
+.error {
+    display: inline-block;
+    width: 205px;
+    text-align: right;
+    color: red;
+}
