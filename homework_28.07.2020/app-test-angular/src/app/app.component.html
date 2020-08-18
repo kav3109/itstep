@@ -40,42 +40,55 @@
 
   <!-- Content -->
   <div class="card-container">
-    <a class="card" target="_blank" rel="noopener" href="https://angular.io/tutorial">
-      <span>Start Test</span>
+    <a (click)="changeButton()" class="card" rel="noopener" href="#">
+      <span>{{ btn }}</span>
     </a>
   </div>
-  <h2 class="guestion">1. Select result of calculation: <span>1+2=?</span></h2>
-  <ol>
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-  </ol>
+  <div hidden="{{ isHidden }}">
+    <h2 class="guestion">11111</h2>
+    <ol>
+      <li>
+        <input type="radio" id="dewey" name="answer" value="dewey">
+        <label for="dewey">{{ acc }}</label>
+      </li>
+      <li>
+        <input type="radio" id="louie" name="answer" value="louie">
+        <label for="louie">Louie</label>
+      </li>
+      <li><input type="radio" id="huey" name="answer" value="huey">
+        <label for="huey">Huey</label>
+      </li>
+      <li><input type="radio" id="huey1" name="answer" value="huey1">
+        <label for="huey1">Huey1</label>
+      </li>
+    </ol>
+  </div>
 
 
-<!--classes, styles, conditions and events-->
-  <p [ngClass]="{
-    'is-show':!isHidden,
-    hidden:isHidden
-  }">{{isHidden}}</p>
-  <p [class.is-show]="!isHidden">{{isHidden}}</p>
-  <p [ngStyle]="{color:'red', 'font-weight':'bold'}">{{isHidden}}</p>
-  <p [style.fontWeight]="isHidden? 'bold':'normal'">{{isHidden}}</p>
-  <button (click)="toggle()">{{isHidden}}</button>
-  <!--custom directives-->
-  <p appItalic >Italic</p>
-  <!--custom pure pipes-->
-  <p>{{ '1 2 3 4 5' | dash: ' ' }}</p>
-  <p>
-    <input [(ngModel)]="text" type="text" name="inputText" placeholder="Enter text">
-    {{ text | dash: '-' }}
-  </p>
-  <!--custom inpure pipes-->
-  <p>
-    <input #data type="text" name="inputText" placeholder="Enter text">
-    <button (click)="arr.push(data.value)">Add new data</button>
-    {{ arr | joinArray }}
-  </p>
+
+<!--&lt;!&ndash;classes, styles, conditions and events&ndash;&gt;-->
+  <!--<p [ngClass]="{-->
+    <!--'is-show':!isHidden,-->
+    <!--hidden:isHidden-->
+  <!--}">{{isHidden}}</p>-->
+  <!--<p [class.is-show]="!isHidden">{{isHidden}}</p>-->
+  <!--<p [ngStyle]="{color:'red', 'font-weight':'bold'}">{{isHidden}}</p>-->
+  <!--<p [style.fontWeight]="isHidden? 'bold':'normal'">{{isHidden}}</p>-->
+  <!--<button (click)="toggle()">{{isHidden}}</button>-->
+  <!--&lt;!&ndash;custom directives&ndash;&gt;-->
+  <!--<p appItalic >Italic</p>-->
+  <!--&lt;!&ndash;custom pure pipes&ndash;&gt;-->
+  <!--<p>{{ '1 2 3 4 5' | dash: ' ' }}</p>-->
+  <!--<p>-->
+    <!--<input [(ngModel)]="text" type="text" name="inputText" placeholder="Enter text">-->
+    <!--{{ text | dash: '-' }}-->
+  <!--</p>-->
+  <!--&lt;!&ndash;custom inpure pipes&ndash;&gt;-->
+  <!--<p>-->
+    <!--<input #data type="text" name="inputText" placeholder="Enter text">-->
+    <!--<button (click)="arr.push(data.value)">Add new data</button>-->
+    <!--{{ arr | joinArray }}-->
+  <!--</p>-->
   <!-- Background -->
 
   <svg id="clouds" alt="Gray Clouds Background" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677" viewBox="0 0 2611.084 485.677">
