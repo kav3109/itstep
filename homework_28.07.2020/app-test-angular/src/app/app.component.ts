@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   questTitle: string; // title of question
   answers: Array<any>; // array of answers in the question
   acc: number = 0;
+  count: number; // count of questions
 
   constructor(
     private questionService: QuestionsService,
@@ -24,20 +25,20 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.arrQuest = this.questionService.getQuestions();
-    this.acc = this.arrQuest.length;
+    this.count = this.arrQuest.length;
   }
 
   changeButton(): void {
-    if(this.acc > 0 && this.btn === 'Start Test') {
+    if(this.count > 0 && this.btn === 'Start Test') {
       this.btn = 'Next';
       this.isHidden = '';
-    } else if(this.acc === 1) {
+    } else if(this.acc === this.count) {
       this.btn = 'Start Test';
       this.isHidden = 'hidden';
-      this.acc = this.questionService.getQuestions().length;
+      this.acc = 0;
     } else {
       this.btn = 'Next';
-      this.acc -= 1;
+      this.acc += 1;
     }
   }
   //TODO get data from datafile
