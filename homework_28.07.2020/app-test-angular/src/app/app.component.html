@@ -64,8 +64,18 @@
   <button (click)="toggle()">{{isHidden}}</button>
   <!--custom directives-->
   <p appItalic >Italic</p>
-  <!--custom pipes-->
+  <!--custom pure pipes-->
   <p>{{ '1 2 3 4 5' | dash: ' ' }}</p>
+  <p>
+    <input [(ngModel)]="text" type="text" name="inputText" placeholder="Enter text">
+    {{ text | dash: '-' }}
+  </p>
+  <!--custom inpure pipes-->
+  <p>
+    <input #data type="text" name="inputText" placeholder="Enter text">
+    <button (click)="arr.push(data.value)">Add new data</button>
+    {{ arr | joinArray }}
+  </p>
   <!-- Background -->
 
   <svg id="clouds" alt="Gray Clouds Background" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677" viewBox="0 0 2611.084 485.677">

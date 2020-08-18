@@ -9,6 +9,8 @@ export class AppComponent {
   title = 'app-test-angular';
 
   isHidden: boolean = false;
+  text: string = 'test-string-data';
+  arr: string[] = ['test', 'data'];
 
   toggle(): void {
     this.isHidden = !this.isHidden;
