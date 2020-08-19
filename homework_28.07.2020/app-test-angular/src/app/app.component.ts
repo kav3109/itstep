@@ -22,6 +22,10 @@ export class AppComponent implements OnInit {
   count: number; // count of questions
   right: number = 0; // count of correct answers
   wrong: number = 0; // count of incorrect answers
+  timePoints: Array<number> = []; // array of time points between click on button
+  avTime: number;
+  minTime: number;
+  maxTime: number;
 
   constructor(
     private questionService: QuestionsService,
@@ -36,25 +40,32 @@ export class AppComponent implements OnInit {
   clickOnButton(): void {
 
     if(this.getResult() === null && this.btn !== 'Start Test') return; // check selected answer
+
     if(this.count > 0 && this.btn === 'Start Test') { // start test
       this.right = 0;
       this.wrong = 0;
+      this.timePoints = [];
       this.arrResults = [];
       this.btn = 'Next';
       this.questIsHidden = '';
       this.resultIsHidden = 'hidden';
       this.setQuestion(this.acc);
       this.acc += 1;
+      this.setTimePoint();
     } else if(this.acc === this.count) { // finish test and show result
       this.btn = 'Start Test';
       this.questIsHidden = 'hidden';
       this.acc = 0;
       this.checkResult();
       this.resultIsHidden = '';
+      this.setTimePoint();
+      this.getAverageTime(this.timePoints);
+      this.getMinMaxTime(this.timePoints);
     } else { // listen steps
       this.btn = 'Next';
       this.setQuestion(this.acc);
       this.acc += 1;
+      this.setTimePoint();
     }
   }
 
@@ -92,4 +103,27 @@ export class AppComponent implements OnInit {
       (val1.answer === win)? this.right += 1: this.wrong += 1;
     });
   }
+
+  setTimePoint(): void {
+    let date = new Date();
+    this.timePoints.push(+date);
+  }
+
+  getAverageTime(times): void {
+    this.avTime = Math.round((times[times.length-1]-times[0])/(times.length-1));
+  }
+
+  getMinMaxTime(times): void {
+    let ranges = [];
+    for(let i = 0; i < times.length-1; i++) {
+      ranges.push(+times[i+1]-(+times[i]));
+    }
+    function compareNumbers(a, b) {
+      return a - b;
+    }
+    ranges = ranges.sort(compareNumbers);
+    this.minTime = ranges[0];
+    this.maxTime = ranges[ranges.length-1];
+  }
+
 }

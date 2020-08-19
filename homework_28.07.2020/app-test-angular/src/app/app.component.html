@@ -58,6 +58,10 @@
     <p>Total question: {{ count }}</p>
     <p>Correct answers: {{ right }}</p>
     <p>Wrong answers: {{ wrong }}</p>
+    <hr>
+    <p>Average time for question: {{ avTime | timer }}</p>
+    <p>Minimal time for question: {{ minTime | timer }}</p>
+    <p>Maximal time for question: {{ maxTime | timer }}</p>
   </div>
 
   <svg id="clouds" alt="Gray Clouds Background" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677" viewBox="0 0 2611.084 485.677">
