@@ -10,13 +10,18 @@ import {AnswersService} from "./core/servises/answers.service";
 export class AppComponent implements OnInit {
   title = 'app-test-angular';
 
-  isHidden: string = "hidden"; // condition
+  questIsHidden: string = "hidden"; // test condition
+  resultIsHidden: string = "hidden"; // result condition
   btn: string = "Start Test"; // button controller
   arrQuest: Array<any> = []; // array of questions
-  questTitle: string; // title of question
+  arrResults: Array<any> = []; // array of user's answers
+  questTitle: string = 'question'; // title of question
+  questId: number; // question id
   answers: Array<any>; // array of answers in the question
-  acc: number = 0;
+  acc: number = 0; // counter
   count: number; // count of questions
+  right: number = 0; // count of correct answers
+  wrong: number = 0; // count of incorrect answers
 
   constructor(
     private questionService: QuestionsService,
@@ -28,28 +33,63 @@ export class AppComponent implements OnInit {
     this.count = this.arrQuest.length;
   }
 
-  changeButton(): void {
-    if(this.count > 0 && this.btn === 'Start Test') {
+  clickOnButton(): void {
+
+    if(this.getResult() === null && this.btn !== 'Start Test') return; // check selected answer
+    if(this.count > 0 && this.btn === 'Start Test') { // start test
+      this.right = 0;
+      this.wrong = 0;
+      this.arrResults = [];
       this.btn = 'Next';
-      this.isHidden = '';
-    } else if(this.acc === this.count) {
+      this.questIsHidden = '';
+      this.resultIsHidden = 'hidden';
+      this.setQuestion(this.acc);
+      this.acc += 1;
+    } else if(this.acc === this.count) { // finish test and show result
       this.btn = 'Start Test';
-      this.isHidden = 'hidden';
+      this.questIsHidden = 'hidden';
       this.acc = 0;
-    } else {
+      this.checkResult();
+      this.resultIsHidden = '';
+    } else { // listen steps
       this.btn = 'Next';
+      this.setQuestion(this.acc);
       this.acc += 1;
     }
   }
-  //TODO get data from datafile
 
+  setQuestion(index): void {
+    this.answers = this.arrQuest[index].answers;
+    this.questTitle = this.arrQuest[index].question;
+    this.questId = this.arrQuest[index].id;
+  }
 
+  getResult(): void {
 
-  // isHidden: boolean = false;
-  // text: string = 'test-string-data';
-  // arr: string[] = ['test', 'data'];
-  //
-  // toggle(): void {
-  //   this.isHidden = !this.isHidden;
-  // }
+    let el = document.querySelectorAll('input[name="answer"]'), result = null, htmlInput;
+
+    el.forEach((value) => {
+      htmlInput = value as HTMLInputElement;
+      if(htmlInput.checked === true) {
+        htmlInput.checked = false;
+        result = htmlInput.value;
+        this.arrResults.push({id: this.questId, answer: result});
+      }
+    });
+    return result;
+  }
+
+  checkResult(): void {
+    let win;
+    const correctAnswers = this.answerService.getQuestions();
+
+    if(this.arrResults.length !== this.answerService.getQuestions().length) console.error('Something went wrong!!!');
+
+    this.arrResults.forEach(val1 => {
+      correctAnswers.forEach(val2 => {
+        if(val1.id === val2.id) win = val2.answer;
+      });
+      (val1.answer === win)? this.right += 1: this.wrong += 1;
+    });
+  }
 }
