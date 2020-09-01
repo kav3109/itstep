@@ -1,0 +1,28 @@
+<label for="lang">{{ "names.lang" | translate }}</label>
+<select class="custom-select d-block w-100" id="lang" #langSelect (change)="translate.use(langSelect.value)">
+  <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.defaultLang">{{ lang }}</option>
+</select>
+
+<label class="mt-2" for="interval">{{ "names.interval" | translate }}</label>
+<select class="custom-select d-block w-100" id="interval" #interval (change)="poem.setCustomInterval(interval.value)">
+  <option ng-selected="selected">{{ "select" | translate }}</option>
+  <option *ngFor="let interval of arrIntervals" [value]="interval">
+    {{interval/1000}}
+  </option>
+</select>
+
+<label class="mt-2" for="background">{{ "names.background" | translate }}</label>
+<select class="custom-select d-block w-100" id="background" #appColorSelect (change)="app.setBackground(appColorSelect.value)">
+  <option ng-selected="selected">{{ "select" | translate }}</option>
+  <option *ngFor="let color of arrColors" [value]="color">
+    {{"color." + color | translate}}
+  </option>
+</select>
+
+<label class="mt-2" for="fontColor">{{ "names.fontColor" | translate }}</label>
+<select class="custom-select d-block w-100" id="fontColor" #fontColorSelect (change)="app.setFontColor(fontColorSelect.value)">
+  <option ng-selected="selected">{{ "select" | translate }}</option>
+  <option *ngFor="let color of arrColors" [value]="color">
+    {{"color." + color | translate}}
+  </option>
+</select>

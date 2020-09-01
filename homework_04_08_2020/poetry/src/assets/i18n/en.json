@@ -1,0 +1,17 @@
+{
+  "title": "Welcome to Poetry",
+  "poemTitle": "Title",
+  "author": "Author",
+  "poem": "Poem",
+  "names": {
+    "lang": "Language",
+    "interval": "Interval(sec.)",
+    "background": "Background color",
+    "fontColor": "Text color"
+  },
+  "select": "Select...",
+  "color": {
+    "white": "white",
+    "black": "black"
+  }
+}

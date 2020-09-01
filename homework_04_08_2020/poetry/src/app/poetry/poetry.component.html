@@ -1,0 +1,13 @@
+<div class="container">
+  <div>
+    <p><b>{{ "poemTitle" | translate }}:</b> {{ poem?.title }}</p>
+    <p><b>{{ "author" | translate }}:</b> {{ poem?.author }}</p>
+    <p><b>{{ "poem" | translate }}:</b></p>
+    <ul>
+      <li *ngFor="let line of poem?.lines" >{{ line }}</li>
+    </ul>
+  </div>
+  <div>
+    <app-settings></app-settings>
+  </div>
+</div>
