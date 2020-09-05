@@ -23,18 +23,26 @@
   </div>
   <div class="indicators">
     <div class="control">
-      <i *ngIf="!started" class="far fa-play-circle fa-3x" (click)="startTime()"></i>
-      <i *ngIf="started" class="far fa-stop-circle fa-3x" (click)="stopTime()"></i>
+      <i *ngIf="!started" class="far fa-play-circle fa-3x" (click)="startPomodoro()"></i>
+      <i *ngIf="started" class="far fa-stop-circle fa-3x" (click)="stopPomodoro()"></i>
     </div>
     <div class="states">
-      <i class="fas fa-stopwatch fa-3x"></i>
-      <i class="fas fa-mug-hot fa-3x"></i>
-      <i class="fas fa-stopwatch fa-3x"></i>
-      <i class="fas fa-mug-hot fa-3x"></i>
-      <i class="fas fa-stopwatch fa-3x"></i>
-      <i class="fas fa-mug-hot fa-3x"></i>
-      <i class="fas fa-stopwatch fa-3x"></i>
-      <i class="fas fa-couch fa-3x"></i>
+      <i class="fas fa-stopwatch fa-3x"
+        [style.color]="sections[0].started?'orange':'grey'"></i>
+      <i class="fas fa-mug-hot fa-3x"
+         [style.color]="sections[1].started?'orange':'grey'"></i>
+      <i class="fas fa-stopwatch fa-3x"
+         [style.color]="sections[2].started?'orange':'grey'"></i>
+      <i class="fas fa-mug-hot fa-3x"
+         [style.color]="sections[3].started?'orange':'grey'"></i>
+      <i class="fas fa-stopwatch fa-3x"
+         [style.color]="sections[4].started?'orange':'grey'"></i>
+      <i class="fas fa-mug-hot fa-3x"
+         [style.color]="sections[5].started?'orange':'grey'"></i>
+      <i class="fas fa-stopwatch fa-3x"
+         [style.color]="sections[6].started?'orange':'grey'"></i>
+      <i class="fas fa-couch fa-3x"
+         [style.color]="sections[7].started?'orange':'grey'"></i>
     </div>
   </div>
 </div>
