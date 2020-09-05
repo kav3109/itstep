@@ -14,8 +14,40 @@
     </svg>
   </a>
 </div>
+<div *ngIf="!started" class="settings">
+  <label class="mt-2" for="theme">Themes:</label>
+  <select class="custom-select d-block w-20" id="theme" #color (change)="setColor(theme, color.value); theme=(color.value);">
+    <option ng-selected="selected">{{theme}}</option>
+    <option *ngFor="let col of themes" [value]="col">
+      {{col}}
+    </option>
+  </select>
+  <label class="mt-2" for="work">Work time(minutes):</label>
+  <select class="custom-select d-block w-20" id="work" #int1 (change)="mmStart=selectedWorkTime=(int1.value)">
+    <option ng-selected="selected">1</option>
+    <option *ngFor="let time of intervals; let i = index" [value]="time">
+      {{time}}
+    </option>
+  </select>
+  <label class="mt-2" for="coffee">Coffee time(minutes):</label>
+  <select class="custom-select d-block w-20" id="coffee" #int2 (change)="selectedShortTimeout=(int2.value)">
+    <option ng-selected="selected">1</option>
+    <option *ngFor="let time of intervals; let i = index" [value]="time">
+      {{time}}
+    </option>
+  </select>
+  <label class="mt-2" for="break">Break time(minutes):</label>
+  <select class="custom-select d-block w-20" id="break" #int3 (change)="selectedLongTimeout=(int3.value)">
+    <option ng-selected="selected">1</option>
+    <option *ngFor="let time of intervals; let i = index" [value]="time">
+      {{time}}
+    </option>
+  </select>
+</div>
 
-<div class="content">
+<div class="content"
+     [style.marginTop]="started?'70px':'20px'"
+     [style.backgroundColor]="theme">
   <div class="timer">
     <span>{{mmStart | time}}</span>
     <span>:</span>
