@@ -1,0 +1,12 @@
+.App {
+  width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+h1 {
+  text-align: center;
+}
+img {
+  width: 300px;
+  float: right;
+}
