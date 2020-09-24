@@ -4,36 +4,74 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        body {
-            width: 100vh;
-            height: 100vh;
+        .tr-block {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            cursor: pointer;
+            width: 320px;
+            min-height: 220px;
+            background-image: radial-gradient(#818181, #333);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin: 15px;
+            overflow: hidden;
+        }
+        /*.tr-block h3 {*/
+            /*color: #fff;*/
+            /*margin-left: -200px;*/
+            /*transform: translate(-110%);*/
+            /*transition: transform 4.5s;*/
+        /*}*/
+        /*.tr-block:hover h3 {*/
+            /*transform: translate(0);*/
+        /*}*/
+        /*.tr-block p {*/
+            /*line-height: 1.4;*/
+            /*opacity: 0;*/
+            /*transform: translateY(110%);*/
+            /*transition: .5s .4s;*/
+        /*}*/
+        /*.tr-block:hover p {*/
+            /*transform: translate(0);*/
+            /*opacity: 1;*/
+        /*}*/
+        /*https://css-tricks.com/almanac/properties/t/transform/*/
+        .tr-block h3 {
+            animation: shimmy1 3s
+        }
+        .tr-block p {
+            animation: shimmy2 3s
+        }
+        @keyframes shimmy1 {
+            0% {transform: translate(-110%);}
+            100% {transform: translate(0);}
+        }
+        @keyframes shimmy2 {
+            0% {transform: translateY(110%); opacity: 0;}
+            100% {transform: translate(0); opacity: 1;}
         }
     </style>
 </head>
 <body>
-<h1>Randome Number</h1>
-<div id="num"></div>
-<button id="but">Generate random number</button>
-<div id="xx"></div>
-<div id="yy"></div>
-<div id="text"></div>
-<script>
-    but.addEventListener('click', () => {num.innerHTML = Math.floor(Math.random()*100)});
-    document.body.addEventListener('mousemove', (e) => {
-        xx.innerHTML = 'page X = ' + e.pageX;
-        yy.innerHTML = 'page Y = ' + e.pageY;
-    });
-    // document.body.addEventListener('mousedown', (e) => {
-    //     text.innerHTML = e.type+' CLICKED ';
-    // });
-    document.body.addEventListener("mousedown", function(event) {
-        if (event.which === 1)
-            text.innerHTML = "clicked left";
-        else if (event.which === 2)
-            text.innerHTML = "clicked middle";
-        else if (event.which === 3)
-            text.innerHTML = "clicked right";
-    });
-</script>
+<div class="wrapper">
+    <div class="tr-block">
+        <h3>transition-property</h3>
+        <p>Свойство, которое необходимо анимировать.</p>
+    </div>
+    <div class="tr-block">
+        <h3>transition-duration</h3>
+        <p>Свойство, задающее время анимации перехода.</p>
+    </div>
+    <div class="tr-block">
+        <h3>transition-timing-function</h3>
+        <p>Функция, описывающая способ расчета скорости перехода свойств.</p>
+    </div>
+    <div class="tr-block">
+        <h3>transition-delay</h3>
+        <p>Свойство, задающее задержку перед запуском анимации. </p>
+    </div>
+</div>
 </body>
 </html>
